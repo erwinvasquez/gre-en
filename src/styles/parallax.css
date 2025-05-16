@@ -1,0 +1,38 @@
+/* Estilos para el componente de parallax */
+
+/* Contenedor principal del parallax */
+.parallax-bg-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Contenido dentro del parallax */
+  .parallax-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  .parallax-inner-content {
+    position: relative;
+    width: 100%;
+    max-width: var(--parallax-content-max-width);
+    margin: 0 auto;
+    padding: var(--parallax-content-padding);
+  }
+  
+  /* Optimizaciones para dispositivos móviles */
+  @media (max-width: 768px) {
+    .parallax-inner-content {
+      padding: calc(var(--parallax-content-padding) / 2);
+    }
+  }
+  
+  /* Accesibilidad - Reducir movimiento */
+  @media (prefers-reduced-motion: reduce) {
+    .parallax-bg-image {
+      transform: none !important;
+    }
+  }
+  

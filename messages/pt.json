@@ -1,0 +1,342 @@
+{
+  "Navbar": {
+    "home": "Início",
+    "products": "Produtos",
+    "account": "Conta",
+    "cart": "Carrinho",
+    "contact": "Contato"
+  },
+  "Sections": {
+    "home": "Início",
+    "about-us": "Sobre Nós",
+    "future-energy": "Futuro Energético",
+    "solutions": "Soluções",
+    "sectors": "Setores",
+    "pricing": "Preços",
+    "contact": "Contato"
+  },
+  "Pages": {
+    "products": "Produtos"
+  },
+  "HomeSection": {
+    "titleLine1": "Liberdade Energética",
+    "titleLine2": "ao alcance de todos",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+    "buttonGo": "Ir",
+    "buttonSeeProject": "Ver Projetos",
+    "buttonSolutions": "Ver Soluções"
+  },
+  "FutureEnergySection": {
+    "header": "Soluções Energéticas Inovadoras para o Futuro",
+    "description": "Descubra como nossas soluções estão revolucionando a forma como interagimos com a energia",
+    "viewMoreButton": "Ver Todas as Soluções",
+    "solution1": {
+      "title": "Gere Sua Própria Energia",
+      "subtitle": "Reduza Contas de Energia",
+      "description": "Com nossas soluções de energia solar, eólica e soluções BIPV, você pode gerar sua própria eletricidade em qualquer lugar e reduzir significativamente os custos da sua conta de energia."
+    },
+    "solution2": {
+      "title": "Energia Limpa",
+      "subtitle": "Contribua para o Cuidado com o Meio Ambiente",
+      "description": "Ao escolher nossas tecnologias de painéis solares, energia eólica e vidro fotovoltaico, você estará utilizando fontes de energia 100% renováveis e limpas."
+    },
+    "solution3": {
+      "title": "Inovação em Sistemas de Geração",
+      "subtitle": "Tecnologias de Ponta",
+      "description": "Green é líder em oferecer produtos inovadores, como vidros fotovoltaicos e telhas solares, que combinam energia solar de alta eficiência e as incorpora em elementos construtivos de edifícios."
+    },
+    "solution4": {
+      "title": "Aumente o Valor da Propriedade",
+      "subtitle": "Melhor Retorno sobre Investimento (ROI)",
+      "description": "Propriedades com sistemas de energia renovável, como painéis solares, energia eólica ou telhas fotovoltaicas, aumentam seu valor e atratividade no mercado, garantindo um retorno de investimento mais alto e rápido. Graças à energia distribuída, o retorno garantido do investimento no sistema é entre 5 e 10 anos."
+    },
+    "solution5": {
+      "title": "Independência Energética",
+      "subtitle": "Controle Total Sobre Seu Consumo de Energia",
+      "description": "Com nossas soluções, você pode reduzir sua dependência das redes elétricas e produzir sua própria energia para autoconsumo ou injetá-la na rede."
+    }
+  },
+  "SolutionsSection": {
+    "header": "Nossas Soluções Energéticas",
+    "description": "Explore nossa gama de tecnologias inovadoras de energia renovável",
+    "bipv": {
+      "title": "Tecnologia BIPV",
+      "subtitle": "Fotovoltaica Integrada em Edifícios",
+      "description": "Nossas soluções BIPV integram perfeitamente a tecnologia solar nos materiais de construção, combinando estética com geração de energia.",
+      "features": {
+        "feature1": "Perfeitamente integrado sem comprometer a estética",
+        "feature2": "30 anos de garantia de produto e desempenho",
+        "feature3": "Cores e padrões personalizáveis de acordo com suas necessidades",
+        "feature4": "Cumpre com os padrões do sistema de construção, de rápida instalação"
+      },
+      "technical": {
+        "title": "Especificações Técnicas",
+        "spec1": "A camada de película de geração de energia converte 16% da energia da radiação de luz visível em energia elétrica",
+        "spec2": "Converte 6% da energia da radiação de luz visível em energia térmica",
+        "spec3": "A camada de película de baixa emissividade: Reflete as radiações infravermelhas e os raios ultravioletas para longe da edificação",
+        "spec4": "A câmara de vácuo reduz a entrada de calor no interior do edifício"
+      },
+      "applications": {
+        "title": "Aplicações",
+        "app1": "Fachadas de Vidro Duplo laminado",
+        "app2": "Triplo laminado",
+        "app3": "Vidro com câmara isolante ou (DVH)",
+        "app4": "Variedade de Cores, transparências e reflectâncias"
+      },
+      "power": "Faixa de potência entre 50 – 200 w",
+      "temperature": "-0,29% ºC melhor coeficiente de temperatura",
+      "appearance": "Aparência cristalina",
+      "design": "Design Modular padronizado",
+      "cta": "Obtenha uma cotação"
+    },
+    "photovoltaic": {
+      "title": "Energia Fotovoltaicas",
+      "subtitle": "Painéis Solares de Alta Eficiência",
+      "description": "Nossas soluções fotovoltaicas oferecem máxima geração de energia com requisitos mínimos de espaço, perfeitas para aplicações residenciais e comerciais.",
+      "features": {
+        "feature1": "Painéis monocristalinos e policristalinos de alta eficiência",
+        "feature2": "Garantia de desempenho de 25 anos",
+        "feature3": "Resistentes a condições climáticas extremas",
+        "feature4": "Fácil instalação e manutenção"
+      },
+      "technical": {
+        "title": "Especificações Técnicas",
+        "spec1": "Eficiência de conversão de até 22%",
+        "spec2": "Potência de saída de 300W a 600W por painel",
+        "spec3": "Revestimento antirreflexo para máxima absorção de luz",
+        "spec4": "Coeficiente de temperatura avançado para um desempenho constante"
+      },
+      "applications": {
+        "title": "Aplicações",
+        "app1": "Telhados residenciais",
+        "app2": "Edifícios comerciais",
+        "app3": "Fazendas solares",
+        "app4": "Instalações fora da rede"
+      },
+      "cta": "Explorar Opções"
+    },
+    "wind": {
+      "title": "Energia Eólicas",
+      "subtitle": "Aproveitando o Poder do Vento",
+      "description": "Nossas soluções de energia eólica proporcionam uma geração de energia confiável em áreas com bons recursos eólicos, complementando as instalações solares para produção de energia 24/7.",
+      "features": {
+        "feature1": "Turbinas de eixo vertical e horizontal para diferentes ambientes",
+        "feature2": "Funcionamento de baixo ruído adequado para ambientes urbanos",
+        "feature3": "Começa a gerar com velocidades de vento baixas",
+        "feature4": "Design durável com requisitos mínimos de manutenção"
+      },
+      "technical": {
+        "title": "Especificações Técnicas",
+        "spec1": "Geração de energia de 400W a 10kW dependendo do modelo",
+        "spec2": "Velocidade de arranque do vento tão baixa quanto 2,5 m/s",
+        "spec3": "Potência máxima a velocidades de vento de 10-12 m/s",
+        "spec4": "Sistemas de inversores integrados para conexão à rede"
+      },
+      "applications": {
+        "title": "Aplicações",
+        "app1": "Propriedades residenciais",
+        "app2": "Edifícios comerciais",
+        "app3": "Localizações remotas",
+        "app4": "Instalações híbridas solar-eólicas"
+      },
+      "cta": "Saiba Mais"
+    },
+    "carousel": {
+      "previous": "Anterior",
+      "next": "Próximo",
+      "viewDetails": "Ver Detalhes"
+    }
+  },
+  "SectorsSection": {
+    "title": "Setores que Atendemos",
+    "description": "Green fornece soluções de energia sustentável adaptadas às necessidades específicas de diferentes setores",
+    "public": {
+      "title": "Setor Público",
+      "subtitle": "Soluções Sustentáveis para Governos e Entidades Públicas",
+      "description": "Green oferece soluções energéticas para governos, municípios e outras entidades públicas para reduzir custos e promover a sustentabilidade.",
+      "benefits": {
+        "title": "Benefícios",
+        "benefit1": "Economia no consumo de energia pública",
+        "benefit2": "Cumprimento de políticas ambientais",
+        "benefit3": "Melhoria da imagem institucional com projetos verdes"
+      }
+    },
+    "commercial": {
+      "title": "Setor Comercial",
+      "subtitle": "Energia Eficiente para Negócios e Comércios",
+      "description": "De escritórios a grandes redes comerciais, oferecemos soluções de energia renovável que otimizam o consumo elétrico e melhoram a competitividade das empresas.",
+      "benefits": {
+        "title": "Benefícios",
+        "benefit1": "Redução de custos operacionais",
+        "benefit2": "Aumento da rentabilidade e eficiência",
+        "benefit3": "Atrativo para clientes que valorizam a sustentabilidade"
+      }
+    },
+    "industrial": {
+      "title": "Setor Industrial",
+      "subtitle": "Soluções Energéticas para a Indústria",
+      "description": "No setor industrial, nossos sistemas de energia renovável são ideais para processos de manufatura, produção e outras operações que requerem grandes quantidades de energia.",
+      "benefits": {
+        "title": "Benefícios",
+        "benefit1": "Redução da dependência de fontes de energia convencionais",
+        "benefit2": "Economia significativa na fatura energética a longo prazo",
+        "benefit3": "Contribuição para a responsabilidade social empresarial com o meio ambiente"
+      }
+    },
+    "residential": {
+      "title": "Setor Residencial",
+      "subtitle": "Energia Sustentável para Residências",
+      "description": "Oferecemos soluções de energia renovável personalizadas para residências, ajudando as famílias a reduzir custos de eletricidade enquanto contribuem para um planeta mais verde.",
+      "benefits": {
+        "title": "Benefícios",
+        "benefit1": "Economia nas contas de eletricidade",
+        "benefit2": "Aumento do valor da propriedade",
+        "benefit3": "Independência energética e maior estabilidade durante cortes de energia"
+      }
+    },
+    "agricultural": {
+      "title": "Setor Agropecuário",
+      "subtitle": "Energia para o Setor Agrícola",
+      "description": "As soluções energéticas da Green são perfeitas para fazendas e empresas agroindustriais, onde a eficiência energética é fundamental para o sucesso e a rentabilidade do negócio.",
+      "benefits": {
+        "title": "Benefícios",
+        "benefit1": "Geração de energia autônoma para irrigação, processamento de cultivos e outros equipamentos",
+        "benefit2": "Redução de custos operacionais",
+        "benefit3": "Solução verde que respeita o ambiente natural"
+      }
+    },
+    "visualizationTitles": {
+      "cards": "Visualização em Cartões Grid",
+      "tabs": "Visualização com Abas Interativas",
+      "carousel": "Visualização em Carrossel",
+      "icons": "Visualização com Ícones Interativos",
+      "accordion": "Visualização em Acordeão"
+    }
+  },
+  "ServicesSection": {
+    "header": "Você tem estes problemas?",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    "stat1": "Lorem ipsum",
+    "stat2": "Nemo enim ipsam",
+    "stat3": "Lorem ipsum dolor.",
+    "button": "Botão",
+    "servicesTitle": "Nossos Serviços",
+    "service1": "Serviço Um",
+    "service2": "Serviço Dois",
+    "service3": "Serviço Três",
+    "serviceDescription1": "Descrição para o serviço um.",
+    "serviceDescription2": "Descrição para o serviço dois.",
+    "serviceDescription3": "Descrição para o serviço três.",
+    "viewMore": "Ver Mais"
+  },
+  "Auth": {
+    "myAccount": "Minha Conta",
+    "login": "Entrar",
+    "register": "Registrar",
+    "name": "Nome",
+    "namePlaceholder": "Digite seu nome",
+    "email": "E-mail",
+    "emailPlaceholder": "Digite seu e-mail",
+    "password": "Senha",
+    "passwordPlaceholder": "Digite sua senha",
+    "loginButton": "Entrar",
+    "registerButton": "Registrar",
+    "loading": "Carregando...",
+    "orContinueWith": "ou continuar com",
+    "continueWithGoogle": "Continuar com Google",
+    "noAccount": "Não tem uma conta?",
+    "registerNow": "Registre-se agora",
+    "alreadyHaveAccount": "Já tem uma conta?",
+    "loginNow": "Entre agora",
+    "emailNotVerified": "E-mail não verificado",
+    "manageAccount": "Gerenciar Conta",
+    "logout": "Sair"
+  },
+  "Account": {
+    "myAccount": "Minha Conta",
+    "profileInformation": "Informações do Perfil",
+    "name": "Nome",
+    "email": "E-mail",
+    "accountProvider": "Provedor da Conta",
+    "emailPassword": "E-mail e Senha",
+    "edit": "Editar",
+    "cancel": "Cancelar",
+    "saveChanges": "Salvar Alterações",
+    "saving": "Salvando...",
+    "emailCannotBeChanged": "O endereço de e-mail não pode ser alterado",
+    "notVerified": "Não Verificado",
+    "accountSettings": "Configurações da Conta",
+    "profile": "Perfil",
+    "security": "Segurança",
+    "notifications": "Notificações",
+    "billing": "Faturamento",
+    "accountActivity": "Atividade da Conta",
+    "lastLogin": "Último acesso"
+  },
+  "Admin": {
+    "adminPanel": "Administrador",
+    "welcome": "Bem-vindo",
+    "dashboard": "Painel de Controle",
+    "dashboardDesc": "Ver estatísticas gerais e métricas de desempenho",
+    "users": "Usuários",
+    "usersDesc": "Gerenciar contas de usuário e permissões",
+    "products": "Produtos",
+    "productsDesc": "Adicionar, editar e gerenciar inventário de produtos",
+    "orders": "Pedidos",
+    "ordersDesc": "Acompanhar e gerenciar pedidos de clientes",
+    "notifications": "Notificações",
+    "notificationsDesc": "Gerenciar notificações do sistema e de usuários",
+    "settings": "Configurações",
+    "settingsDesc": "Configurar ajustes do sistema e da aplicação",
+    "totalUsers": "Total de Usuários",
+    "totalProducts": "Total de Produtos",
+    "totalOrders": "Total de Pedidos",
+    "revenue": "Receita",
+    "lastLogin": "Último Acesso",
+    "needHelp": "Precisa de Ajuda?",
+    "helpText": "Consulte nossa documentação para guias detalhados sobre como usar o painel de administração.",
+    "viewDocs": "Ver Documentação"
+  },
+  "Footer": {
+    "contactUs": "Contate-nos",
+    "address": "Endereço",
+    "phone": "Telefone",
+    "email": "E-mail",
+    "hours": "Horário Comercial",
+    "followUs": "Siga-nos",
+    "solutions": "Soluções",
+    "sectors": "Setores",
+    "company": "Empresa",
+    "support": "Suporte",
+    "allRightsReserved": "Todos os direitos reservados.",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Serviço",
+    "links": {
+      "solutions": {
+        "bipv": "Soluções BIPV",
+        "photovoltaic": "Soluções Fotovoltaicas",
+        "wind": "Soluções Eólicas"
+      },
+      "sectors": {
+        "residential": "Residencial",
+        "commercial": "Comercial",
+        "industrial": "Industrial",
+        "public": "Setor Público"
+      },
+      "company": {
+        "about": "Sobre Nós",
+        "team": "Nossa Equipe",
+        "careers": "Carreiras",
+        "news": "Notícias"
+      },
+      "support": {
+        "contact": "Contate-nos",
+        "faq": "Perguntas Frequentes",
+        "resources": "Recursos"
+      }
+    }
+  }
+}
+
+
+  

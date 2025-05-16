@@ -1,0 +1,53 @@
+:root {
+  /* Duraciones base - MODIFICA SOLO ESTOS VALORES */
+  --animation-duration-base: 1000ms;
+
+  /* Factores de escala para diferentes velocidades */
+  --animation-factor-fast: 0.5; /* 50% de la duración base */
+  --animation-factor-normal: 0.75; /* 75% de la duración base */
+  --animation-factor-slow: 1; /* 100% de la duración base */
+  --animation-factor-slower: 1.5; /* 150% de la duración base */
+  --animation-factor-slowest: 2.5; /* 250% de la duración base */
+
+  /* Duraciones calculadas - NO MODIFICAR DIRECTAMENTE */
+  --duration-fast: calc(var(--animation-duration-base) * var(--animation-factor-fast));
+  --duration-normal: calc(var(--animation-duration-base) * var(--animation-factor-normal));
+  --duration-slow: calc(var(--animation-duration-base) * var(--animation-factor-slow));
+  --duration-slower: calc(var(--animation-duration-base) * var(--animation-factor-slower));
+  --duration-slowest: calc(var(--animation-duration-base) * var(--animation-factor-slowest));
+
+  /* Funciones de temporización */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-linear: linear;
+  --ease-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Transiciones predefinidas */
+  --transition-colors:
+    color var(--duration-normal) var(--ease-in-out),
+    background-color var(--duration-normal) var(--ease-in-out),
+    border-color var(--duration-normal) var(--ease-in-out),
+    text-decoration-color var(--duration-normal) var(--ease-in-out),
+    fill var(--duration-normal) var(--ease-in-out),
+    stroke var(--duration-normal) var(--ease-in-out);
+
+  --transition-transform: transform var(--duration-normal) var(--ease-in-out);
+  --transition-opacity: opacity var(--duration-normal) var(--ease-in-out);
+  --transition-scale: transform var(--duration-normal) var(--ease-out);
+  --transition-all: all var(--duration-normal) var(--ease-in-out);
+
+  /* Configuración para animaciones específicas */
+  --animation-fade-in: fade-in var(--duration-normal) var(--ease-out) forwards;
+  --animation-slide-up: slide-up var(--duration-normal) var(--ease-out) forwards;
+  --animation-slide-in-left: slide-in-left var(--duration-normal) var(--ease-out) forwards;
+  --animation-slide-in-right: slide-in-right var(--duration-normal) var(--ease-out) forwards;
+
+  /* Configuración para animaciones de componentes específicos */
+  --animation-title: fade-in var(--duration-slow) var(--ease-out) forwards;
+  --animation-subtitle: slide-up var(--duration-normal) var(--ease-out) forwards;
+  --animation-button: scale-in var(--duration-normal) var(--ease-bounce) forwards;
+  --animation-card: fade-in var(--duration-normal) var(--ease-out) forwards;
+  --animation-image: blur-in var(--duration-slow) var(--ease-out) forwards;
+}

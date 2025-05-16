@@ -1,0 +1,239 @@
+/**
+ * Sistema de animaciones basadas en scroll
+ * Este archivo utiliza las variables definidas en animation-tokens.css
+ */
+
+/* Clase base para elementos que serán animados */
+.animate-on-scroll {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Clase aplicada cuando el elemento es visible */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+}
+
+/* Variantes de animación */
+.fade-in {
+  animation: none;
+}
+.fade-in.is-visible {
+  animation: fade-in var(--animation-duration-normal) var(--animation-easing-in-out) forwards;
+}
+
+.slide-up {
+  transform: translateY(var(--animation-distance-medium));
+  animation: none;
+}
+.slide-up.is-visible {
+  animation: slide-up var(--animation-duration-normal) var(--animation-easing-in-out) forwards;
+}
+
+.slide-in-left {
+  transform: translateX(calc(-1 * var(--animation-distance-large)));
+  animation: none;
+}
+.slide-in-left.is-visible {
+  animation: slide-in-left var(--animation-duration-normal) var(--animation-easing-in-out) forwards;
+}
+
+.slide-in-right {
+  transform: translateX(var(--animation-distance-large));
+  animation: none;
+}
+.slide-in-right.is-visible {
+  animation: slide-in-right var(--animation-duration-normal) var(--animation-easing-in-out) forwards;
+}
+
+.scale-in {
+  transform: scale(var(--animation-scale-start));
+  animation: none;
+}
+.scale-in.is-visible {
+  animation: scale-in var(--animation-duration-normal) var(--animation-easing-in-out) forwards;
+}
+
+.bounce {
+  animation: none;
+}
+.bounce.is-visible {
+  animation: bounce var(--animation-duration-normal) var(--animation-easing-bounce) forwards;
+}
+
+.rotate-in {
+  transform: rotate(var(--animation-rotate-value));
+  animation: none;
+}
+.rotate-in.is-visible {
+  animation: rotate-in var(--animation-duration-normal) var(--animation-easing-in-out) forwards;
+}
+
+.blur-in {
+  filter: blur(var(--animation-blur-value));
+  animation: none;
+}
+.blur-in.is-visible {
+  animation: blur-in var(--animation-duration-normal) var(--animation-easing-in-out) forwards;
+}
+
+/* Variantes de retraso para animaciones secuenciales */
+.delay-100 {
+  animation-delay: var(--animation-delay-100);
+}
+.delay-200 {
+  animation-delay: var(--animation-delay-200);
+}
+.delay-300 {
+  animation-delay: var(--animation-delay-300);
+}
+.delay-400 {
+  animation-delay: var(--animation-delay-400);
+}
+.delay-500 {
+  animation-delay: var(--animation-delay-500);
+}
+.delay-700 {
+  animation-delay: var(--animation-delay-700);
+}
+.delay-1000 {
+  animation-delay: var(--animation-delay-1000);
+}
+
+/* Variantes de duración */
+.duration-fastest {
+  --duration-animation: var(--animation-duration-fastest);
+}
+.duration-fast {
+  --duration-animation: var(--animation-duration-fast);
+}
+.duration-normal {
+  --duration-animation: var(--animation-duration-normal);
+}
+.duration-slow {
+  --duration-animation: var(--animation-duration-slow);
+}
+.duration-slower {
+  --duration-animation: var(--animation-duration-slower);
+}
+.duration-slowest {
+  --duration-animation: var(--animation-duration-slowest);
+}
+
+/* Variantes de curvas de temporización */
+.ease-linear {
+  --ease-animation: var(--animation-easing-linear);
+}
+.ease-in {
+  --ease-animation: var(--animation-easing-in);
+}
+.ease-out {
+  --ease-animation: var(--animation-easing-out);
+}
+.ease-in-out {
+  --ease-animation: var(--animation-easing-in-out);
+}
+.ease-bounce {
+  --ease-animation: var(--animation-easing-bounce);
+}
+.ease-elastic {
+  --ease-animation: var(--animation-easing-elastic);
+}
+
+/* Definición de keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--animation-distance-medium));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-1 * var(--animation-distance-large)));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(var(--animation-distance-large));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(var(--animation-scale-start));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  40% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate-in {
+  from {
+    opacity: 0;
+    transform: rotate(var(--animation-rotate-value));
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    filter: blur(var(--animation-blur-value));
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+
+  
