@@ -1,0 +1,51 @@
+/**
+ * Sistema de tokens de animación centralizado
+ * Este archivo contiene todas las variables CSS relacionadas con animaciones
+ */
+
+ :root {
+    /* Duraciones base */
+    --animation-duration-base: 1000ms;
+    --animation-duration-factor-fastest: 0.2;
+    --animation-duration-factor-fast: 0.4;
+    --animation-duration-factor-normal: 1;
+    --animation-duration-factor-slow: 1.5;
+    --animation-duration-factor-slower: 2;
+    --animation-duration-factor-slowest: 3;
+  
+    /* Duraciones calculadas */
+    --animation-duration-fastest: calc(var(--animation-duration-base) * var(--animation-duration-factor-fastest));
+    --animation-duration-fast: calc(var(--animation-duration-base) * var(--animation-duration-factor-fast));
+    --animation-duration-normal: var(--animation-duration-base);
+    --animation-duration-slow: calc(var(--animation-duration-base) * var(--animation-duration-factor-slow));
+    --animation-duration-slower: calc(var(--animation-duration-base) * var(--animation-duration-factor-slower));
+    --animation-duration-slowest: calc(var(--animation-duration-base) * var(--animation-duration-factor-slowest));
+  
+    /* Curvas de temporización (easing) */
+    --animation-easing-linear: cubic-bezier(0, 0, 1, 1);
+    --animation-easing-in: cubic-bezier(0.4, 0, 1, 1);
+    --animation-easing-out: cubic-bezier(0, 0, 0.2, 1);
+    --animation-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-easing-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --animation-easing-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+    /* Retrasos (delays) */
+    --animation-delay-100: 100ms;
+    --animation-delay-200: 200ms;
+    --animation-delay-300: 300ms;
+    --animation-delay-400: 400ms;
+    --animation-delay-500: 500ms;
+    --animation-delay-700: 700ms;
+    --animation-delay-1000: 1000ms;
+  
+    /* Distancias para animaciones de movimiento */
+    --animation-distance-small: 30px;
+    --animation-distance-medium: 60px;
+    --animation-distance-large: 90px;
+  
+    /* Valores para filtros */
+    --animation-blur-value: 8px;
+    --animation-scale-start: 0.8;
+    --animation-rotate-value: -10deg;
+  }
+  

@@ -1,0 +1,92 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/components/active-link/ActiveLink.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+/* Estilos para enlaces de texto */
+.ActiveLink_text-link__M2xuG {
+  margin-right: 0.5rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.ActiveLink_text-link__M2xuG:hover {
+  color: hsl(var(--primary));
+}
+.ActiveLink_text-link__M2xuG {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-navbar);
+  font-size: var(--navbar-link-font-size);
+  font-weight: var(--navbar-link-font-weight);
+}
+
+.ActiveLink_active-text-link__RF2VY {
+  color: hsl(var(--primary));
+  font-weight: var(--navbar-link-active-font-weight);
+}
+
+/* Pseudo-elemento para animación en enlaces de texto */
+.ActiveLink_text-link__M2xuG::after {
+  background-color: hsl(var(--primary));
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: bottom right;
+}
+
+/* Animación al pasar el cursor sobre enlaces de texto */
+.ActiveLink_text-link__M2xuG:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Estado activo: mantiene la línea dorada */
+.ActiveLink_active-text-link__RF2VY::after {
+  background-color: hsl(var(--primary));
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Estilos para enlaces de íconos */
+.ActiveLink_icon-link__TvGb6 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  transition: var(--navbar-icon-transition);
+}
+
+.ActiveLink_active-icon-link__39zMx {
+  color: var(--navbar-active);
+}
+
+/* Eliminamos el hover aquí ya que ahora lo manejamos con las variables CSS */
+
+/* Estilos para modo oscuro */
+.ActiveLink_dark__9aFtu .ActiveLink_text-link__M2xuG:hover {
+  color: hsl(var(--primary));
+}
+
+.ActiveLink_dark__9aFtu .ActiveLink_active-text-link__RF2VY {
+  color: hsl(var(--primary));
+}
+
+.ActiveLink_dark__9aFtu .ActiveLink_text-link__M2xuG::after,
+.ActiveLink_dark__9aFtu .ActiveLink_active-text-link__RF2VY::after {
+  background-color: hsl(var(--primary));
+}
+
+.ActiveLink_dark__9aFtu .ActiveLink_icon-link__TvGb6:hover,
+.ActiveLink_dark__9aFtu .ActiveLink_active-icon-link__39zMx {
+  color: hsl(var(--primary));
+}
+
+
+
+
+
+

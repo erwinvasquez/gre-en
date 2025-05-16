@@ -1,0 +1,724 @@
+{
+  "Navbar": {
+    "home": "Inicio",
+    "products": "Productos",
+    "account": "Cuenta",
+    "cart": "Carrito",
+    "contact": "Contacto",
+    "quote": "Cotizador"
+  },
+  "Sections": {
+    "home": "Inicio",
+    "about-us": "Sobre Nosotros",
+    "future-energy": "Futuro Energético",
+    "solutions": "Soluciones",
+    "sectors": "Sectores",
+    "pricing": "Precios",
+    "contact": "Contacto",
+    "quote": "Cotizador"
+  },
+  "Pages": {
+    "products": "Productos",
+    "quote": "Cotizador de Paneles Solares"
+  },
+  "HomeSection": {
+    "titleLine1": "Libertad Energética",
+    "titleLine2": "al alcance de todos",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+    "buttonGo": "Ir",
+    "buttonSeeProject": "Ver Proyectos",
+    "buttonSolutions": "Ver Soluciones"
+  },
+  "FutureEnergySection": {
+    "header": "Soluciones Energéticas Innovadoras para el Futuro",
+    "description": "Descubre cómo nuestras soluciones están revolucionando la forma en que interactuamos con la energía",
+    "viewMoreButton": "Ver Todas las Soluciones",
+    "solution1": {
+      "title": "Genera Tu Propia Energía",
+      "subtitle": "Reduce Facturas de Energía",
+      "description": "Con nuestras soluciones de energía solar, eólica y soluciones BIPV, puedes generar tu propia electricidad en cualquier lugar y reducir significativamente los costos de tu factura energética."
+    },
+    "solution2": {
+      "title": "Energía Limpia",
+      "subtitle": "Contribuye al Cuidado del Medio Ambiente",
+      "description": "Al elegir nuestras tecnologías de paneles solares, energía eólica y vidrio fotovoltaico, estarás utilizando fuentes de energía 100% renovables y limpias."
+    },
+    "solution3": {
+      "title": "Innovación en Sistemas de Generación",
+      "subtitle": "Tecnologías de Vanguardia",
+      "description": "Green es líder en ofrecer productos innovadores, como vidrios fotovoltaicos y tejas solares, que combinan la energía solar de alta eficiencia y las incorpora en elementos constructivos de edificios."
+    },
+    "solution4": {
+      "title": "Aumenta el Valor de la Propiedad",
+      "subtitle": "Mejor Retorno de Inversión (ROI)",
+      "description": "Las propiedades con sistemas de energía renovable, como paneles solares, energía eólica o tejas fotovoltaicas, aumentan su valor y atractivo en el mercado, asegurando un retorno de inversión más alto y rápido. Gracias a la energía distribuida el retorno garantizado de la inversión en el sistema es entre 5 y 10 años."
+    },
+    "solution5": {
+      "title": "Independencia Energética",
+      "subtitle": "Control Total Sobre Tu Consumo de Energía",
+      "description": "Con nuestras soluciones, puedes reducir tu dependencia de las redes eléctricas y producir tu propia energía para autoconsumo o inyectarla a la red."
+    }
+  },
+  "SolutionsSection": {
+    "header": "Nuestras Soluciones Energéticas",
+    "description": "Explora nuestra gama de tecnologías innovadoras de energía renovable",
+    "bipv": {
+      "title": "Tecnologías BIPV",
+      "subtitle": "Fotovoltaica Integrada en Edificios",
+      "description": "Nuestras soluciones BIPV integran perfectamente la tecnología solar en los materiales de construcción, combinando estética con generación de energía.",
+      "features": {
+        "feature1": "Perfectamente integrado sin comprometer la estética",
+        "feature2": "30 años de garantía de producto y rendimiento",
+        "feature3": "Colores y patrones personalizables según sus necesidades",
+        "feature4": "Cumple con los estándares del sistema de construcción, de rápida instalación"
+      },
+      "technical": {
+        "title": "Especificaciones Técnicas",
+        "spec1": "La capa de película de generación de energía convierte el 16% de la energía de la radiación de luz visible en energía eléctrica",
+        "spec2": "Convierte el 6% de la energía de la radiación de luz visible en energía térmica",
+        "spec3": "La capa de película de baja emisividad: Refleja las radiaciones infrarojas y los rayos ultravioletas del lejos de la edificación",
+        "spec4": "La cámara de vacío reduce el ingreso de calor al interior del edificio"
+      },
+      "applications": {
+        "title": "Aplicaciones",
+        "app1": "Fachadas de Vidrio Doble laminado",
+        "app2": "Triple laminado",
+        "app3": "Vidrio con cámara aislante o (DVH)",
+        "app4": "Variedad de Colores, transparencias y reflectancias"
+      },
+      "power": "Rango de potencia entre 50 – 200 w",
+      "temperature": "-0,29% ºC mejor coeficiente de temperatura",
+      "appearance": "Apariencia cristalina",
+      "design": "Diseño Modular estandarizado",
+      "cta": "Obtenga una cotización"
+    },
+    "photovoltaic": {
+      "title": "Energía Fotovoltaica",
+      "subtitle": "Paneles Solares de Alta Eficiencia",
+      "description": "Nuestras soluciones fotovoltaicas ofrecen máxima generación de energía con requisitos mínimos de espacio, perfectas para aplicaciones residenciales y comerciales.",
+      "features": {
+        "feature1": "Paneles monocristalinos y policristalinos de alta eficiencia",
+        "feature2": "Garantía de rendimiento de 25 años",
+        "feature3": "Resistentes a condiciones climáticas extremas",
+        "feature4": "Fácil instalación y mantenimiento"
+      },
+      "technical": {
+        "title": "Especificaciones Técnicas",
+        "spec1": "Eficiencia de conversión de hasta el 22%",
+        "spec2": "Potencia de salida de 300W a 600W por panel",
+        "spec3": "Recubrimiento antirreflectante para máxima absorción de luz",
+        "spec4": "Coeficiente de temperatura avanzado para un rendimiento constante"
+      },
+      "applications": {
+        "title": "Aplicaciones",
+        "app1": "Tejados residenciales",
+        "app2": "Edificios comerciales",
+        "app3": "Granjas solares",
+        "app4": "Instalaciones fuera de la red"
+      },
+      "cta": "Explorar Opciones"
+    },
+    "wind": {
+      "title": "Energía Eólica",
+      "subtitle": "Aprovechando el Poder del Viento",
+      "description": "Nuestras soluciones de energía eólica proporcionan una generación de energía confiable en áreas con buenos recursos eólicos, complementando las instalaciones solares para producción de energía 24/7.",
+      "features": {
+        "feature1": "Turbinas de eje vertical y horizontal para diferentes entornos",
+        "feature2": "Funcionamiento de bajo ruido adecuado para entornos urbanos",
+        "feature3": "Comienza a generar con velocidades de viento bajas",
+        "feature4": "Diseño duradero con requisitos mínimos de mantenimiento"
+      },
+      "technical": {
+        "title": "Especificaciones Técnicas",
+        "spec1": "Generación de energía de 400W a 10kW dependiendo del modelo",
+        "spec2": "Velocidad de arranque del viento tan baja como 2,5 m/s",
+        "spec3": "Potencia máxima a velocidades de viento de 10-12 m/s",
+        "spec4": "Sistemas de inversores integrados para conexión a la red"
+      },
+      "applications": {
+        "title": "Aplicaciones",
+        "app1": "Propiedades residenciales",
+        "app2": "Edificios comerciales",
+        "app3": "Ubicaciones remotas",
+        "app4": "Instalaciones híbridas solar-eólicas"
+      },
+      "cta": "Saber Más"
+    },
+    "carousel": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "viewDetails": "Ver Detalles"
+    }
+  },
+  "ContactSection": {
+    "header": "Contáctanos",
+    "description": "Estamos aquí para ayudarte con tus proyectos de energía renovable. Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.",
+    "form": {
+      "title": "Formulario de Contacto",
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre completo",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "tu@email.com (opcional)",
+      "phone": "Teléfono",
+      "phonePlaceholder": "Tu número de teléfono",
+      "city": "Ciudad",
+      "cityPlaceholder": "Tu ciudad",
+      "sector": "Sector",
+      "sectorPlaceholder": "Selecciona un sector",
+      "sectors": {
+        "public": "Público",
+        "agriculture": "Agrícola",
+        "residential": "Residencial",
+        "commercial": "Comercial",
+        "industrial": "Industrial"
+      },
+      "generationType": "Tipo de Generación",
+      "generationTypePlaceholder": "Selecciona un tipo",
+      "generationTypes": {
+        "bipv": "BIPV (Fotovoltaica Integrada en Edificios)",
+        "photovoltaic": "Fotovoltaica",
+        "wind": "Eólica"
+      },
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos más sobre tu proyecto o consulta",
+      "submit": "Enviar Mensaje",
+      "submitting": "Enviando...",
+      "successMessage": "¡Gracias! Tu mensaje ha sido enviado exitosamente. Nos pondremos en contacto contigo pronto."
+    },
+    "validation": {
+      "nameRequired": "El nombre es requerido",
+      "phoneRequired": "El número de teléfono es requerido",
+      "emailInvalid": "El formato del correo electrónico es inválido",
+      "cityRequired": "La ciudad es requerida",
+      "sectorRequired": "Debes seleccionar un sector",
+      "generationTypeRequired": "Debes seleccionar un tipo de generación"
+    },
+    "errors": {
+      "generic": "Ocurrió un error. Por favor intenta de nuevo.",
+      "submitFailed": "Error al enviar el formulario. Por favor intenta más tarde."
+    }
+  },
+  "QuoteSection": {
+    "title": "Cotizador de Paneles Solares",
+    "subtitle": "Calcula cuántos paneles solares necesitas y obtén un costo estimado para tu sistema de energía solar",
+    "form": {
+      "title": "Configuración del Sistema",
+      "monthlyConsumption": "Consumo Mensual de Energía",
+      "monthlyConsumptionPlaceholder": "Ingresa tu consumo mensual en kWh",
+      "monthlyConsumptionHelper": "Puedes encontrar esta información en tu factura de electricidad",
+      "location": "Ubicación",
+      "locationPlaceholder": "Ingresa tu ciudad o dirección",
+      "locationHelper": "Haz clic en el mapa para seleccionar tu ubicación exacta y obtener datos precisos de radiación solar",
+      "mapInstructions": "Haz clic en el mapa para seleccionar tu ubicación",
+      "gettingAddress": "Obteniendo dirección...",
+      "useCurrentLocation": "Usar Ubicación Actual",
+      "panelType": "Tipo de Panel",
+      "panelTypePlaceholder": "Selecciona el tipo de panel",
+      "panelTypes": {
+        "monocrystalline": "Monocristalino (600W)",
+        "polycrystalline": "Policristalino (550W)",
+        "bifacial": "Bifacial (650W)"
+      },
+      "systemType": "Tipo de Sistema",
+      "systemTypePlaceholder": "Selecciona el tipo de sistema",
+      "systemTypes": {
+        "grid-tied": "Conectado a red (Conectado a la red)",
+        "off-grid": "Off-grid (Con baterías)",
+        "hybrid": "Híbrido (Red + Baterías)"
+      },
+      "calculate": "Calcular Cotización",
+      "calculating": "Calculando...",
+      "recalculate": "Recalcular"
+    },
+    "results": {
+      "title": "Resultados de la Cotización",
+      "systemSummary": "Resumen del Sistema",
+      "panelsNeeded": "Paneles Necesarios",
+      "totalPower": "Potencia Total del Sistema",
+      "monthlyGeneration": "Generación Mensual",
+      "yearlyGeneration": "Generación Anual",
+      "systemCost": "Costo del Sistema",
+      "panelsCost": "Paneles Solares",
+      "inverterCost": "Inversor",
+      "installationCost": "Instalación",
+      "additionalCost": "Componentes Adicionales",
+      "totalCost": "Costo Total",
+      "savings": "Ahorros Estimados",
+      "monthlySavings": "Ahorros Mensuales",
+      "yearlySavings": "Ahorros Anuales",
+      "paybackPeriod": "Período de Recuperación",
+      "co2Reduction": "Reducción de CO₂ por Año",
+      "technicalDetails": "Detalles Técnicos",
+      "solarRadiation": "Radiación Solar",
+      "systemEfficiency": "Eficiencia del Sistema",
+      "inverterEfficiency": "Eficiencia del Inversor",
+      "performanceRatio": "Ratio de Rendimiento",
+      "requestQuote": "Solicitar Cotización Detallada",
+      "downloadReport": "Descargar Reporte"
+    },
+    "validation": {
+      "consumptionRequired": "El consumo mensual es requerido",
+      "consumptionMin": "El consumo debe ser mayor a 0",
+      "locationRequired": "La ubicación es requerida",
+      "panelTypeRequired": "El tipo de panel es requerido",
+      "systemTypeRequired": "El tipo de sistema es requerido"
+    },
+    "errors": {
+      "calculationFailed": "Error al calcular la cotización. Por favor intenta de nuevo.",
+      "locationNotFound": "Ubicación no encontrada. Por favor selecciona una ubicación en el mapa.",
+      "weatherDataFailed": "Error al obtener datos meteorológicos para tu ubicación. Usando valores estimados.",
+      "mapLoadFailed": "Error al cargar el mapa. Por favor recarga la página."
+    },
+    "units": {
+      "kwh": "kWh",
+      "kw": "kW",
+      "panels": "paneles",
+      "years": "años",
+      "months": "meses",
+      "usd": "USD",
+      "kg": "kg",
+      "percent": "%",
+      "kwhPerM2PerDay": "kWh/m²/día"
+    }
+  },
+  "SectorsSection": {
+    "title": "Sectores que Atendemos",
+    "description": "Green proporciona soluciones de energía sostenible adaptadas a las necesidades específicas de diferentes sectores",
+    "public": {
+      "title": "Sector Público",
+      "subtitle": "Soluciones Sostenibles para Gobiernos y Entidades Públicas",
+      "description": "Green brinda soluciones energéticas a gobiernos, municipios y otras entidades públicas para reducir costos y promover la sostenibilidad.",
+      "benefits": {
+        "title": "Beneficios",
+        "benefit1": "Ahorro en el consumo de energía pública",
+        "benefit2": "Cumplimiento de políticas medioambientales",
+        "benefit3": "Mejora de la imagen institucional con proyectos verdes"
+      }
+    },
+    "commercial": {
+      "title": "Sector Comercial",
+      "subtitle": "Energía Eficiente para Negocios y Comercios",
+      "description": "Desde oficinas hasta grandes cadenas comerciales, ofrecemos soluciones de energía renovable que optimizan el consumo eléctrico y mejoran la competitividad de las empresas.",
+      "benefits": {
+        "title": "Beneficios",
+        "benefit1": "Reducción de costos operativos",
+        "benefit2": "Aumento de la rentabilidad y eficiencia",
+        "benefit3": "Atractivo para clientes que valoran la sostenibilidad"
+      }
+    },
+    "industrial": {
+      "title": "Sector Industrial",
+      "subtitle": "Soluciones Energéticas para la Industria",
+      "description": "En el sector industrial, nuestros sistemas de energía renovable son ideales para procesos de manufactura, producción y otras operaciones que requieren grandes cantidades de energía.",
+      "benefits": {
+        "title": "Beneficios",
+        "benefit1": "Reducción de la dependencia de fuentes de energía convencionales",
+        "benefit2": "Ahorro significativo en la factura energética a largo plazo",
+        "benefit3": "Contribución a la responsabilidad social empresarial con el medio ambiente"
+      }
+    },
+    "residential": {
+      "title": "Sector Residencial",
+      "subtitle": "Energía Sostenible para Hogares",
+      "description": "Ofrecemos soluciones de energía renovable personalizadas para hogares, ayudando a las familias a reducir costos de electricidad mientras contribuyen a un planeta más verde.",
+      "benefits": {
+        "title": "Beneficios",
+        "benefit1": "Ahorro en las facturas de electricidad",
+        "benefit2": "Aumento del valor de la propiedad",
+        "benefit3": "Independencia energética y mayor estabilidad ante cortes de energía"
+      }
+    },
+    "agricultural": {
+      "title": "Sector Agropecuario",
+      "subtitle": "Energía para el Sector Agro",
+      "description": "Las soluciones energéticas de Green son perfectas para granjas y empresas agroindustriales, donde la eficiencia energética es clave para el éxito y la rentabilidad del negocio.",
+      "benefits": {
+        "title": "Beneficios",
+        "benefit1": "Generación de energía autónoma para el riego, procesamiento de cultivos y otros equipos",
+        "benefit2": "Reducción de costos operativos",
+        "benefit3": "Solución verde que respeta el entorno natural"
+      }
+    },
+    "visualizationTitles": {
+      "cards": "Visualización en Tarjetas Grid",
+      "tabs": "Visualización con Pestañas Interactivas",
+      "carousel": "Visualización en Carrusel",
+      "icons": "Visualización con Iconos Interactivos",
+      "accordion": "Visualización en Acordeón"
+    }
+  },
+  "ServicesSection": {
+    "header": "¿Tienes estos problemas?",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    "stat1": "Lorem ipsum",
+    "stat2": "Nemo enim ipsam",
+    "stat3": "Lorem ipsum dolor.",
+    "button": "Botón",
+    "servicesTitle": "Nuestros Servicios",
+    "service1": "Servicio Uno",
+    "service2": "Servicio Dos",
+    "service3": "Servicio Tres",
+    "serviceDescription1": "Descripción para el servicio uno.",
+    "serviceDescription2": "Descripción para el servicio dos.",
+    "serviceDescription3": "Descripción para el servicio tres.",
+    "viewMore": "Ver Más"
+  },
+  "Auth": {
+    "myAccount": "Mi Cuenta",
+    "login": "Iniciar Sesión",
+    "register": "Registrarse",
+    "name": "Nombre",
+    "namePlaceholder": "Ingresa tu nombre",
+    "email": "Correo Electrónico",
+    "emailPlaceholder": "Ingresa tu correo electrónico",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Ingresa tu contraseña",
+    "loginButton": "Iniciar Sesión",
+    "registerButton": "Registrarse",
+    "loading": "Cargando...",
+    "orContinueWith": "o continuar con",
+    "continueWithGoogle": "Continuar con Google",
+    "noAccount": "¿No tienes una cuenta?",
+    "registerNow": "Regístrate ahora",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "loginNow": "Inicia sesión ahora",
+    "emailNotVerified": "Correo electrónico no verificado",
+    "manageAccount": "Administrar Cuenta",
+    "logout": "Cerrar Sesión"
+  },
+  "Account": {
+    "myAccount": "Mi Cuenta",
+    "profileInformation": "Información del Perfil",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "accountProvider": "Proveedor de Cuenta",
+    "emailPassword": "Correo y Contraseña",
+    "edit": "Editar",
+    "cancel": "Cancelar",
+    "saveChanges": "Guardar Cambios",
+    "saving": "Guardando...",
+    "emailCannotBeChanged": "La dirección de correo electrónico no puede ser cambiada",
+    "notVerified": "No Verificado",
+    "accountSettings": "Configuración de la Cuenta",
+    "profile": "Perfil",
+    "security": "Seguridad",
+    "notifications": "Notificaciones",
+    "billing": "Facturación",
+    "accountActivity": "Actividad de la Cuenta",
+    "lastLogin": "Último inicio de sesión"
+  },
+  "Admin": {
+    "adminPanel": "Administrador",
+    "welcome": "Bienvenido",
+    "dashboard": "Panel de Control",
+    "dashboardDesc": "Ver estadísticas generales y métricas de rendimiento",
+    "users": "Usuarios",
+    "usersDesc": "Administrar cuentas de usuario y permisos",
+    "products": "Productos",
+    "productsDesc": "Añadir, editar y administrar inventario de productos",
+    "orders": "Pedidos",
+    "ordersDesc": "Seguir y administrar pedidos de clientes",
+    "notifications": "Notificaciones",
+    "notificationsDesc": "Administrar notificaciones del sistema y de usuarios",
+    "settings": "Configuración",
+    "settingsDesc": "Configurar ajustes del sistema y la aplicación",
+    "totalUsers": "Total de Usuarios",
+    "totalProducts": "Total de Productos",
+    "totalOrders": "Total de Pedidos",
+    "revenue": "Ingresos",
+    "lastLogin": "Último Inicio de Sesión",
+    "needHelp": "¿Necesitas Ayuda?",
+    "helpText": "Consulta nuestra documentación para guías detalladas sobre cómo usar el panel de administración.",
+    "viewDocs": "Ver Documentación"
+  },
+  "Footer": {
+    "contactUs": "Contáctanos",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "email": "Correo Electrónico",
+    "hours": "Horario de Atención",
+    "followUs": "Síguenos",
+    "solutions": "Soluciones",
+    "sectors": "Sectores",
+    "company": "Empresa",
+    "support": "Soporte",
+    "allRightsReserved": "Todos los derechos reservados.",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "contact": {
+      "address": {
+        "building": "Green Tower, oficina 1707, piso 17",
+        "street": "Av. San Martin calle G",
+        "city": "Santa Cruz de la Sierra"
+      },
+      "phone": "+591 - 78457304",
+      "email": "info@greenenergy.com",
+      "hours": {
+        "weekdays": "Lun-Vie: 9AM-6PM",
+        "saturday": "Sáb: 10AM-2PM"
+      }
+    },
+    "links": {
+      "solutions": {
+        "bipv": "Tecnologías BIPV",
+        "photovoltaic": "Energía Fotovoltaica",
+        "wind": "Energía Eólica"
+      },
+      "sectors": {
+        "residential": "Residencial",
+        "commercial": "Comercial",
+        "industrial": "Industrial",
+        "public": "Sector Público"
+      },
+      "company": {
+        "about": "Sobre Nosotros",
+        "team": "Nuestro Equipo",
+        "careers": "Carreras",
+        "news": "Noticias"
+      },
+      "support": {
+        "contact": "Contáctanos",
+        "faq": "Preguntas Frecuentes",
+        "resources": "Recursos"
+      }
+    }
+  },
+  "BIPVPage": {
+    "meta": {
+      "title": "Tecnologías BIPV",
+      "description": "Descubre nuestras soluciones de Fotovoltaica Integrada en Edificios que combinan generación de energía con arquitectura moderna."
+    },
+    "hero": {
+      "title": "Soluciones Fotovoltaicas Integradas",
+      "subtitle": "Tecnología de vanguardia que combina generación de energía renovable con diseño arquitectónico moderno para edificios sostenibles y eficientes."
+    },
+    "photovoltaicGlass": {
+      "title": "Vidrios Fotovoltaicos",
+      "whatIs": {
+        "title": "¿Qué son los Vidrios Fotovoltaicos?",
+        "description": "Los vidrios fotovoltaicos son una solución innovadora que integra tecnología de generación de energía directamente en las estructuras de vidrio de los edificios. A través de una capa fotovoltaica, estos vidrios convierten la luz solar en energía eléctrica y energía térmica mientras proporcionan aislamiento térmico adicional, lo que mejora la eficiencia energética del edificio."
+      },
+      "advantages": {
+        "title": "Ventajas",
+        "advantage1": {
+          "title": "Generación de Energía Solar",
+          "description": "Los vidrios fotovoltaicos convierten el 16% de la radiación de luz visible en electricidad y el 6% en energía térmica, contribuyendo a la eficiencia energética del edificio."
+        },
+        "advantage2": {
+          "title": "Reducción de Calor",
+          "description": "La cámara de vacío en estos vidrios ayuda a reducir la transferencia de calor al interior del edificio, mejorando el confort térmico."
+        },
+        "advantage3": {
+          "title": "Alta Eficiencia",
+          "description": "Superan otras tecnologías fotovoltaicas en términos de eficiencia y rendimiento, gracias a sus propiedades avanzadas de absorción y pasivación de la luz."
+        },
+        "advantage4": {
+          "title": "Diseño Estético y Funcional",
+          "description": "Se adaptan a diversas aplicaciones arquitectónicas, desde fachadas hasta ventanas y techos, proporcionando energía sin comprometer la estética."
+        }
+      },
+      "howItWorks": {
+        "title": "¿Cómo Funciona?",
+        "subtitle": "Definición y Funcionamiento",
+        "description1": "Los vidrios fotovoltaicos funcionan mediante una capa de película fotovoltaica que convierte la radiación de la luz solar en electricidad. Esta película es baja en emisividad, lo que significa que refleja las radiaciones infrarrojas y los rayos ultravioletas, protegiendo el interior del edificio del calor excesivo.",
+        "description2": "El vidrio tiene una cámara de vacío que ayuda a minimizar la entrada de calor, mejorando el aislamiento térmico del edificio. Este proceso permite que el vidrio fotovoltaico genere electricidad mientras mantiene el confort térmico de los espacios interiores.",
+        "description3": "El panel fotovoltaico de vidrio, con una apariencia cristalina, ofrece una excelente calidad visual y de rendimiento. Los módulos fotovoltaicos son modulares y estandarizados, lo que facilita su integración en cualquier proyecto de construcción."
+      },
+      "technical": {
+        "title": "Información Técnica",
+        "specifications": {
+          "title": "Especificaciones del Producto",
+          "spec1": {
+            "title": "Potencia del Panel",
+            "description": "Rango de potencia entre 50 W y 200 W."
+          },
+          "spec2": {
+            "title": "Coeficiente de Temperatura",
+            "description": "-0,29% ºC. Esto asegura un rendimiento óptimo incluso con cambios de temperatura."
+          }
+        },
+        "applications": {
+          "title": "Aplicaciones",
+          "app1": "Fachadas de vidrio doble laminado, triple laminado o vidrio con cámara aislante (DVH).",
+          "app2": "Ventanas y otros elementos arquitectónicos que buscan maximizar la eficiencia energética."
+        },
+        "variety": {
+          "title": "Variedad y Durabilidad",
+          "point1": "Disponible en una amplia gama de colores, transparencias y reflectancias.",
+          "point2": "Diseño modular estandarizado con vida útil superior a 30 años."
+        }
+      },
+      "cta": "Obtenga una cotización"
+    },
+    "solarTile": {
+      "title": "Teja Solar",
+      "comingSoon": "Información sobre Teja Solar próximamente. Esta sección está en desarrollo.",
+      "moreInfo": "Más Información"
+    },
+    "solarRoofPanel": {
+      "title": "Panel Techo Solar",
+      "whatIs": {
+        "title": "¿Qué es el Panel de Techo Solar?",
+        "description": "El Panel de Techo Solar es un sistema innovador diseñado para integrarse perfectamente en techos planos, ofreciendo una solución de generación de energía solar eficiente y estéticamente agradable. Fabricado con vidrios templados ultra transparentes de 6+6 mm, este panel no solo genera electricidad, sino que también se adapta a la estética moderna de edificios residenciales y comerciales."
+      },
+      "advantages": {
+        "title": "Ventajas",
+        "advantage1": {
+          "title": "Estética y Diseño Moderno",
+          "description": "Perfecto para techos planos, el panel ofrece un diseño discreto y elegante con vidrio templado ultra transparente."
+        },
+        "advantage2": {
+          "title": "Seguridad y Protección",
+          "description": "El panel cuenta con protección Clase A contra incendios, garantizando su seguridad y confiabilidad."
+        },
+        "advantage3": {
+          "title": "Transparencia Óptima",
+          "description": "Permite la transmisión de luz atomizada, con opciones de 10% y 18% de transmisión de luz, lo que lo hace adecuado para diversas aplicaciones y necesidades de diseño."
+        },
+        "advantage4": {
+          "title": "Durabilidad",
+          "description": "Este panel tiene una vida útil estimada de 30 años, proporcionando generación de energía confiable durante varias décadas."
+        }
+      },
+      "howItWorks": {
+        "title": "¿Cómo Funciona?",
+        "subtitle": "Definición y Funcionamiento",
+        "description1": "El Panel de Techo Solar convierte la luz solar en energía eléctrica mediante células fotovoltaicas monocristalinas de alta eficiencia. Estas células están integradas en un diseño modular que facilita la instalación en techos planos. A medida que la luz incide sobre el panel, las células fotovoltaicas la convierten en electricidad, que luego puede ser utilizada para alimentar diversas aplicaciones dentro del edificio.",
+        "description2": "El panel también está diseñado para facilitar el drenaje del agua, lo que evita la acumulación de agua en el techo y mantiene la eficiencia y durabilidad del sistema."
+      },
+      "technical": {
+        "title": "Información Técnica",
+        "specifications": {
+          "title": "Especificaciones del Panel",
+          "spec1": {
+            "title": "Potencia Máxima por Módulo",
+            "description": "275 W, proporcionando una capacidad de generación de energía eficiente."
+          },
+          "spec2": {
+            "title": "Dimensiones Modulares",
+            "description": "1635 x 1185 x 52.8 mm. Estas medidas estandarizadas permiten una instalación más rápida y adaptativa a diferentes tipos de techos."
+          },
+          "spec3": {
+            "title": "Peso del Módulo",
+            "description": "67 kg, un peso adecuado para asegurar la estabilidad del panel sin ser excesivamente pesado."
+          },
+          "spec4": {
+            "title": "Tipo de Células",
+            "description": "Las células monocristalinas ofrecen una mayor eficiencia en la conversión de luz solar a energía eléctrica."
+          },
+          "spec5": {
+            "title": "Tiempo de Generación",
+            "description": "El panel tiene una durabilidad de 30 años, lo que garantiza un retorno de inversión confiable a largo plazo."
+          },
+          "spec6": {
+            "title": "Diseño de Drenaje de Agua",
+            "description": "Incorporado en el diseño para asegurar que el agua se drene correctamente y no afecte el rendimiento del sistema solar."
+          }
+        }
+      },
+      "cta": "Solicita una Cotización"
+    },
+    "portableSolarPanel": {
+      "title": "Panel Solar Portátil",
+      "whatIs": {
+        "title": "¿Qué es el Panel Solar Portátil?",
+        "description": "El Panel Solar Portátil es un sistema de generación solar off-grid, diseñado para ser ligero, flexible y fácil de transportar e instalar. Ideal para espacios pequeños, como balcones, fachadas de edificios y patios, este panel convierte la luz solar en energía eléctrica, ayudando a reducir la dependencia de la red eléctrica. El diseño modular permite una integración flexible en diferentes espacios, proporcionando un alto valor añadido con excelentes características de rendimiento."
+      },
+      "advantages": {
+        "title": "Ventajas",
+        "advantage1": {
+          "title": "Ligero y Flexible",
+          "description": "Fabricado con un material compuesto optimizado, el panel es 60% más ligero que otros sistemas solares, manteniendo la misma capacidad de generación de energía."
+        },
+        "advantage2": {
+          "title": "Fácil Instalación y Transporte",
+          "description": "Su diseño portátil permite una instalación rápida y sin complicaciones. Se puede transportar y montar fácilmente en lugares como balcones, patios o fachadas."
+        },
+        "advantage3": {
+          "title": "Rendimiento en Baja Irradiancia",
+          "description": "Genera energía de manera eficiente incluso en condiciones de baja luz, como en mañanas, tardes y días nublados."
+        },
+        "advantage4": {
+          "title": "Durabilidad y Larga Vida Útil",
+          "description": "El panel tiene una garantía de apariencia de 8 a 10 años y una vida útil de rendimiento eléctrico de 25 años, asegurando un retorno confiable y duradero de la inversión."
+        },
+        "advantage5": {
+          "title": "Personalización",
+          "description": "Se adapta a varios escenarios, lo que lo convierte en una opción versátil para diferentes tipos de viviendas y edificios."
+        }
+      },
+      "howItWorks": {
+        "title": "¿Cómo Funciona?",
+        "subtitle": "Definición y Funcionamiento",
+        "description1": "El Panel Solar Portátil convierte la luz solar en energía eléctrica a través de un proceso sencillo y eficiente. El sistema incluye un microinversor y conectores, lo que permite conectar el panel directamente a la red eléctrica o a otros dispositivos de almacenamiento energético. Su diseño modular de 1200 x 900 x 15 mm permite una fácil integración en espacios reducidos como balcones y fachadas.",
+        "description2": "El proceso de instalación es muy simple:",
+        "step1": "Fijar el panel a la estructura del balcón utilizando una correa de sujeción.",
+        "step2": "Conectar el microinversor al panel solar.",
+        "step3": "Conectar el cable de extensión y enchufarlo en la red eléctrica o en un sistema de almacenamiento de energía.",
+        "keyBenefit": "Beneficio Clave: El panel está diseñado para maximizar la generación de energía en condiciones de baja irradiancia, lo que lo hace ideal para climas con cielos parcialmente nublados o cuando la luz solar no es tan directa."
+      },
+      "technical": {
+        "title": "Información Técnica",
+        "features": {
+          "title": "Características Técnicas",
+          "feature1": {
+            "title": "Tamaño del Panel",
+            "description": "1200 x 900 x 15 mm, un tamaño ideal para aplicaciones en balcones y fachadas de edificios."
+          },
+          "feature2": {
+            "title": "Potencia",
+            "description": "Capacidad de generar energía eléctrica eficiente, especialmente a baja irradiancia."
+          },
+          "feature3": {
+            "title": "Microinversor",
+            "description": "Incluido para convertir la corriente continua (DC) en corriente alterna (AC), facilitando la conexión con la red eléctrica."
+          },
+          "feature4": {
+            "title": "Material Compuesto Optimizado",
+            "description": "60% más ligero que otros sistemas solares, sin comprometer el rendimiento."
+          }
+        },
+        "warranty": {
+          "title": "Garantía",
+          "point1": {
+            "title": "Apariencia",
+            "description": "De 8 a 10 años."
+          },
+          "point2": {
+            "title": "Rendimiento Eléctrico",
+            "description": "Hasta 25 años, lo que garantiza un uso prolongado sin perder eficiencia."
+          }
+        },
+        "applications": {
+          "title": "Aplicaciones",
+          "app1": "Balcones de Departamentos y Casas.",
+          "app2": "Fachadas de Edificios.",
+          "app3": "Patios, Muros Perimetrales y Rejas o Cercas Metálicas."
+        }
+      },
+      "cta": "Solicita una Cotización"
+    },
+    "contact": {
+      "title": "¿Interesado en nuestras soluciones fotovoltaicas?",
+      "description": "Nuestro equipo de expertos está listo para asesorarte y ofrecerte la mejor solución para tu proyecto.",
+      "button": "Contáctanos Ahora"
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

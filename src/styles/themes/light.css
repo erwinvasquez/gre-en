@@ -1,0 +1,81 @@
+:root {
+  /* Colores semánticos - Tema claro */
+  --background: var(--color-bone-white);
+  --foreground: var(--color-carbon-gray);
+
+  --card: var(--color-white);
+  --card-foreground: var(--color-carbon-gray);
+
+  --popover: var(--color-white);
+  --popover-foreground: var(--color-carbon-gray);
+
+  --primary: var(--color-forest-green);
+  --primary-foreground: var(--color-white);
+
+  --secondary: var(--color-deep-blue);
+  --secondary-foreground: var(--color-white);
+
+  --accent: var(--color-lime-green);
+  --accent-foreground: var(--color-carbon-gray);
+
+  --muted: var(--color-light-gray);
+  --muted-foreground: var(--color-gray-600);
+
+  --destructive: var(--color-destructive-light);
+  --destructive-foreground: var(--color-white);
+
+  --border: var(--color-gray-300);
+  --input: var(--color-gray-300);
+  --ring: var(--color-forest-green);
+
+  /* Estados de feedback */
+  --success: var(--color-green-500);
+  --success-foreground: var(--color-white);
+  --info: var(--color-blue-500);
+  --info-foreground: var(--color-white);
+  --warning: var(--color-amber-500);
+  --warning-foreground: var(--color-carbon-gray);
+
+  /* Sombras */
+  --shadow-color: 0 0% 0%;
+  --shadow-strength: 2%;
+  --shadow-sm: 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%));
+  --shadow-md: 0 4px 6px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)), 0 2px 4px -2px
+    hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%));
+  --shadow-lg: 0 10px 15px -3px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)), 0 4px 6px -4px
+    hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%));
+  --shadow-xl: 0 20px 25px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)), 0 8px 10px -6px
+    hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%));
+
+  /* Colores específicos de componentes */
+  --navbar-bg: hsl(var(--color-bone-white));
+  --navbar-text: hsl(var(--color-gray-800));
+  --navbar-shadow: var(--shadow-sm);
+  --navbar-link-hover-color: var(--color-primary-600);
+  --navbar-link-active-color: var(--color-primary-700);
+  --navbar-indicator-color: var(--color-primary-500);
+
+  /* Añadir estas variables para el submenu en tema claro después de las variables de navbar */
+  --submenu-bg: hsl(var(--color-white));
+  --submenu-text: hsl(var(--color-gray-800));
+  --submenu-border-color: var(--color-gray-200);
+  --submenu-shadow: var(--shadow-md);
+  --submenu-item-hover-bg: var(--color-gray-100);
+  --submenu-item-icon-color: var(--color-gray-500);
+
+  /* Navbar scrolling */
+  --navbar-bg-opacity-scrolling: 0.8;
+
+  /* Colores para gráficos */
+  --chart-1: 0 84% 60%; /* Rojo */
+  --chart-2: 217 91% 60%; /* Azul */
+  --chart-3: 142 76% 36%; /* Verde */
+  --chart-4: 38 92% 50%; /* Amarillo */
+  --chart-5: 271 91% 65%; /* Púrpura */
+
+  /* Radio de borde */
+  --radius: 0.5rem;
+}
+
+
+

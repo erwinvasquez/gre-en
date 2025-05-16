@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/erwinvasquez/Desarrollo/Next/gre-en v2/src/app/layout\":[\"static/media/b01b725c4365f934-s.p.ttf\",\"static/media/3558e0041c416c73-s.p.ttf\",\"static/media/da8cac8f28be278a-s.p.ttf\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

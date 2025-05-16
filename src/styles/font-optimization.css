@@ -1,0 +1,25 @@
+/* Optimización de carga de fuentes */
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter.ttf") format("truetype");
+    font-weight: 100 900; /* Rango completo de pesos */
+    font-display: swap; /* Mejora la percepción de velocidad */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "IBM Mono";
+    src: url("/fonts/IBMMono.ttf") format("truetype");
+    font-weight: 400 700; /* Rango de pesos disponibles */
+    font-display: swap;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans.ttf") format("truetype");
+    font-weight: 300 800; /* Rango de pesos disponibles */
+    font-display: swap;
+    font-style: normal;
+  }
+  
