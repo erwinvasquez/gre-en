@@ -109,16 +109,40 @@ export async function generateMetadata({
 /**
  * Obtiene los metadatos completos desde los archivos de traducción
  */
-export async function getPageMetadata(path: string, locale: string = siteConfig.defaultLocale): Promise<Metadata> {
+export async function getPageMetadata(
+  path: string,
+  locale: string = siteConfig.defaultLocale,
+  pageKey?: string,
+): Promise<Metadata> {
   try {
     // Obtener traducciones para metadatos
     const t = await getTranslations({ locale, namespace: "Metadata" })
     const schemaT = await getTranslations({ locale, namespace: "Schema" })
 
-    // Obtener metadatos desde las traducciones
-    const title = t("title")
-    const description = t("description")
-    const keywords = t("keywords").split(", ")
+    let title: string
+    let description: string
+    let keywords: string[]
+
+    // Si se proporciona una clave de página específica, intentar obtener metadatos específicos
+    if (pageKey) {
+      try {
+        const pageT = await getTranslations({ locale, namespace: pageKey })
+        title = pageT("meta.title")
+        description = pageT("meta.description")
+        keywords = pageT("meta.keywords") ? pageT("meta.keywords").split(", ") : t("keywords").split(", ")
+      } catch {
+        // Fallback a metadatos generales si no existen específicos
+        title = t("title")
+        description = t("description")
+        keywords = t("keywords").split(", ")
+      }
+    } else {
+      // Usar metadatos generales
+      title = t("title")
+      description = t("description")
+      keywords = t("keywords").split(", ")
+    }
+
     const ogTitle = t("og:title")
     const ogDescription = t("og:description")
     const ogImage = t("og:image")
@@ -205,6 +229,7 @@ export async function getSpecificPageMetadata(
     return getPageMetadata(path, locale)
   }
 }
+
 
 
 // import type { Metadata } from "next"
