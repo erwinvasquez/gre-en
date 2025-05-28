@@ -1,4 +1,3 @@
-
 "use client"
 
 import type React from "react"
@@ -22,6 +21,7 @@ type QuoteFormData = {
     address: string
     lat: number
     lng: number
+    department: string
   } | null
   panelType: string
   systemType: string
@@ -44,6 +44,79 @@ const defaultCenter = {
   lng: -63.1561,
 }
 
+// Valores de radiación solar por departamento de Bolivia (kWh/m²/día)
+const solarRadiationByDepartment = {
+  "Santa Cruz": 5.8,
+  "La Paz": 4.9,
+  Cochabamba: 5.4,
+  Potosí: 5.2,
+  Chuquisaca: 5.3,
+  Oruro: 5.1,
+  Tarija: 5.5,
+  Beni: 5.0,
+  Pando: 4.8,
+  // Valor por defecto
+  Desconocido: 5.2,
+}
+
+// Límites geográficos aproximados de los departamentos de Bolivia
+const departmentBounds = {
+  "Santa Cruz": {
+    north: -14.0,
+    south: -22.0,
+    east: -57.0,
+    west: -65.0,
+  },
+  "La Paz": {
+    north: -14.0,
+    south: -17.5,
+    east: -65.0,
+    west: -70.0,
+  },
+  Cochabamba: {
+    north: -16.0,
+    south: -18.5,
+    east: -64.0,
+    west: -67.5,
+  },
+  Potosí: {
+    north: -18.5,
+    south: -22.5,
+    east: -65.0,
+    west: -68.0,
+  },
+  Chuquisaca: {
+    north: -18.0,
+    south: -21.5,
+    east: -62.5,
+    west: -65.5,
+  },
+  Oruro: {
+    north: -17.0,
+    south: -19.5,
+    east: -66.0,
+    west: -68.5,
+  },
+  Tarija: {
+    north: -21.0,
+    south: -22.5,
+    east: -62.5,
+    west: -65.0,
+  },
+  Beni: {
+    north: -10.5,
+    south: -15.5,
+    east: -62.0,
+    west: -67.0,
+  },
+  Pando: {
+    north: -9.5,
+    south: -12.5,
+    east: -65.0,
+    west: -69.5,
+  },
+}
+
 // Tipos para los resultados
 type QuoteResults = {
   panelsNeeded: number
@@ -64,6 +137,7 @@ type QuoteResults = {
   }
   technicalDetails: {
     solarRadiation: number
+    department: string
     systemEfficiency: number
     inverterEfficiency: number
     performanceRatio: number
@@ -106,6 +180,24 @@ export default function CotizadorPage() {
   const [mapCenter, setMapCenter] = useState(defaultCenter)
   const [selectedPosition, setSelectedPosition] = useState<{ lat: number; lng: number } | null>(null)
   const [isLoadingLocation, setIsLoadingLocation] = useState(false)
+
+  // Función para determinar el departamento basado en coordenadas
+  const getDepartmentFromCoordinates = (lat: number, lng: number): string => {
+    for (const [department, bounds] of Object.entries(departmentBounds)) {
+      if (lat >= bounds.south && lat <= bounds.north && lng >= bounds.west && lng <= bounds.east) {
+        return department
+      }
+    }
+    return "Desconocido"
+  }
+
+  // Función para obtener radiación solar por departamento
+  const getSolarRadiationByDepartment = (department: string): number => {
+    return (
+      solarRadiationByDepartment[department as keyof typeof solarRadiationByDepartment] ||
+      solarRadiationByDepartment["Desconocido"]
+    )
+  }
 
   // Manejar cambios en los inputs
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -151,41 +243,6 @@ export default function CotizadorPage() {
     return Object.keys(newErrors).length === 0
   }
 
-  // Función para obtener radiación solar real desde OpenWeatherMap
-  const getSolarRadiation = async (lat: number, lng: number): Promise<number> => {
-    try {
-      const response = await fetch(`/api/weather?lat=${lat}&lng=${lng}`)
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch weather data")
-      }
-
-      const data = await response.json()
-
-      // OpenWeatherMap devuelve radiación en MJ/m²/day, convertir a kWh/m²/day
-      // 1 MJ/m²/day = 0.278 kWh/m²/day
-      const solarRadiationKwh = data.solarRadiation * 0.278
-
-      return Math.max(solarRadiationKwh, 3.5) // Mínimo 3.5 kWh/m²/day
-    } catch (error) {
-      console.error("Error fetching solar radiation:", error)
-      // Fallback a valores por defecto basados en coordenadas
-      return getDefaultSolarRadiation(lat, lng)
-    }
-  }
-
-  // Función fallback para radiación solar
-  const getDefaultSolarRadiation = (lat: number, lng: number): number => {
-    // Valores aproximados para Bolivia basados en latitud
-    const absLat = Math.abs(lat)
-
-    if (absLat < 15) return 5.8 // Trópico
-    if (absLat < 20) return 5.2 // Subtropical
-    if (absLat < 25) return 4.8 // Templado
-
-    return 4.5 // Por defecto
-  }
-
   // Manejar clic en el mapa
   const handleMapClick = useCallback(
     async (event: any) => {
@@ -197,6 +254,9 @@ export default function CotizadorPage() {
         setIsLoadingLocation(true)
 
         try {
+          // Determinar departamento basado en coordenadas
+          const department = getDepartmentFromCoordinates(lat, lng)
+
           // Obtener dirección usando geocoding reverso
           const geocoder = new google.maps.Geocoder()
           const result = await new Promise<any>((resolve, reject) => {
@@ -213,7 +273,7 @@ export default function CotizadorPage() {
 
           setFormData((prev) => ({
             ...prev,
-            location: { address, lat, lng },
+            location: { address, lat, lng, department },
           }))
 
           // Limpiar error de ubicación si existe
@@ -222,12 +282,14 @@ export default function CotizadorPage() {
           }
         } catch (error) {
           console.error("Error getting address:", error)
+          const department = getDepartmentFromCoordinates(lat, lng)
           setFormData((prev) => ({
             ...prev,
             location: {
               address: `${lat.toFixed(4)}, ${lng.toFixed(4)}`,
               lat,
               lng,
+              department,
             },
           }))
         } finally {
@@ -255,8 +317,9 @@ export default function CotizadorPage() {
       const panelConfig = panelConfigs[formData.panelType as keyof typeof panelConfigs]
       const systemConfig = systemConfigs[formData.systemType as keyof typeof systemConfigs]
 
-      // Obtener radiación solar real
-      const solarRadiation = await getSolarRadiation(formData.location!.lat, formData.location!.lng)
+      // Obtener radiación solar por departamento
+      const department = formData.location!.department
+      const solarRadiation = getSolarRadiationByDepartment(department)
 
       // Parámetros del sistema
       const inverterEfficiency = 0.95
@@ -308,6 +371,7 @@ export default function CotizadorPage() {
         },
         technicalDetails: {
           solarRadiation,
+          department,
           systemEfficiency: systemEfficiency * 100,
           inverterEfficiency: inverterEfficiency * 100,
           performanceRatio: systemEfficiency * inverterEfficiency * 100,
@@ -383,13 +447,25 @@ export default function CotizadorPage() {
                     className={errors.location ? "border-red-500" : ""}
                   />
 
+                  {/* Mostrar departamento detectado */}
+                  {formData.location?.department && (
+                    <div className="flex items-center text-sm text-green-600 bg-green-50 p-2 rounded">
+                      <MapPin className="h-4 w-4 mr-1" />
+                      <span>Departamento: {formData.location.department}</span>
+                      <span className="ml-2 text-xs">
+                        (Radiación solar: {getSolarRadiationByDepartment(formData.location.department).toFixed(1)}{" "}
+                        kWh/m²/día)
+                      </span>
+                    </div>
+                  )}
+
                   {/* Mapa de Google */}
                   <div className="border rounded-lg overflow-hidden">
                     <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!} onLoad={handleMapLoad}>
                       <GoogleMap
                         mapContainerStyle={mapContainerStyle}
                         center={selectedPosition || mapCenter}
-                        zoom={10}
+                        zoom={6}
                         onClick={handleMapClick}
                         options={{
                           zoomControl: true,
@@ -427,7 +503,10 @@ export default function CotizadorPage() {
                     </p>
                   )}
 
-                  <p className="text-xs text-muted-foreground">{t("form.locationHelper")}</p>
+                  <p className="text-xs text-muted-foreground">
+                    Haz clic en el mapa para seleccionar tu ubicación. El sistema detectará automáticamente tu
+                    departamento.
+                  </p>
                   {errors.location && <p className="text-xs text-red-500">{errors.location}</p>}
                 </div>
 
@@ -443,7 +522,7 @@ export default function CotizadorPage() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="monocrystalline">{t("form.panelTypes.monocrystalline")}</SelectItem>
-                      <SelectItem value="polycrystalline">{t("form.panelTypes.polycrystalline")}</SelectItem>
+                      <SelectItem value="polycrystalline">{t("form.panelTypes.polycrystaline")}</SelectItem>
                       <SelectItem value="bifacial">{t("form.panelTypes.bifacial")}</SelectItem>
                     </SelectContent>
                   </Select>
@@ -641,6 +720,10 @@ export default function CotizadorPage() {
                   <div>
                     <h3 className="text-lg font-semibold mb-3">{t("results.technicalDetails")}</h3>
                     <div className="grid grid-cols-2 gap-3 text-sm">
+                      <div className="flex justify-between">
+                        <span>Departamento</span>
+                        <span className="font-semibold">{results.technicalDetails.department}</span>
+                      </div>
                       <div className="flex justify-between">
                         <span>{t("results.solarRadiation")}</span>
                         <span>

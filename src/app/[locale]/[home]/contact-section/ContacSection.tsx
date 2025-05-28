@@ -190,10 +190,8 @@ export default function ContactSection() {
         sector: formData.sector,
         generationType: formData.generationType,
         message: formData.message,
-        userId: session?.user?.id || null,
-        userEmail: session?.user?.email || null,
         createdAt: serverTimestamp(),
-        status: "new",
+        status: "Nuevo Contacto",
       }
 
       console.log("Datos a enviar:", contactData)
@@ -242,21 +240,6 @@ export default function ContactSection() {
           <div className="bg-card rounded-xl shadow-lg border border-border p-6 md:p-8">
             <h3 className="text-2xl font-semibold mb-6 text-card-foreground">{t("form.title")}</h3>
 
-            {/* Mensaje de éxito */}
-            {submitStatus === "success" && (
-              <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-center text-green-700 dark:text-green-400">
-                <Check className="h-5 w-5 mr-2 flex-shrink-0" />
-                <p>{t("form.successMessage")}</p>
-              </div>
-            )}
-
-            {/* Mensaje de error */}
-            {submitStatus === "error" && (
-              <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg flex items-center text-red-700 dark:text-red-400">
-                <AlertCircle className="h-5 w-5 mr-2 flex-shrink-0" />
-                <p>{errorMessage || t("errors.generic")}</p>
-              </div>
-            )}
 
             <form onSubmit={handleSubmit}>
               {/* Grid para layout horizontal en pantallas grandes */}
@@ -422,6 +405,25 @@ export default function ContactSection() {
                   className="w-full min-h-[120px] rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 />
               </div>
+
+
+
+            {/* Mensaje de éxito */}
+            {submitStatus === "success" && (
+              <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-center text-green-700 dark:text-green-400">
+                <Check className="h-5 w-5 mr-2 flex-shrink-0" />
+                <p>{t("form.successMessage")}</p>
+              </div>
+            )}
+
+            {/* Mensaje de error */}
+            {submitStatus === "error" && (
+              <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg flex items-center text-red-700 dark:text-red-400">
+                <AlertCircle className="h-5 w-5 mr-2 flex-shrink-0" />
+                <p>{errorMessage || t("errors.generic")}</p>
+              </div>
+            )}
+
 
               {/* Botón de envío */}
               <div className="mt-6">

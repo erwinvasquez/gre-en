@@ -12,9 +12,11 @@ export function ThemeToggle() {
   // Evitar problemas de hidratación
   useEffect(() => {
     setMounted(true)
-    // Asegurarse de que el tema inicial sea light
-    setTheme("light")
-  }, [setTheme])
+    // Forzar tema light si no hay tema guardado
+    if (!theme || theme === "system") {
+      setTheme("light")
+    }
+  }, [theme, setTheme])
 
   // Si no está montado, renderizar un placeholder con las mismas dimensiones
   if (!mounted) {

@@ -1,0 +1,87 @@
+.dark {
+  /* Colores semánticos - Tema oscuro */
+  --background: var(--color-carbon-gray);
+  --foreground: var(--color-bone-white);
+
+  --card: var(--color-gray-900);
+  --card-foreground: var(--color-gray-50);
+
+  --popover: var(--color-gray-900);
+  --popover-foreground: var(--color-gray-50);
+
+  --primary: var(--color-forest-green);
+  --primary-foreground: var(--color-white);
+
+  --secondary: var(--color-deep-blue);
+  --secondary-foreground: var(--color-white);
+
+  --muted: var(--color-gray-800);
+  --muted-foreground: var(--color-gray-400);
+
+  --accent: var(--color-lime-green);
+  --accent-foreground: var(--color-carbon-gray);
+
+  --destructive: var(--color-destructive-dark);
+  --destructive-foreground: var(--color-white);
+
+  --border: var(--color-gray-700);
+  --input: var(--color-gray-700);
+  --ring: var(--color-forest-green);
+
+  /* Estados de feedback */
+  --success: var(--color-green-700);
+  --success-foreground: var(--color-white);
+  --info: var(--color-blue-700);
+  --info-foreground: var(--color-white);
+  --warning: var(--color-amber-700);
+  --warning-foreground: var(--color-white);
+
+  /* Sombras */
+  --shadow-color: var(--shadow-color-dark);
+  --shadow-strength: var(--shadow-strength-dark);
+  --shadow-sm: 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%));
+  --shadow-md: 0 4px 6px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)), 0 2px 4px -2px
+    hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%));
+  --shadow-lg: 0 10px 15px -3px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)), 0 4px 6px -4px
+    hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%));
+  --shadow-xl: 0 20px 25px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)), 0 8px 10px -6px
+    hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%));
+
+  /* Navbar - Tema oscuro */
+  --navbar-bg: hsl(var(--color-gray-900));
+  --navbar-text: hsl(var(--color-gray-100));
+  --navbar-shadow: var(--shadow-sm);
+  --navbar-link-hover-color: hsl(var(--color-lime-green));
+  --navbar-link-active-color: hsl(var(--color-lime-green));
+  --navbar-indicator-color: hsl(var(--color-lime-green));
+  --navbar-bg-scrolling: hsl(var(--color-gray-900) / 0.7);
+  --navbar-blur-amount: 10px;
+
+  /* Footer - Tema oscuro */
+  --footer-bg: hsl(var(--color-gray-900));
+  --footer-text: hsl(var(--color-gray-100));
+  --footer-border: hsl(var(--color-gray-800));
+
+  /* Submenu - Tema oscuro */
+  --submenu-bg: hsl(var(--color-gray-900));
+  --submenu-text: hsl(var(--color-gray-100));
+  --submenu-border-color: hsl(var(--color-gray-800));
+  --submenu-shadow: var(--shadow-md);
+  --submenu-item-hover-bg: hsl(var(--color-gray-800));
+  --submenu-item-icon-color: hsl(var(--color-gray-400));
+
+  /* Colores para gráficos */
+  --chart-1: var(--color-chart-1-dark);
+  --chart-2: var(--color-chart-2-dark);
+  --chart-3: var(--color-chart-3-dark);
+  --chart-4: var(--color-chart-4-dark);
+  --chart-5: var(--color-chart-5-dark);
+
+  /* Radio de borde */
+  --radius: 0.5rem;
+}
+
+
+
+
+

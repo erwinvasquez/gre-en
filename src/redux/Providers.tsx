@@ -14,7 +14,13 @@ interface Props {
 export const Providers = ({ children }: Props) => {
   return (
     <Provider store={store}>
-      <ThemeProvider attribute="class">
+      <ThemeProvider 
+              attribute="class"
+              defaultTheme="light"
+              enableSystem={false}
+              themes={["light", "dark"]}
+              storageKey="theme"
+            >
         <SessionProvider>{children}</SessionProvider>
       </ThemeProvider>
     </Provider>

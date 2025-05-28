@@ -121,7 +121,7 @@ export const Navbar = () => {
       { id: "sectors", label: S("sectors") },
       { id: "solutions", label: S("solutions") },
       // { id: "about-us", label: S("about-us") },
-       { id: "contact", label: S("contact") },
+      { id: "contact", label: S("contact") },
     ],
     [S],
   )
@@ -139,15 +139,15 @@ export const Navbar = () => {
             >
               <MobileMenu sections={sections} pages={simplePages} pagesWithSubmenu={pagesWithSubmenu} />
               <Link href={`/${locale}`} className="flex items-center gap-4 sm:gap-4 h-12">
-  {/* Wrapper con límite visual */}
-  <div className="h-12 w-auto">
-    <img
-      src="/images/Logovf.png"
-      alt="Logo Icon"
-      className="h-full scale-[3.5] origin-left lg:scale-100 lg:h-10 object-contain"
-    />
-  </div>
-</Link>
+                {/* Wrapper con límite visual */}
+                <div className="h-12 w-auto">
+                  <img
+                    src="/images/Logovf.png"
+                    alt="Logo Icon"
+                    className="h-full scale-[3.5] origin-left lg:scale-100 lg:h-10 object-contain"
+                  />
+                </div>
+              </Link>
             </div>
 
             {/* Columna central: Menú de navegación (visible solo en desktop) */}

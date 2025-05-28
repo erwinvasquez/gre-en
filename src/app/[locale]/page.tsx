@@ -14,25 +14,28 @@ import FutureEnergySection from "./[home]/future-energy-sectino/FutureEnergySect
 
 // Generar metadatos para la página de inicio
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  return getPageMetadata("home", "/", params.locale)
+  return getPageMetadata("/", params.locale)
 }
 
 export default async function HomePage({ params }: { params: { locale: string } }) {
   // Obtener traducciones para metadatos
   const t = await getTranslations({ locale: params.locale, namespace: "Metadata" })
+  const schemaT = await getTranslations({ locale: params.locale, namespace: "Schema" })
 
-  // Generar Schema.org para la página de inicio
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://greenenergy.com.bo"
+
+  // Generar Schema.org para la página de inicio con todos los campos
   const pageSchema = await generatePageSchema({
-    title: t("home.title"),
-    description: t("home.description"),
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://tudominio.com"}/${params.locale}`,
+    title: t("title"),
+    description: t("description"),
+    url: `${baseUrl}/${params.locale}`,
     locale: params.locale,
-    datePublished: "2023-01-01T00:00:00Z", // Fecha de publicación inicial
-    dateModified: new Date().toISOString(), // Fecha de última modificación
+    datePublished: schemaT("dates.sitePublished"),
+    dateModified: new Date().toISOString(),
     breadcrumbs: [
       {
-        name: t("home.title"),
-        item: `${process.env.NEXT_PUBLIC_SITE_URL || "https://tudominio.com"}/${params.locale}`,
+        name: schemaT("breadcrumbs.home"),
+        item: `${baseUrl}/${params.locale}`,
       },
     ],
   })

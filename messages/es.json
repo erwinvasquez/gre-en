@@ -1,4 +1,58 @@
 {
+  "Schema": {
+    "availableLanguage": "Spanish",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+591 - 78457304",
+      "contactType": "customer service",
+      "areaServed": "BO",
+      "availableLanguage": "Spanish"
+    },
+    "mainEntityOfPage": {
+      "@type": "Organization",
+      "name": "GreenEnergy Bolivia",
+      "url": "https://greenenergy.com.bo",
+      "logo": "https://greenenergy.com.bo/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/greenenergybo",
+        "https://www.instagram.com/greenenergybo"
+      ]
+    },
+    "product": {
+      "@type": "Product",
+      "name": "Panel Solar",
+      "description": "Panel solar de alta eficiencia para aplicaciones residenciales y comerciales.",
+      "brand": "GreenEnergy",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://greenenergy.com.bo/panel-solar-300w",
+        "priceCurrency": "BOB",
+        "price": "1000",
+        "priceValidUntil": "2024-12-31"
+      }
+    },
+    "breadcrumbs": {
+      "home": "Inicio"
+    },
+    "dates": {
+      "sitePublished": "2023-01-01T00:00:00Z",
+      "lastModified": "Última actualización"
+    }
+  },
+  "Metadata": {
+    "title": "Energía Renovable y Soluciones Sostenibles - GreenEnergy Bolivia",
+    "description": "GreenEnergy ofrece soluciones de energía renovable, energía solar, energía eólica y eficiencia energética para hogares y empresas en Bolivia. Únete a la revolución verde y reduce tu huella de carbono.",
+    "keywords": "energía renovable, energía solar, energía eólica, eficiencia energética, soluciones sostenibles, Bolivia",
+    "author": "GreenEnergy Bolivia",
+    "publisher": "GreenEnergy Bolivia",
+    "robots": "index, follow",
+    "og:title": "Energía Renovable y Soluciones Sostenibles - GreenEnergy Bolivia",
+    "og:description": "GreenEnergy ofrece soluciones de energía renovable, energía solar, energía eólica y eficiencia energética para hogares y empresas en Bolivia.",
+    "og:image": "https://greenenergy.com.bo/images/og-image.png",
+    "og:url": "https://greenenergy.com.bo",
+    "siteName": "GreenEnergy Bolivia",
+    "locale": "es_BO"
+  },
   "Navbar": {
     "home": "Inicio",
     "products": "Productos",

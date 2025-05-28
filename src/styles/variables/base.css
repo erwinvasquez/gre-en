@@ -1,5 +1,5 @@
 :root {
-  /* Colores base */
+  /* Colores base - Definiciones principales */
   --color-white: 0 0% 100%;
   --color-black: 0 0% 3.9%;
 
@@ -11,7 +11,7 @@
   --color-deep-blue: 220 70% 40%;
   --color-light-gray: 220 14% 96%;
 
-  /* Paleta de grises */
+  /* Paleta de grises completa */
   --color-gray-50: 0 0% 98%;
   --color-gray-100: 0 0% 96.1%;
   --color-gray-200: 0 0% 93.9%;
@@ -31,9 +31,17 @@
   --color-gold-600: 51 100% 40%;
   --color-gold-700: 51 100% 35%;
 
-  /* Colores semánticos */
+  /* Colores semánticos base */
   --color-destructive-light: 0 84.2% 60.2%;
   --color-destructive-dark: 0 62.8% 30.6%;
+
+  /* Colores adicionales para estados */
+  --color-green-500: 142 76% 36%;
+  --color-green-700: 142 76% 26%;
+  --color-blue-500: 217 91% 60%;
+  --color-blue-700: 217 91% 50%;
+  --color-amber-500: 38 92% 50%;
+  --color-amber-700: 38 92% 40%;
 
   /* Colores para gráficos */
   --color-chart-1-light: 12 76% 61%;
@@ -48,8 +56,15 @@
   --color-chart-4-dark: 280 65% 60%;
   --color-chart-5-dark: 340 75% 55%;
 
-  /* Dimensiones */
+  /* Dimensiones base */
   --radius: 0.5rem;
   --navbar-height: 4rem; /* 64px */
+
+  /* Sombras base */
+  --shadow-color-light: 0 0% 0%;
+  --shadow-color-dark: 0 0% 0%;
+  --shadow-strength-light: 2%;
+  --shadow-strength-dark: 5%;
 }
+
 

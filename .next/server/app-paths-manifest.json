@@ -1,10 +1,6 @@
 {
-  "/api/weather/route": "app/api/weather/route.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/account/page": "app/[locale]/account/page.js",
-  "/[locale]/cotizador/page": "app/[locale]/cotizador/page.js",
-  "/[locale]/debug/weather/page": "app/[locale]/debug/weather/page.js",
-  "/[locale]/products/bipv/page": "app/[locale]/products/bipv/page.js"
+  "/[locale]/products/photovoltaic/page": "app/[locale]/products/photovoltaic/page.js"
 }
