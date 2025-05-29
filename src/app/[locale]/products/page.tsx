@@ -8,7 +8,7 @@ import { getTranslations } from "next-intl/server"
 
 // Generar metadatos para la página de productos
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  return getPageMetadata("products", "/products", params.locale)
+  return getPageMetadata("/products", params.locale, "Pages")
 }
 
 const getPokemons = async (limit = 20, offset = 0): Promise<SimplePokemon[]> => {
@@ -28,22 +28,23 @@ export default async function ProductsPage({ params }: { params: { locale: strin
   const pokemons = await getPokemons(100)
 
   // Obtener traducciones para metadatos
-  const t = await getTranslations({ locale: params.locale, namespace: "Metadata" })
+  const t = await getTranslations({ locale: params.locale, namespace: "Pages" })
+  const homeT = await getTranslations({ locale: params.locale, namespace: "Sections" })
 
   // Generar Schema.org para la página de productos
   const pageSchema = await generatePageSchema({
-    title: t("products.title"),
-    description: t("products.description"),
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://tudominio.com"}/${params.locale}/products`,
+    title: t("products"),
+    description: t("products"),
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://greenenergy.com.bo"}/${params.locale}/products`,
     locale: params.locale,
     breadcrumbs: [
       {
-        name: t("home.title"),
-        item: `${process.env.NEXT_PUBLIC_SITE_URL || "https://tudominio.com"}/${params.locale}`,
+        name: homeT("home"),
+        item: `${process.env.NEXT_PUBLIC_SITE_URL || "https://greenenergy.com.bo"}/${params.locale}`,
       },
       {
-        name: t("products.title"),
-        item: `${process.env.NEXT_PUBLIC_SITE_URL || "https://tudominio.com"}/${params.locale}/products`,
+        name: t("products"),
+        item: `${process.env.NEXT_PUBLIC_SITE_URL || "https://greenenergy.com.bo"}/${params.locale}/products`,
       },
     ],
   })
@@ -53,7 +54,7 @@ export default async function ProductsPage({ params }: { params: { locale: strin
       {/* Schema.org específico para esta página */}
       <SchemaOrg schema={pageSchema} />
 
-      <h1 className="text-3xl text-center mt-20">{t("products.title")}</h1>
+      <h1 className="text-3xl text-center mt-20">{t("products")}</h1>
       <div className=" flex flex-wrap gap-10 items-center justify-center">
         {pokemons.map((pokemon) => (
           <Image
@@ -69,6 +70,7 @@ export default async function ProductsPage({ params }: { params: { locale: strin
     </div>
   )
 }
+
 
 
 

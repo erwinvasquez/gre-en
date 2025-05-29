@@ -759,6 +759,150 @@
       "description": "Nossa equipe de especialistas está pronta para aconselhá-lo e oferecer a melhor solução para o seu projeto.",
       "button": "Contate-nos Agora"
     }
+  },
+  "PhotovoltaicPage": {
+    "meta": {
+      "title": "Painéis Solares Bifaciais TOPCon - Tecnologia Avançada",
+      "description": "Descubra nossos painéis solares bifaciais TOPCon de última geração com eficiência superior a 23% e tecnologia tipo N para máximo desempenho."
+    },
+    "hero": {
+      "title": "Painéis Solares Bifaciais TOPCon",
+      "powerRange": "500W-720W",
+      "powerLabel": "Potência Máxima",
+      "efficiency": "23%",
+      "efficiencyLabel": "Eficiência",
+      "bifacialGain": "+30%",
+      "bifacialLabel": "Ganho Bifacial",
+      "description": "Módulos fotovoltaicos de última geração com células monocristalinas bifaciais tipo N e tecnologia TOPCon, projetados para maximizar a geração de energia em projetos comerciais e industriais de grande escala.",
+      "technicalSheet": "Ficha Técnica",
+      "requestQuote": "Solicitar Cotação"
+    },
+    "technology": {
+      "title": "Tecnologia TOPCon Bifacial",
+      "subtitle": "A evolução da tecnologia fotovoltaica que redefine os padrões de eficiência e durabilidade",
+      "whatIs": {
+        "title": "O que é a tecnologia TOPCon?",
+        "description1": "TOPCon (Tunnel Oxide Passivated Contact) é uma tecnologia avançada de células solares tipo N que utiliza uma camada de óxido ultrafina para criar um contato passivado que reduz significativamente as perdas por recombinação.",
+        "description2": "Esta inovação permite alcançar eficiências superiores a 23% e uma degradação anual inferior a 0,4%, comparado com 0,7% das células tipo P convencionais.",
+        "degradation": "<0,4%",
+        "degradationLabel": "Degradação anual",
+        "lifespan": "25+",
+        "lifespanLabel": "Anos de vida útil"
+      }
+    },
+    "specifications": {
+      "title": "Especificações Técnicas",
+      "electrical": {
+        "title": "Características Elétricas",
+        "nominalPower": "Potência Nominal (Pmax)",
+        "nominalPowerValue": "De 500 W até 720W",
+        "moduleEfficiency": "Eficiência do Módulo",
+        "moduleEfficiencyValue": "22,5% – 23,0%",
+        "voltagePmax": "Tensão Pmax (Vmp)",
+        "voltagePmaxValue": "42V – 49V",
+        "currentPmax": "Corrente Pmax (Imp)",
+        "currentPmaxValue": "14A – 15A",
+        "openCircuitVoltage": "Tensão Circuito Aberto (Voc)",
+        "openCircuitVoltageValue": "50V – 56V",
+        "shortCircuitCurrent": "Corrente Curto-circuito (Isc)",
+        "shortCircuitCurrentValue": "15,2A – 15,8A",
+        "bifacialGain": "Ganho Bifacial",
+        "bifacialGainValue": "Até 30%"
+      },
+      "physical": {
+        "title": "Características Físicas",
+        "cellType": "Tipo de Célula",
+        "cellTypeValue": "Mono-c bifacial tipo N",
+        "technology": "Tecnologia",
+        "technologyValue": "TOPCon",
+        "cellSize": "Tamanho da Célula",
+        "cellSizeValue": "182 mm",
+        "configuration": "Configuração",
+        "configurationValue": "144 células (6x24)",
+        "dimensions": "Dimensões",
+        "dimensionsValue": "2278 x 1134 x 30 mm",
+        "weight": "Peso",
+        "weightValue": "33,5 kg",
+        "frame": "Moldura",
+        "frameValue": "Alumínio anodizado"
+      },
+      "environmental": {
+        "title": "Condições Ambientais e Construção",
+        "operatingTemp": "Temperatura de Operação",
+        "operatingTempValue": "-40°C a +85°C",
+        "connectors": "Conectores",
+        "connectorsValue": "MC4-EVO2",
+        "frontGlass": "Vidro Frontal",
+        "frontGlassValue": "Temperado 2,0 mm",
+        "backGlass": "Vidro Posterior",
+        "backGlassValue": "Temperado 2,0 mm",
+        "certifications": "Certificações",
+        "certificationsValue": "IEC 61215/61730",
+        "iso": "ISO",
+        "isoValue": "9001/14001/45001"
+      }
+    },
+    "performance": {
+      "title": "Desempenho Superior Comprovado",
+      "subtitle": "Vantagens Quantificáveis",
+      "advantages": {
+        "energyGeneration": {
+          "title": "Maior Geração de Energia",
+          "description": "Até 30% mais energia comparado com painéis monofaciais tradicionais graças à captação bifacial e maior eficiência das células tipo N.",
+          "metrics": "+30% geração | +15% eficiência vs tipo P"
+        },
+        "degradation": {
+          "title": "Menor Degradação",
+          "description": "Degradação anual inferior a 0,4% vs 0,7% das células tipo P, garantindo maior produção energética ao longo da vida útil do sistema.",
+          "metrics": "<0,4% degradação anual | 25+ anos vida útil"
+        },
+        "thermal": {
+          "title": "Melhor Desempenho Térmico",
+          "description": "Coeficiente de temperatura mais baixo (-0,30%/°C) permite melhor desempenho em climas quentes comparado com tecnologias convencionais.",
+          "metrics": "-0,30%/°C | Ideal para climas quentes"
+        }
+      }
+    },
+    "applications": {
+      "title": "Aplicações Otimizadas",
+      "utilityScale": {
+        "title": "Projetos Utility-Scale",
+        "description": "Instalações de grande escala (+10MW) onde a eficiência e o LCOE são críticos. Ideal para parques solares com alta irradiância e superfícies refletivas.",
+        "recommendedPower": "Potência recomendada:",
+        "recommendedPowerValue": "10MW - 500MW+",
+        "roi": "ROI típico:",
+        "roiValue": "6-8 anos"
+      },
+      "industrial": {
+        "title": "Instalações Industriais",
+        "description": "Complexos industriais e comerciais que requerem alta densidade de potência e máxima eficiência em espaços limitados.",
+        "recommendedPower": "Potência recomendada:",
+        "recommendedPowerValue": "500kW - 10MW",
+        "energySaving": "Economia energética:",
+        "energySavingValue": "40-60%"
+      },
+      "groundMounted": {
+        "title": "Sistemas no Solo Otimizados",
+        "description": "Instalações no solo com superfícies altamente refletivas (areia, neve, água) que maximizam o ganho bifacial.",
+        "bifacialGain": "Ganho bifacial:",
+        "bifacialGainValue": "20-30%",
+        "recommendedHeight": "Altura recomendada:",
+        "recommendedHeightValue": "1,5-2,5m"
+      },
+      "extreme": {
+        "title": "Ambientes Extremos",
+        "description": "Resistência superior em condições adversas: alta umidade, salinidade, temperaturas extremas e cargas de neve.",
+        "thermalRange": "Faixa térmica:",
+        "thermalRangeValue": "-40°C a +85°C",
+        "snowLoad": "Carga de neve:",
+        "snowLoadValue": "5400 Pa"
+      }
+    },
+    "cta": {
+      "title": "Pronto para implementar a tecnologia mais avançada?",
+      "technicalQuote": "Solicitar Cotação Técnica",
+      "downloadDocs": "Baixar Documentação"
+    }
   }
 }
 
