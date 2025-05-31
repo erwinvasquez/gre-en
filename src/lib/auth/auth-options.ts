@@ -2,6 +2,7 @@
 import type { NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import GoogleProvider from "next-auth/providers/google"
+import { createOrUpdateUser, getUserRole } from "@/lib/firestore-roles"
 
 // Log para verificar que este archivo se está cargando
 console.log("🔄 NextAuth: Configuración cargada")
@@ -38,6 +39,7 @@ export const authOptions: NextAuthOptions = {
               email: credentials.email,
               image: null,
               emailVerified: true,
+              providerId: "credentials",
             }
           }
 
@@ -74,12 +76,44 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user, account }) {
       console.log("🔄 NextAuth: jwt callback - Personalizando token")
+
       if (user) {
         console.log("🔄 NextAuth: jwt callback - Añadiendo datos de usuario al token")
         token.id = user.id
         token.emailVerified = (user as any).emailVerified || false
         token.providerId = account?.provider || "unknown"
+
+        // Crear o actualizar usuario en Firestore y obtener rol
+        try {
+          console.log("🔄 NextAuth: jwt callback - Sincronizando con Firestore...")
+          const userData = await createOrUpdateUser({
+            id: user.id,
+            email: user.email,
+            name: user.name,
+            provider: account?.provider || "unknown",
+            image: user.image,
+          })
+
+          token.role = userData.role
+          console.log(`✅ NextAuth: jwt callback - Rol asignado: ${userData.role}`)
+        } catch (error) {
+          console.error("❌ NextAuth: Error al sincronizar con Firestore:", error)
+          token.role = "user" // Rol por defecto en caso de error
+        }
+      } else if (token.id) {
+        // En renovaciones de token, verificar si el rol ha cambiado
+        try {
+          const currentRole = await getUserRole(token.id as string)
+          if (currentRole !== token.role) {
+            console.log(`🔄 NextAuth: jwt callback - Rol actualizado de ${token.role} a ${currentRole}`)
+            token.role = currentRole
+          }
+        } catch (error) {
+          console.error("❌ NextAuth: Error al verificar rol en renovación:", error)
+          // Mantener el rol actual en caso de error
+        }
       }
+
       return token
     },
     async session({ session, token }) {
@@ -89,6 +123,9 @@ export const authOptions: NextAuthOptions = {
         session.user.id = token.id as string
         session.user.emailVerified = token.emailVerified as boolean
         session.user.providerId = token.providerId as string
+        session.user.role = token.role as "admin" | "user"
+
+        console.log(`✅ NextAuth: session callback - Sesión creada con rol: ${session.user.role}`)
       }
       return session
     },
@@ -110,12 +147,26 @@ export const authOptions: NextAuthOptions = {
   events: {
     async signIn({ user, account }) {
       console.log(`🔄 NextAuth Event: signIn - Usuario ha iniciado sesión con ${account?.provider}:`, user.name)
+
+      // IMPORTANTE: Asegurarse de que el usuario se guarde en Firestore al iniciar sesión
+      try {
+        await createOrUpdateUser({
+          id: user.id,
+          email: user.email,
+          name: user.name,
+          provider: account?.provider || "unknown",
+          image: user.image,
+        })
+        console.log("✅ NextAuth Event: signIn - Usuario guardado en Firestore")
+      } catch (error) {
+        console.error("❌ NextAuth Event: signIn - Error al guardar usuario en Firestore:", error)
+      }
     },
     async signOut() {
       console.log("🔄 NextAuth Event: signOut - Usuario ha cerrado sesión")
     },
     async session({ session }) {
-      console.log("🔄 NextAuth Event: session - Sesión actualizada", session)
+      console.log("🔄 NextAuth Event: session - Sesión actualizada", session.user?.role)
     },
   },
 }
@@ -130,9 +181,30 @@ declare module "next-auth" {
       image: string | null
       emailVerified: boolean
       providerId: string
+      role: "admin" | "user" // Añadir rol a la sesión
     }
   }
+
+  interface User {
+    id: string
+    name: string | null
+    email: string | null
+    image: string | null
+    role?: "admin" | "user"
+  }
 }
+
+// Extender JWT para incluir rol
+declare module "next-auth/jwt" {
+  interface JWT {
+    id: string
+    emailVerified: boolean
+    providerId: string
+    role: "admin" | "user"
+  }
+}
+
+
 
 
 

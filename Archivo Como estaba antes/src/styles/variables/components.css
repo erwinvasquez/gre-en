@@ -1,0 +1,191 @@
+/* Variables específicas para componentes */
+:root {
+  /* Navbar - Variables centralizadas */
+  --navbar-font-size: var(--font-size-xs);
+  --navbar-font-weight: var(--font-weight-extrabold);
+  --navbar-text-transform: uppercase;
+  --navbar-height: 4rem; /* 64px */
+  --navbar-padding: 0.75rem; /* 12px */
+  --navbar-z-index: var(--z-navbar);
+  --navbar-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --navbar-bg: hsl(var(--background));
+  --navbar-text: hsl(var(--foreground));
+
+  /* Navbar links - Variables específicas para los enlaces */
+  --navbar-link-font-size: var(--font-size-xs);
+  --navbar-link-font-weight: var(--font-weight-medium);
+  --navbar-link-active-font-weight: var(--font-weight-semibold);
+  --navbar-link-spacing: var(--spacing-4); /* Espaciado entre enlaces */
+  --navbar-link-hover-transition: var(--transition-colors);
+  --navbar-link-hover-color: hsl(var(--primary));
+  --navbar-link-active-color: hsl(var(--primary));
+
+  /* Navbar indicator - Variables para el indicador de enlace activo */
+  --navbar-indicator-height: 2px;
+  --navbar-indicator-color: hsl(var(--primary));
+  --navbar-indicator-transition: transform 0.3s ease-in-out;
+  --navbar-indicator-offset: -6px;
+
+  /* Navbar mobile - Variables para el menú móvil */
+  --navbar-mobile-menu-bg: hsl(var(--background));
+  --navbar-mobile-menu-width: 75%;
+  --navbar-mobile-menu-max-width: 300px;
+
+  /* Navbar icons - Variables para los iconos */
+  --navbar-icon-transition: all 0.2s ease-in-out;
+  --navbar-icon-hover-scale: 1.12; /* Escala del 12% en hover */
+  --navbar-icon-hover-color: hsl(var(--primary));
+  --navbar-icon-padding: 0.5rem;
+  --navbar-icon-radius: 0.375rem;
+  --navbar-icon-spacing: var(--spacing-2); /* Nueva variable para espaciado entre iconos */
+  /* Ajustar la posición del indicador para que sea más precisa */
+  --navbar-icon-indicator-top: 0.125rem; /* Posición del indicador */
+  --navbar-icon-indicator-right: 0.125rem; /* Posición del indicador */
+  /* Añadir una nueva variable para el tamaño de los iconos */
+  --navbar-icon-size: 21px; /* Tamaño base para los iconos de la navbar */
+
+  /* Añadir estas nuevas variables para el submenu después de las variables de navbar */
+
+  /* Submenu - Variables centralizadas */
+  --submenu-bg: hsl(var(--background));
+  --submenu-text: var(--navbar-text);
+  --submenu-border-color: var(--border);
+  --submenu-shadow: var(--shadow-md);
+  --submenu-z-index: calc(var(--navbar-z-index) - 1);
+  --submenu-padding-y: var(--spacing-6);
+  --submenu-padding-x: var(--spacing-4);
+  --submenu-transition: all var(--navbar-transition-duration) var(--navbar-transition-timing);
+  --submenu-item-radius: var(--radius);
+  --submenu-item-hover-bg: var(--muted);
+  --submenu-item-active-color: var(--primary);
+  --submenu-item-icon-color: var(--muted-foreground);
+  --submenu-item-icon-hover-color: var(--primary);
+  --submenu-max-height: 500px;
+  --submenu-title-font-weight: var(--font-weight-medium);
+  --submenu-description-font-size: var(--font-size-sm);
+
+  /* Nuevas variables para la navbar transparente con blur durante scroll */
+  --navbar-transition-duration: 0.3s;
+  --navbar-transition-timing: ease;
+  --navbar-blur-amount: 10px;
+  --navbar-bg-opacity-scrolling: 0.7;
+  --navbar-bg-scrolling: hsla(var(--background) / var(--navbar-bg-opacity-scrolling));
+
+  /* Footer */
+  --footer-bg: var(--color-gray-900);
+  --footer-text: var(--color-gray-300);
+  --footer-heading: var(--primary);
+  --footer-border: var(--color-gray-800);
+  --footer-link: var(--color-gray-300);
+  --footer-link-hover: var(--primary);
+  --footer-social-bg: var(--color-gray-800);
+  --footer-social-hover-shadow: var(--color-green-500);
+  --footer-padding-y: var(--spacing-10);
+  --footer-link-spacing: var(--spacing-2);
+
+  /* Buttons */
+  --button-primary-bg: hsl(var(--primary));
+  --button-primary-text: hsl(var(--primary-foreground));
+  --button-primary-hover-bg: hsl(var(--primary) / 0.9);
+  --button-padding-x: var(--spacing-6);
+  --button-padding-y: var(--spacing-2);
+  --button-border-radius: var(--radius);
+  --button-transition: var(--transition-colors);
+
+  /* Cards */
+  --card-padding: var(--spacing-6);
+  --card-border-radius: var(--radius);
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --card-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --card-transition: box-shadow 0.3s ease;
+
+  /* Forms */
+  --input-height: var(--spacing-10);
+  --input-padding-x: var(--spacing-3);
+  --input-border-color: hsl(var(--border));
+  --input-border-radius: var(--radius);
+  --input-focus-ring-color: hsl(var(--ring));
+  --input-placeholder-color: hsl(var(--muted-foreground));
+
+  /* Tables */
+  --table-header-bg: hsl(var(--muted));
+  --table-border-color: hsl(var(--border));
+  --table-row-hover-bg: hsl(var(--muted));
+  --table-cell-padding: var(--spacing-3) var(--spacing-4);
+
+  /* Solution section colors */
+  --solution-1: hsl(var(--primary));
+  --solution-2: hsl(var(--secondary));
+  --solution-3: hsl(var(--accent));
+
+  /* Variables para las tarjetas de soluciones */
+  --solution-card-radius: var(--radius);
+  --solution-card-shadow: var(--shadow-md);
+  --solution-card-hover-shadow: var(--shadow-lg);
+  --solution-card-border-width: 1px;
+
+  /* Colores para las soluciones específicas */
+  /* BIPV - Building Integrated Photovoltaics */
+  --solution-bipv-gradient-from: var(--color-emerald-500);
+  --solution-bipv-gradient-to: var(--color-green-600);
+  --solution-bipv-light-bg: var(--color-emerald-50);
+  --solution-bipv-dark-bg: var(--color-emerald-950);
+  --solution-bipv-border-light: var(--color-emerald-200);
+  --solution-bipv-border-dark: var(--color-emerald-800);
+  --solution-bipv-icon-bg-light: var(--color-emerald-100);
+  --solution-bipv-icon-bg-dark: var(--color-emerald-900);
+  --solution-bipv-icon-color-light: var(--color-emerald-600);
+  --solution-bipv-icon-color-dark: var(--color-emerald-400);
+
+  /* Photovoltaic */
+  --solution-photovoltaic-gradient-from: var(--color-blue-500);
+  --solution-photovoltaic-gradient-to: var(--color-indigo-600);
+  --solution-photovoltaic-light-bg: var(--color-blue-50);
+  --solution-photovoltaic-dark-bg: var(--color-blue-950);
+  --solution-photovoltaic-border-light: var(--color-blue-200);
+  --solution-photovoltaic-border-dark: var(--color-blue-800);
+  --solution-photovoltaic-icon-bg-light: var(--color-blue-100);
+  --solution-photovoltaic-icon-bg-dark: var(--color-blue-900);
+  --solution-photovoltaic-icon-color-light: var(--color-blue-600);
+  --solution-photovoltaic-icon-color-dark: var(--color-blue-400);
+
+  /* Wind */
+  --solution-wind-gradient-from: var(--color-teal-500);
+  --solution-wind-gradient-to: var(--color-cyan-600);
+  --solution-wind-light-bg: var(--color-teal-50);
+  --solution-wind-dark-bg: var(--color-teal-950);
+  --solution-wind-border-light: var(--color-teal-200);
+  --solution-wind-border-dark: var(--color-teal-800);
+  --solution-wind-icon-bg-light: var(--color-teal-100);
+  --solution-wind-icon-bg-dark: var(--color-teal-900);
+  --solution-wind-icon-color-light: var(--color-teal-600);
+  --solution-wind-icon-color-dark: var(--color-teal-400);
+}
+
+/* Variables para tema oscuro */
+.dark {
+  --navbar-bg: hsl(var(--background));
+  --navbar-text: hsl(var(--foreground));
+  --navbar-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --navbar-link-hover-color: hsl(var(--primary));
+  --navbar-link-active-color: hsl(var(--primary));
+  --navbar-mobile-menu-bg: hsl(var(--background));
+  --navbar-icon-hover-color: hsl(var(--primary));
+  --navbar-bg-scrolling: hsla(var(--background) / var(--navbar-bg-opacity-scrolling));
+
+  --button-primary-bg: hsl(var(--primary));
+  --button-primary-text: hsl(var(--primary-foreground));
+  --button-primary-hover-bg: hsl(var(--primary) / 0.9);
+
+  --input-border-color: hsl(var(--border));
+  --input-placeholder-color: hsl(var(--muted-foreground));
+
+  --table-header-bg: hsl(var(--muted));
+  --table-border-color: hsl(var(--border));
+  --table-row-hover-bg: hsl(var(--muted));
+}
+
+
+
+
+

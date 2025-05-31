@@ -2,12 +2,11 @@
 
 import type React from "react"
 import { useState, useCallback, useMemo } from "react"
-import { HomeIcon } from "@primer/octicons-react"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
-import { NavbarSection, ActiveLink, ThemeToggle } from "@/components"
+import { NavbarSection, ActiveLink } from "@/components"
 import { SwitchLanguage } from "../switchlanguage/SwitchLanguage"
-import { ShoppingCartIcon, UserIcon } from "@heroicons/react/16/solid"
+import { UserIcon } from "@heroicons/react/16/solid"
 import { MobileMenu } from "../mobile-menu/MobileMenu"
 import { Submenu, type PageWithSubmenu } from "../submenu/Submenu"
 import { Layers, Sun, Wind } from "lucide-react"
@@ -16,6 +15,13 @@ import { useAuth, useLocalization, useScrollPosition } from "@/hooks"
 import { NavbarIcon } from "@/components/ui/navbar-icon"
 import { cn } from "@/lib/utils"
 import { Container } from "@/components/ui/container"
+import { useRole } from "@/hooks/useRole"
+
+const navItems = [
+  { href: "/", text: "Home" },
+  { href: "/pricing", text: "Pricing" },
+  { href: "/contact", text: "Contact" },
+]
 
 export const Navbar = () => {
   const S = useTranslations("Sections")
@@ -26,6 +32,7 @@ export const Navbar = () => {
   const [isAuthDrawerOpen, setIsAuthDrawerOpen] = useState(false)
   const { session, status } = useAuth()
   const { locale, getLocalizedPath } = useLocalization()
+  const { isAdmin } = useRole() // Usar el hook de roles para verificar si es admin
 
   // Usar el hook de scroll para detectar cuando el usuario está haciendo scroll
   const { isScrolling, scrollY } = useScrollPosition(5, 300)
@@ -54,7 +61,8 @@ export const Navbar = () => {
   const simplePages = useMemo(() => {
     const pages: Array<{ path: string; text: string }> = []
 
-    if (status === "authenticated" && session) {
+    // Solo mostrar el panel de administración si el usuario es admin
+    if (status === "authenticated" && session && isAdmin) {
       pages.push({
         path: "/admin",
         text: A("adminPanel"),
@@ -62,7 +70,7 @@ export const Navbar = () => {
     }
 
     return pages
-  }, [status, session, A])
+  }, [status, session, A, isAdmin]) // Añadir isAdmin como dependencia
 
   // Páginas con submenu (memoizado para evitar recreaciones en cada renderizado)
   const pagesWithSubmenu: PageWithSubmenu[] = useMemo(
@@ -229,6 +237,7 @@ export const Navbar = () => {
     </div>
   )
 }
+
 
 
 

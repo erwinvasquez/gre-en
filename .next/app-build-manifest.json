@@ -23,6 +23,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
+    "/[locale]/admin/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/admin/page.js"
+    ],
     "/[locale]/products/photovoltaic/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -33,6 +38,21 @@
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/products/layout.js"
     ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
+    ],
+    "/[locale]/admin/contacts/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/admin/contacts/page.js"
+    ],
+    "/[locale]/admin/contacts/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/admin/contacts/[id]/page.js"
+    ],
     "/[locale]/products/bipv/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -42,16 +62,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/products/wind/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
-    ],
-    "/[locale]/admin/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/admin/page.js"
     ]
   }
 }

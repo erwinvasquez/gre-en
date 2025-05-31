@@ -6,6 +6,7 @@ import { useRouter, usePathname } from "next/navigation"
 import Link from "next/link"
 import { useAppSelector } from "@/redux/hooks"
 import type { PageWithSubmenu } from "../submenu/Submenu"
+import { useRole } from "@/hooks/useRole"
 
 interface MobileMenuProps {
   sections: Array<{ id: string; label: string }>
@@ -20,6 +21,7 @@ export function MobileMenu({ sections, pages, pagesWithSubmenu = [] }: MobileMen
   const pathname = usePathname()
   const router = useRouter()
   const locale = useAppSelector((state) => state.language.locale)
+  const { isAdmin } = useRole() // Usar el hook de roles
 
   const [isSubpageExpanded, setIsSubpageExpanded] = useState<{ [key: string]: boolean }>({})
 
@@ -96,6 +98,15 @@ export function MobileMenu({ sections, pages, pagesWithSubmenu = [] }: MobileMen
     }))
   }
 
+  // Filtrar páginas admin si el usuario no es admin
+  const filteredPages = pages.filter((page) => {
+    // Si la ruta contiene "admin" y el usuario no es admin, no mostrar
+    if (page.path.includes("admin") && !isAdmin) {
+      return false
+    }
+    return true
+  })
+
   return (
     <>
       {/* Botón de hamburguesa */}
@@ -142,7 +153,7 @@ export function MobileMenu({ sections, pages, pagesWithSubmenu = [] }: MobileMen
                 ))}
 
                 {/* Páginas sin submenu */}
-                {pages
+                {filteredPages
                   .filter((page) => !hasSubmenu(page.path))
                   .map((page) => (
                     <Link
@@ -232,6 +243,7 @@ export function MobileMenu({ sections, pages, pagesWithSubmenu = [] }: MobileMen
     </>
   )
 }
+
 
 
 

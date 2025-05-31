@@ -226,6 +226,18 @@ export function useAuth() {
     setError(null)
   }, [])
 
+  // Funciones adicionales para manejo de roles (NUEVAS)
+  const userRole = (session?.user?.role as "admin" | "user") || null
+  const isAdmin = userRole === "admin"
+  const isUser = userRole === "user"
+
+  const hasRole = useCallback(
+    (role: "admin" | "user") => {
+      return userRole === role
+    },
+    [userRole],
+  )
+
   return {
     session,
     status,
@@ -237,8 +249,15 @@ export function useAuth() {
     register,
     logout,
     clearError,
+    // Nuevas propiedades para roles
+    userRole,
+    isAdmin,
+    isUser,
+    hasRole,
   }
 }
+
+
 
 
 

@@ -17,6 +17,9 @@ const REDIRECTS: Record<string, { destination: string; permanent: boolean }> = {
 // Rutas protegidas que requieren autenticación
 const PROTECTED_ROUTES = ["/admin", "/account"]
 
+// Rutas que requieren rol de administrador
+const ADMIN_ROUTES = ["/admin"]
+
 // En la función getPreferredLanguage, añadir soporte para portugués
 function getPreferredLanguage(request: NextRequest): SupportedLocale {
   // Obtener el idioma de la cookie si existe
@@ -81,6 +84,15 @@ export default async function middleware(request: NextRequest) {
     return false
   })
 
+  // Verificar si es una ruta de admin
+  const isAdminRoute = ADMIN_ROUTES.some((route) => {
+    const pathParts = pathname.split("/")
+    if (pathParts.length >= 3 && ["en", "es", "pt"].includes(pathParts[1])) {
+      return route === `/${pathParts[2]}`
+    }
+    return false
+  })
+
   if (isProtectedRoute) {
     // Verificar si hay un token de autenticación
     const token = await getToken({
@@ -92,6 +104,17 @@ export default async function middleware(request: NextRequest) {
       // Redirigir a la página principal si no hay token
       const locale = pathname.split("/")[1]
       return NextResponse.redirect(new URL(`/${locale}`, request.url))
+    }
+
+    // Si es una ruta de admin, verificar el rol
+    if (isAdminRoute) {
+      // Verificar si el usuario tiene rol de admin
+      const userRole = token.role
+      if (userRole !== "admin") {
+        // Redirigir a la página principal si no es admin
+        const locale = pathname.split("/")[1]
+        return NextResponse.redirect(new URL(`/${locale}`, request.url))
+      }
     }
   }
 
@@ -112,6 +135,7 @@ export const config = {
   // Excluir archivos estáticos y API routes
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico|.*\\.png$|.*\\.jpg$|.*\\.svg$).*)"],
 }
+
  
 
 

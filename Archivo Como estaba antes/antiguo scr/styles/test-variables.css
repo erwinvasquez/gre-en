@@ -1,0 +1,44 @@
+/* Importar nuestro sistema de variables */
+@import "./index.css";
+
+/* Estilos de prueba que usan las variables */
+.test-heading {
+  font-family: var(--font-headings);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: hsl(var(--primary));
+  margin-bottom: var(--spacing-4);
+}
+
+.test-paragraph {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: hsl(var(--foreground));
+  margin-bottom: var(--spacing-4);
+}
+
+.test-button {
+  font-family: var(--font-navbar);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius);
+  transition: var(--transition-colors);
+}
+
+.test-button:hover {
+  background-color: hsl(var(--primary) / 0.9);
+}
+
+/* Contenedor de prueba */
+.test-container {
+  max-width: var(--container-md);
+  margin: 0 auto;
+  padding: var(--spacing-8);
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+}
