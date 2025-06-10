@@ -59,7 +59,12 @@ export const Navbar = () => {
 
   // Memoizar la construcción de páginas simples para evitar recálculos en cada renderizado
   const simplePages = useMemo(() => {
-    const pages: Array<{ path: string; text: string }> = []
+    const pages: Array<{ path: string; text: string }> = [
+      {
+        path: "/cotizador",
+        text: P("quote"), // Puedes usar `t("Navbar.cotizador")` si lo tienes traducido
+      },
+    ]
 
     // Solo mostrar el panel de administración si el usuario es admin
     if (status === "authenticated" && session && isAdmin) {

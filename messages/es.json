@@ -64,7 +64,7 @@
   "Sections": {
     "home": "Inicio",
     "about-us": "Sobre Nosotros",
-    "future-energy": "Futuro Energético",
+    "future-energy": "Beneficios",
     "solutions": "Soluciones",
     "sectors": "Sectores",
     "pricing": "Precios",
@@ -73,7 +73,7 @@
   },
   "Pages": {
     "products": "Productos",
-    "quote": "Cotizador de Paneles Solares"
+    "quote": "Cotizar"
   },
   "HomeSection": {
     "titleLine1": "Libertad Energética",

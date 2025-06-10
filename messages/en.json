@@ -64,7 +64,7 @@
   "Sections": {
     "home": "Home",
     "about-us": "About Us",
-    "future-energy": "Future Energy",
+    "future-energy": "Benefits",
     "solutions": "Solutions",
     "sectors": "Sectors",
     "pricing": "Pricing",
@@ -73,7 +73,7 @@
   },
   "Pages": {
     "products": "Products",
-    "quote": "Solar Quote Calculator"
+    "quote": "Quote"
   },
   "HomeSection": {
     "titleLine1": "Energy Freedom",

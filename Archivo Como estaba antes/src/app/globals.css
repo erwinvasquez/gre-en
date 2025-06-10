@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importar nuestro sistema de variables CSS */
+@import "../styles/index.css";
+
+/* Estilos base para tipografía */
+@layer base {
+  html {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-headings);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+  }
+
+  h1 {
+    font-size: var(--font-size-4xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-2xl);
+  }
+
+  h4 {
+    font-size: var(--font-size-xl);
+  }
+
+  p {
+    font-family: var(--font-body);
+    line-height: var(--line-height-relaxed);
+  }
+
+  button,
+  a {
+    font-family: var(--font-navbar);
+  }
+}
+
+/* Estilos específicos para la barra de navegación usando variables CSS */
+.navbar {
+  color: var(--navbar-text);
+  font-family: var(--font-navbar);
+  font-size: var(--navbar-font-size);
+  font-weight: var(--navbar-font-weight);
+  text-transform: var(--navbar-text-transform);
+  height: var(--navbar-height);
+  padding: var(--navbar-padding);
+  box-shadow: var(--navbar-shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--navbar-z-index);
+  transition: background-color var(--navbar-transition-duration) var(--navbar-transition-timing), backdrop-filter
+    var(--navbar-transition-duration) var(--navbar-transition-timing), box-shadow var(--navbar-transition-duration)
+    var(--navbar-transition-timing);
+}
+
+/* Estado estático de la navbar (sin scroll) */
+.navbar-static {
+  background-color: var(--navbar-bg);
+  backdrop-filter: none;
+}
+
+/* Estado de la navbar durante el scroll */
+.navbar-scrolling {
+  background-color: transparent;
+  backdrop-filter: blur(var(--navbar-blur-amount));
+  -webkit-backdrop-filter: blur(var(--navbar-blur-amount));
+  box-shadow: var(--shadow-sm);
+}
+
+/* Fallback para navegadores que no soportan backdrop-filter */
+@supports not (backdrop-filter: blur(10px)) {
+  .navbar-scrolling {
+    background-color: var(--navbar-bg);
+    opacity: var(--navbar-bg-opacity-scrolling);
+  }
+}
+
+/* Estilos para los enlaces del navbar */
+.navbar-link {
+  font-size: var(--navbar-link-font-size);
+  font-weight: var(--navbar-link-font-weight);
+  margin-right: var(--navbar-link-spacing);
+  transition: var(--navbar-link-hover-transition);
+}
+
+.navbar-link:hover {
+  color: var(--navbar-link-hover-color);
+}
+
+.navbar-link.active {
+  color: var(--navbar-link-active-color);
+  font-weight: var(--navbar-link-active-font-weight);
+}
+
+/* Estilos para el indicador de enlace activo */
+.navbar-link-indicator {
+  position: absolute;
+  bottom: var(--navbar-indicator-offset);
+  left: 0;
+  width: 100%;
+  height: var(--navbar-indicator-height);
+  background-color: var(--navbar-indicator-color);
+  transform: scaleX(0);
+  transition: var(--navbar-indicator-transition);
+  transform-origin: bottom right;
+}
+
+.navbar-link:hover .navbar-link-indicator,
+.navbar-link.active .navbar-link-indicator {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+body {
+  //padding-top: var(--navbar-height); /* Usar la variable para la altura del navbar */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Nuevas clases utilitarias para alturas y espaciado consistentes */
+  .min-h-screen-navbar {
+    min-height: calc(100vh - var(--navbar-height));
+  }
+
+  .h-screen-navbar {
+    height: calc(100vh - var(--navbar-height));
+  }
+
+  .max-h-screen-navbar {
+    max-height: calc(100vh - var(--navbar-height));
+  }
+
+  /* Clases para espaciado consistente */
+  .section-padding {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+    padding-top: var(--spacing-16);
+    padding-bottom: var(--spacing-16);
+  }
+
+  .section-container {
+    @apply w-full max-w-screen-xl mx-auto;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Asegurarse de que las secciones tengan suficiente espacio en la parte superior */
+section {
+  //scroll-margin-top: var(--navbar-height); /* Usar la variable para la altura del navbar */
+}
+
+/* Ajustar el padding-top para diferentes tamaños de pantalla */
+@media (max-width: 640px) {
+  body {
+    padding-top: var(--navbar-height); /* Usar la variable para la altura del navbar */
+  }
+}
+
+
+
+
+
+
+
+
+
+
