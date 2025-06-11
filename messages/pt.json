@@ -256,7 +256,7 @@
     "title": "Calculadora de Investimento de Projetos de Energía Solar",
     "subtitle": "Calcule o orçamento do seu projeto de energia solar em Bolívia",
     "form": {
-      "title": "Dados de Faturamento e Instalação Atual",
+      "title": "Dados de Faturamento e Instalação Atuales",
       "monthlyConsumption": "Consumo Mensal de Energia",
       "monthlyConsumptionPlaceholder": "Digite seu consumo mensal em kWh",
       "monthlyConsumptionHelper": "Você pode encontrar essas informações na sua conta de luz",
