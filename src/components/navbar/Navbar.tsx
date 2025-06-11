@@ -61,7 +61,7 @@ export const Navbar = () => {
   const simplePages = useMemo(() => {
     const pages: Array<{ path: string; text: string }> = [
       {
-        path: "/cotizador",
+        path: "/calculadora",
         text: P("quote"), // Puedes usar `t("Navbar.cotizador")` si lo tienes traducido
       },
     ]

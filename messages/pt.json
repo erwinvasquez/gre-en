@@ -73,7 +73,7 @@
   },
   "Pages": {
     "products": "Produtos",
-    "quote": "Cotiza"
+    "quote": "Calculadora"
   },
   "HomeSection": {
     "titleLine1": "Liberdade Energética",
@@ -253,13 +253,13 @@
     }
   },
   "QuoteSection": {
-    "title": "Cotizador de Painéis Solares",
-    "subtitle": "Calcule quantos painéis solares você precisa e obtenha um custo estimado para seu sistema de energia solar",
+    "title": "Calculadora de Investimento de Projetos de Energía Solar",
+    "subtitle": "Calcule o orçamento do seu projeto de energia solar em Bolívia",
     "form": {
-      "title": "Configuração do Sistema",
+      "title": "Dados de Faturamento e Instalação Atual",
       "monthlyConsumption": "Consumo Mensal de Energia",
       "monthlyConsumptionPlaceholder": "Digite seu consumo mensal em kWh",
-      "monthlyConsumptionHelper": "Você pode encontrar esta informação na sua conta de eletricidade",
+      "monthlyConsumptionHelper": "Você pode encontrar essas informações na sua conta de luz",
       "location": "Localização",
       "locationPlaceholder": "Digite sua cidade ou endereço",
       "locationHelper": "Clique no mapa para selecionar sua localização exata e obter dados precisos de radiação solar",
@@ -280,9 +280,34 @@
         "off-grid": "Off-grid (Com baterias)",
         "hybrid": "Híbrido (Rede + Baterias)"
       },
-      "calculate": "Calcular Cotação",
+      "sector": "Setor",
+      "sectorPlaceholder": "Selecione o setor",
+      "sectors": {
+        "residential": "Residencial",
+        "commercial": "Comercial",
+        "industrial": "Industrial",
+        "public": "Público",
+        "agriculture": "Agrícola"
+      },
+      "phase": "Tipo de Instalação",
+      "phasePlaceholder": "Selecione o tipo de fase",
+      "phases": {
+        "monofasico": "Monofásico",
+        "trifasico": "Trifásico"
+      },
+      "includeBattery": "Incluir sistema de backup com bateria",
+      "batteryDescription": "Sistema de Emergência",
+      "batteryAutonomy": "A configuração ideal de baterias será calculada automaticamente para fornecer 4 horas de autonomia total em caso de emergência.",
+      "currentElectricityCost": "Seu Custo Atual de Eletricidade",
+      "rateType": "Tarifa aplicável",
+      "costBs": "Custo mensal",
+      "costUSD": "Custo anual",
+      "calculate": "Calcular Investimento",
       "calculating": "Calculando...",
-      "recalculate": "Recalcular"
+      "loadingConfig": "Carregando configuração...",
+      "configError": "Erro de configuração",
+      "noResults": "Complete o formulário",
+      "noResultsHelper": "Digite seus dados no formulário à esquerda para obter sua cotação personalizada"
     },
     "results": {
       "title": "Resultados da Cotação",
@@ -300,7 +325,7 @@
       "savings": "Economias Estimadas",
       "monthlySavings": "Economias Mensais",
       "yearlySavings": "Economias Anuais",
-      "paybackPeriod": "Período de Recuperação",
+      "paybackPeriod": "Período de Retorno",
       "co2Reduction": "Redução de CO₂ por Ano",
       "technicalDetails": "Detalhes Técnicos",
       "solarRadiation": "Radiação Solar",
@@ -308,7 +333,42 @@
       "inverterEfficiency": "Eficiência do Inversor",
       "performanceRatio": "Razão de Desempenho",
       "requestQuote": "Solicitar Cotação Detalhada",
-      "downloadReport": "Baixar Relatório"
+      "downloadReport": "Baixar Relatório",
+      "currentElectricityCost": "Seu Custo Atual de Eletricidade",
+      "monthlyBs": "Custo Mensal",
+      "yearlyBs": "Custo Anual",
+      "transportIncluded": "Inclui transporte para {department}",
+      "roi": "ROI (Retorno sobre Investimento)",
+      "note": "Nota Regulatória: O órgão regulador permite reduzir até 80% da sua conta de luz com energia solar.",
+      "allowedSavings": "Economia Anual Permitida (80%)",
+      "paybackPeriodHelper": "Para recuperar investimento",
+      "savings25Years": "Economia 25 anos",
+      "savings25YearsHelper": "Após o Investimento",
+      "environmental": {
+        "title": "Impacto Ambiental",
+        "treesEquivalent": "Equivalente a plantar",
+        "trees": "árvores",
+        "carsRemoved": "Equivalente a remover",
+        "cars": "carros de circulação",
+        "gasolineSaved": "Economia de",
+        "liters": "litros de gasolina"
+      },
+      "costsTitle": "Status de Custos do Sistema Solar",
+      "costsSubtitle": "Detalhamento do investimento - Sistema de {power} kW",
+      "installationCosts": "Custos de Instalação e Serviços",
+      "transport": "Transporte para {department}",
+      "installationSubtotal": "Subtotal Instalação",
+      "adjustments": "Ajustes e Custos Administrativos",
+      "sectorAdjustment": "Ajuste Setor {sector}",
+      "multiplier": "Multiplicador",
+      "businessSavings": "Lucro Empresarial (40%)",
+      "salesCommission": "Comissão de Vendas (3%)",
+      "transactionTax": "Imposto sobre Transações (3%)",
+      "iva": "ICMS (13%)",
+      "adjustmentsSubtotal": "Subtotal Ajustes",
+      "totalInvestment": "TOTAL INVESTIMENTO SISTEMA SOLAR",
+      "completeSystem": "Sistema completo instalado e funcionando",
+      "exchangeRate": "Taxa de câmbio"
     },
     "validation": {
       "consumptionRequired": "O consumo mensal é obrigatório",
@@ -318,12 +378,10 @@
       "systemTypeRequired": "O tipo de sistema é obrigatório"
     },
     "errors": {
-      "calculationFailed": "Erro ao calcular a cotação. Tente novamente.",
-      "locationNotFound": "Localização não encontrada. Por favor selecione uma localização no mapa.",
+      "calculationFailed": "Erro ao calcular cotação. Por favor, tente novamente.",
+      "locationNotFound": "Localização não encontrada. Por favor, selecione uma localização no mapa.",
       "weatherDataFailed": "Erro ao obter dados meteorológicos para sua localização. Usando valores estimados.",
-      "mapLoadFailed": "Erro ao carregar o mapa. Por favor recarregue a página.",
-      "locationNotFound": "Localização não encontrada. Digite uma cidade ou endereço válido.",
-      "weatherDataFailed": "Erro ao obter dados meteorológicos para sua localização."
+      "mapLoadFailed": "Erro ao carregar mapa. Por favor, recarregue a página."
     },
     "units": {
       "kwh": "kWh",
@@ -334,7 +392,10 @@
       "usd": "USD",
       "kg": "kg",
       "percent": "%",
-      "kwhPerM2PerDay": "kWh/m²/dia"
+      "kwhPerM2PerDay": "kWh/m²/dia",
+      "rateType": "Tarifa não disponível",
+      "yearly": "12 meses",
+      "perYear": "por ano"
     }
   },
   "SectorsSection": {
@@ -900,8 +961,8 @@
     },
     "cta": {
       "title": "Pronto para implementar a tecnologia mais avançada?",
-      "technicalQuote": "Solicitar Cotação Técnica",
-      "downloadDocs": "Baixar Documentação"
+      "calc": "Calcular Inversão",
+      "contact": "Contate-nos"
     }
   }
 }

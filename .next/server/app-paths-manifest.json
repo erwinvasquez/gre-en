@@ -1,10 +1,10 @@
 {
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/api/language/route": "app/api/language/route.js",
-  "/[locale]/cotizador/page": "app/[locale]/cotizador/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
   "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/calculadora/page": "app/[locale]/calculadora/page.js",
+  "/[locale]/contacto/page": "app/[locale]/contacto/page.js",
   "/[locale]/admin/page": "app/[locale]/admin/page.js",
   "/[locale]/products/photovoltaic/page": "app/[locale]/products/photovoltaic/page.js"
 }

@@ -253,16 +253,16 @@
     }
   },
   "QuoteSection": {
-    "title": "Solar Panel Quote Calculator",
-    "subtitle": "Calculate how many solar panels you need and get an estimated cost for your solar energy system",
+    "title": "Solar Project Investment Calculator",
+    "subtitle": "Calculate the budget of your solar energy project in Bolivia",
     "form": {
-      "title": "System Configuration",
+      "title": "Current Billing and Installation Data",
       "monthlyConsumption": "Monthly Energy Consumption",
-      "monthlyConsumptionPlaceholder": "Enter your monthly kWh consumption",
+      "monthlyConsumptionPlaceholder": "Enter your monthly consumption in kWh",
       "monthlyConsumptionHelper": "You can find this information on your electricity bill",
       "location": "Location",
       "locationPlaceholder": "Enter your city or address",
-      "locationHelper": "Click on the map to select your exact location for accurate solar radiation data",
+      "locationHelper": "Click on the map to select your exact location and get accurate solar radiation data",
       "mapInstructions": "Click on the map to select your location",
       "gettingAddress": "Getting address...",
       "useCurrentLocation": "Use Current Location",
@@ -280,9 +280,34 @@
         "off-grid": "Off-grid (With batteries)",
         "hybrid": "Hybrid (Grid + Batteries)"
       },
-      "calculate": "Calculate Quote",
+      "sector": "Sector",
+      "sectorPlaceholder": "Select sector",
+      "sectors": {
+        "residential": "Residential",
+        "commercial": "Commercial",
+        "industrial": "Industrial",
+        "public": "Public",
+        "agriculture": "Agricultural"
+      },
+      "phase": "Installation Type",
+      "phasePlaceholder": "Select phase type",
+      "phases": {
+        "monofasico": "Single Phase",
+        "trifasico": "Three Phase"
+      },
+      "includeBattery": "Include backup battery system",
+      "batteryDescription": "Emergency System",
+      "batteryAutonomy": "The optimal battery configuration will be automatically calculated to provide 4 hours of full autonomy in case of emergency.",
+      "currentElectricityCost": "Your Current Electricity Cost",
+      "rateType": "Applicable rate",
+      "costBs": "Monthly cost",
+      "costUSD": "Annual cost",
+      "calculate": "Calculate Investment",
       "calculating": "Calculating...",
-      "recalculate": "Recalculate"
+      "loadingConfig": "Loading configuration...",
+      "configError": "Configuration error",
+      "noResults": "Complete the form",
+      "noResultsHelper": "Enter your data in the form on the left to get your personalized quote"
     },
     "results": {
       "title": "Quote Results",
@@ -308,7 +333,42 @@
       "inverterEfficiency": "Inverter Efficiency",
       "performanceRatio": "Performance Ratio",
       "requestQuote": "Request Detailed Quote",
-      "downloadReport": "Download Report"
+      "downloadReport": "Download Report",
+      "currentElectricityCost": "Your Current Electricity Cost",
+      "monthlyBs": "Monthly Cost",
+      "yearlyBs": "Annual Cost",
+      "transportIncluded": "Includes transport to {department}",
+      "roi": "ROI (Return on Investment)",
+      "note": "Regulatory Note: The regulatory body allows reducing up to 80% of your electricity bill with solar energy.",
+      "allowedSavings": "Allowed Annual Savings (80%)",
+      "paybackPeriodHelper": "To recover investment",
+      "savings25Years": "25 Year Savings",
+      "savings25YearsHelper": "After Investment",
+      "environmental": {
+        "title": "Environmental Impact",
+        "treesEquivalent": "Equivalent to planting",
+        "trees": "trees",
+        "carsRemoved": "Equivalent to removing",
+        "cars": "cars from circulation",
+        "gasolineSaved": "Savings of",
+        "liters": "liters of gasoline"
+      },
+      "costsTitle": "Solar System Cost Status",
+      "costsSubtitle": "Detailed investment breakdown - {power} kW System",
+      "installationCosts": "Installation and Service Costs",
+      "transport": "Transport to {department}",
+      "installationSubtotal": "Installation Subtotal",
+      "adjustments": "Adjustments and Administrative Costs",
+      "sectorAdjustment": "{sector} Sector Adjustment",
+      "multiplier": "Multiplier",
+      "businessSavings": "Business Profit (40%)",
+      "salesCommission": "Sales Commission (3%)",
+      "transactionTax": "Transaction Tax (3%)",
+      "iva": "VAT (13%)",
+      "adjustmentsSubtotal": "Adjustments Subtotal",
+      "totalInvestment": "TOTAL SOLAR SYSTEM INVESTMENT",
+      "completeSystem": "Complete system installed and functioning",
+      "exchangeRate": "Exchange rate"
     },
     "validation": {
       "consumptionRequired": "Monthly consumption is required",
@@ -318,10 +378,10 @@
       "systemTypeRequired": "System type is required"
     },
     "errors": {
-      "calculationFailed": "Failed to calculate quote. Please try again.",
+      "calculationFailed": "Error calculating quote. Please try again.",
       "locationNotFound": "Location not found. Please select a location on the map.",
-      "weatherDataFailed": "Failed to get weather data for your location. Using estimated values.",
-      "mapLoadFailed": "Failed to load map. Please refresh the page."
+      "weatherDataFailed": "Error getting weather data for your location. Using estimated values.",
+      "mapLoadFailed": "Error loading map. Please reload the page."
     },
     "units": {
       "kwh": "kWh",
@@ -332,7 +392,10 @@
       "usd": "USD",
       "kg": "kg",
       "percent": "%",
-      "kwhPerM2PerDay": "kWh/m²/day"
+      "kwhPerM2PerDay": "kWh/m²/day",
+      "rateType": "Rate not available",
+      "yearly": "12 months",
+      "perYear": "per year"
     }
   },
   "SectorsSection": {
@@ -898,8 +961,8 @@
     },
     "cta": {
       "title": "Ready to implement the most advanced technology?",
-      "technicalQuote": "Request Technical Quote",
-      "downloadDocs": "Download Documentation"
+      "calc": "Calculate Investment",
+      "contact": "Contact Us"
     }
   }
 }

@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container"
 import { Card } from "@/components/ui/card"
 import { AnimatedElement } from "@/components/AnimatedElement"
 import { getDefaultMetadata } from "@/lib/seo/metadata"
-import { CheckCircle, Zap, Shield, Thermometer, Sun, Factory, TrendingUp, FileText, Download } from "lucide-react"
+import { CheckCircle, Zap, Shield, Thermometer, Sun, Factory, TrendingUp, FileText, Download, Calculator, MessageCircle } from "lucide-react"
 import Image from "next/image"
 
 // Generar metadatos para SEO
@@ -52,14 +52,10 @@ export default async function PhotovoltaicPage({ params: { locale } }: { params:
                 </div>
                 <p className="text-lg text-muted-foreground mb-6">{t("hero.description")}</p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-                    <FileText className="w-5 h-5 mr-2" />
-                    {t("hero.technicalSheet")}
-                  </button>
-                  <button className="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-colors">
-                    <Download className="w-5 h-5 mr-2" />
-                    {t("hero.requestQuote")}
-                  </button>
+                  <a href="/calculadora" className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                    <Calculator className="w-5 h-5 mr-2" />
+                    {t("cta.calc")}
+                  </a>
                 </div>
               </div>
             </AnimatedElement>
@@ -461,22 +457,17 @@ export default async function PhotovoltaicPage({ params: { locale } }: { params:
             </div>
           </AnimatedElement>
 
-          {/* Call to Action Final */}
-          <AnimatedElement animation="slide-up" duration="slow" delay={200}>
-            <div className="text-center">
-              <h3 className="text-2xl font-semibold mb-6">{t("cta.title")}</h3>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-                  <FileText className="w-5 h-5 mr-2" />
-                  {t("cta.technicalQuote")}
-                </button>
-                <button className="inline-flex items-center px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-colors">
-                  <Download className="w-5 h-5 mr-2" />
-                  {t("cta.downloadDocs")}
-                </button>
-              </div>
-            </div>
-          </AnimatedElement>
+          {/* Botones de acción al final */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mt-12">
+            <a href="/calculadora" className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+              <Calculator className="w-5 h-5 mr-2" />
+              {t("cta.calc")}
+            </a>
+            <a href="/contacto" className="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-colors">
+              <MessageCircle className="w-5 h-5 mr-2" />
+              {t("cta.contact")}
+            </a>
+          </div>
         </Container>
       </Section>
     </main>

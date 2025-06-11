@@ -73,7 +73,7 @@
   },
   "Pages": {
     "products": "Productos",
-    "quote": "Cotizar"
+    "quote": "Calcular"
   },
   "HomeSection": {
     "titleLine1": "Libertad Energética",
@@ -253,10 +253,10 @@
     }
   },
   "QuoteSection": {
-    "title": "Cotizador de Paneles Solares",
-    "subtitle": "Calcula cuántos paneles solares necesitas y obtén un costo estimado para tu sistema de energía solar",
+    "title": "Calculadora de Inversión de Proyectos de Energía Solar",
+    "subtitle": "Calcula el presupuesto de tu proyecto de energía solar en Bolivia",
     "form": {
-      "title": "Configuración del Sistema",
+      "title": "Datos de Facturación e Instalación actual",
       "monthlyConsumption": "Consumo Mensual de Energía",
       "monthlyConsumptionPlaceholder": "Ingresa tu consumo mensual en kWh",
       "monthlyConsumptionHelper": "Puedes encontrar esta información en tu factura de electricidad",
@@ -280,9 +280,34 @@
         "off-grid": "Off-grid (Con baterías)",
         "hybrid": "Híbrido (Red + Baterías)"
       },
-      "calculate": "Calcular Cotización",
+      "sector": "Sector",
+      "sectorPlaceholder": "Selecciona el sector",
+      "sectors": {
+        "residential": "Residencial",
+        "commercial": "Comercial",
+        "industrial": "Industrial",
+        "public": "Público",
+        "agriculture": "Agrícola"
+      },
+      "phase": "Tipo de Instalación",
+      "phasePlaceholder": "Selecciona el tipo de fase",
+      "phases": {
+        "monofasico": "Monofásico",
+        "trifasico": "Trifásico"
+      },
+      "includeBattery": "Incluir sistema de respaldo con batería",
+      "batteryDescription": "Sistema de Emergencia",
+      "batteryAutonomy": "Se calculará automáticamente la configuración óptima de baterías para proporcionar 4 horas de autonomía completa en caso de emergencia.",
+      "currentElectricityCost": "Tu Gasto Actual de Electricidad",
+      "rateType": "Tarifa aplicable",
+      "costBs": "Costo mensual",
+      "costUSD": "Costo anual",
+      "calculate": "Calcular Inversión",
       "calculating": "Calculando...",
-      "recalculate": "Recalcular"
+      "loadingConfig": "Cargando configuración...",
+      "configError": "Error de configuración",
+      "noResults": "Completa el formulario",
+      "noResultsHelper": "Ingresa tus datos en el formulario de la izquierda para obtener tu cotización personalizada"
     },
     "results": {
       "title": "Resultados de la Cotización",
@@ -308,7 +333,42 @@
       "inverterEfficiency": "Eficiencia del Inversor",
       "performanceRatio": "Ratio de Rendimiento",
       "requestQuote": "Solicitar Cotización Detallada",
-      "downloadReport": "Descargar Reporte"
+      "downloadReport": "Descargar Reporte",
+      "currentElectricityCost": "Tu Gasto Actual de Electricidad",
+      "monthlyBs": "Gasto Mensual",
+      "yearlyBs": "Gasto Anual",
+      "transportIncluded": "Incluye transporte a {department}",
+      "roi": "ROI (Retorno de Inversión)",
+      "note": "Nota Regulatoria: El ente regulador permite reducir hasta el 80% de tu factura eléctrica con energía solar.",
+      "allowedSavings": "Ahorro Anual Permitido (80%)",
+      "paybackPeriodHelper": "Para recuperar inversión",
+      "savings25Years": "Ahorro 25 años",
+      "savings25YearsHelper": "Después de la Inversión",
+      "environmental": {
+        "title": "Impacto Ambiental",
+        "treesEquivalent": "Equivalente a plantar",
+        "trees": "árboles",
+        "carsRemoved": "Equivalente a retirar",
+        "cars": "autos de circulación",
+        "gasolineSaved": "Ahorro de",
+        "liters": "litros de gasolina"
+      },
+      "costsTitle": "Estado de Costos del Sistema Solar",
+      "costsSubtitle": "Desglose detallado de la inversión - Sistema de {power} kW",
+      "installationCosts": "Costos de Instalación y Servicios",
+      "transport": "Transporte a {department}",
+      "installationSubtotal": "Subtotal Instalación",
+      "adjustments": "Ajustes y Costos Administrativos",
+      "sectorAdjustment": "Ajuste Sector {sector}",
+      "multiplier": "Multiplicador",
+      "businessSavings": "Utilidad Empresarial (40%)",
+      "salesCommission": "Comisión de Ventas (3%)",
+      "transactionTax": "Impuesto a las Transacciones (3%)",
+      "iva": "IVA (13%)",
+      "adjustmentsSubtotal": "Subtotal Ajustes",
+      "totalInvestment": "TOTAL INVERSIÓN SISTEMA SOLAR",
+      "completeSystem": "Sistema completo instalado y funcionando",
+      "exchangeRate": "Tipo de cambio"
     },
     "validation": {
       "consumptionRequired": "El consumo mensual es requerido",
@@ -332,7 +392,10 @@
       "usd": "USD",
       "kg": "kg",
       "percent": "%",
-      "kwhPerM2PerDay": "kWh/m²/día"
+      "kwhPerM2PerDay": "kWh/m²/día",
+      "rateType": "Tarifa no disponible",
+      "yearly": "12 meses",
+      "perYear": "por año"
     }
   },
   "SectorsSection": {
@@ -898,8 +961,8 @@
     },
     "cta": {
       "title": "¿Listo para implementar la tecnología más avanzada?",
-      "technicalQuote": "Solicitar Cotización Técnica",
-      "downloadDocs": "Descargar Documentación"
+      "calc": "Calcular Inversión",
+      "contact": "Contáctanos"
     }
   }
 }
