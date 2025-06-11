@@ -144,7 +144,7 @@
       "temperature": "-0.29% °C better temperature coefficient",
       "appearance": "Crystalline appearance",
       "design": "Standardized modular design",
-      "cta": "Get a Quote"
+      "cta": "View Options"
     },
     "photovoltaic": {
       "title": "Photovoltaic Energy",
@@ -170,7 +170,7 @@
         "app3": "Solar farms",
         "app4": "Off-grid installations"
       },
-      "cta": "Explore Options"
+      "cta": "Calculate Investment"
     },
     "wind": {
       "title": "Wind Energy",

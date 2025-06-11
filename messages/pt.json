@@ -144,7 +144,7 @@
       "temperature": "-0,29% ºC melhor coeficiente de temperatura",
       "appearance": "Aparência cristalina",
       "design": "Design Modular padronizado",
-      "cta": "Obtenha uma cotação"
+      "cta": "Ver Opções"
     },
     "photovoltaic": {
       "title": "Energia Fotovoltaica",
@@ -170,7 +170,7 @@
         "app3": "Fazendas solares",
         "app4": "Instalações fora da rede"
       },
-      "cta": "Explorar Opções"
+      "cta": "Calcular Inversão"
     },
     "wind": {
       "title": "Energia Eólica",

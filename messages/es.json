@@ -144,7 +144,7 @@
       "temperature": "-0,29% ºC mejor coeficiente de temperatura",
       "appearance": "Apariencia cristalina",
       "design": "Diseño Modular estandarizado",
-      "cta": "Obtenga una cotización"
+      "cta": "Ver Opciones"
     },
     "photovoltaic": {
       "title": "Energía Fotovoltaica",
@@ -170,7 +170,7 @@
         "app3": "Granjas solares",
         "app4": "Instalaciones fuera de la red"
       },
-      "cta": "Explorar Opciones"
+      "cta": "Calcular Inversión"
     },
     "wind": {
       "title": "Energía Eólica",
@@ -256,7 +256,7 @@
     "title": "Calculadora de Inversión de Proyectos de Energía Solar",
     "subtitle": "Calcula el presupuesto de tu proyecto de energía solar en Bolivia",
     "form": {
-      "title": "Datos de Facturación e Instalación actual",
+      "title": "Datos de Facturación e Instalación actuales",
       "monthlyConsumption": "Consumo Mensual de Energía",
       "monthlyConsumptionPlaceholder": "Ingresa tu consumo mensual en kWh",
       "monthlyConsumptionHelper": "Puedes encontrar esta información en tu factura de electricidad",
