@@ -81,7 +81,8 @@
     "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
     "buttonGo": "Ir",
     "buttonSeeProject": "Ver Proyectos",
-    "buttonSolutions": "Ver Soluciones"
+    "buttonSolutions": "Ver Soluciones",
+    "calculatorButton": "Calcular Inversión"
   },
   "FutureEnergySection": {
     "header": "Soluciones Energéticas Innovadoras para el Futuro",
@@ -256,10 +257,15 @@
     "title": "Calculadora de Inversión de Proyectos de Energía Solar",
     "subtitle": "Calcula el presupuesto de tu proyecto de energía solar en Bolivia",
     "form": {
-      "title": "Datos de Facturación e Instalación actuales",
+      "title": "Formulario de consumo de energía",
       "monthlyConsumption": "Consumo Mensual de Energía",
-      "monthlyConsumptionPlaceholder": "Ingresa tu consumo mensual en kWh",
+      "monthlyConsumptionPlaceholder": "Ingresa tu consumo mensual en kWh del aviso de cobranza.",
       "monthlyConsumptionHelper": "Puedes encontrar esta información en tu factura de electricidad",
+      "lowConsumption": {
+        "title": "Consumo Bajo Detectado",
+        "message": "Por su consumo actual menor a 1000 kWh, le recomendamos considerar nuestra solución de paneles solares portátiles, que se adaptan mejor a sus necesidades de consumo.",
+        "button": "Contactar para más información"
+      },
       "location": "Ubicación",
       "locationPlaceholder": "Ingresa tu ciudad o dirección",
       "locationHelper": "Haz clic en el mapa para seleccionar tu ubicación exacta y obtener datos precisos de radiación solar",
@@ -340,6 +346,7 @@
       "transportIncluded": "Incluye transporte a {department}",
       "roi": "ROI (Retorno de Inversión)",
       "note": "Nota Regulatoria: El ente regulador permite reducir hasta el 80% de tu factura eléctrica con energía solar.",
+      "disclaimer": "Este cálculo de inversión es solo una aproximación para tener una referencia. Si deseas conocer con exactitud, puedes solicitar una cotización detallada.",
       "allowedSavings": "Ahorro Anual Permitido (80%)",
       "paybackPeriodHelper": "Para recuperar inversión",
       "savings25Years": "Ahorro 25 años",
@@ -669,8 +676,44 @@
     },
     "solarTile": {
       "title": "Teja Solar",
-      "comingSoon": "Información sobre Teja Solar próximamente. Esta sección está en desarrollo.",
-      "moreInfo": "Más Información"
+      "whatIs": {
+        "title": "¿Qué es la Teja Solar?",
+        "description": "La Teja Solar es una solución innovadora que combina la estética tradicional de las tejas con la generación de energía solar. Diseñada para integrarse perfectamente en cualquier techo, ofrece una alternativa elegante y eficiente para la generación de energía renovable."
+      },
+      "advantages": {
+        "title": "Ventajas",
+        "advantage1": {
+          "title": "Seguridad y Durabilidad",
+          "description": "Clasificación de resistencia al fuego Clase A, resistencia a huracanes e impermeabilización estructural."
+        },
+        "advantage2": {
+          "title": "Durabilidad",
+          "description": "Cumple con las normas de certificación obligatorias para materiales de construcción y tiene una vida útil similar a la de los edificios."
+        },
+        "advantage3": {
+          "title": "Instalación y Mantenimiento",
+          "description": "Instalación sin penetración, diseño modular y fácil de reemplazar."
+        },
+        "advantage4": {
+          "title": "Compatibilidad y Limpieza",
+          "description": "Compatible con la mayoría de las tejas metálicas, autolimpiable y con drenaje sin obstrucciones."
+        }
+      },
+      "technical": {
+        "title": "Información Técnica",
+        "specifications": {
+          "title": "Especificaciones",
+          "spec1": {
+            "title": "Potencia Máxima",
+            "description": "120W por teja"
+          },
+          "spec2": {
+            "title": "Potencia por Metro Cuadrado",
+            "description": "191W/㎡"
+          }
+        }
+      },
+      "cta": "Solicitar Cotización"
     },
     "solarRoofPanel": {
       "title": "Panel Techo Solar",
@@ -816,9 +859,10 @@
       "cta": "Solicita una Cotización"
     },
     "contact": {
-      "title": "¿Interesado en nuestras soluciones fotovoltaicas?",
-      "description": "Nuestro equipo de expertos está listo para asesorarte y ofrecerte la mejor solución para tu proyecto.",
-      "button": "Contáctanos Ahora"
+      "title": "¿Interesado en nuestras soluciones?",
+      "description": "Contáctanos para obtener más información sobre nuestras soluciones de energía renovable.",
+      "button": "Contactar",
+      "calculator": "Calcular Inversión"
     }
   },
   "PhotovoltaicPage": {
@@ -963,6 +1007,80 @@
       "title": "¿Listo para implementar la tecnología más avanzada?",
       "calc": "Calcular Inversión",
       "contact": "Contáctanos"
+    }
+  },
+  "WindPage": {
+    "meta": {
+      "title": "Turbina Eólica - Generador de Energía Eólica de Alta Eficiencia",
+      "description": "Descubre nuestra turbina eólica de alta eficiencia, diseñada para maximizar la conversión de energía eólica en electricidad con un rendimiento superior al 90%."
+    },
+    "hero": {
+      "title": "TURBINA EÓLICA",
+      "power": "3000 W",
+      "powerLabel": "Potencia",
+      "efficiency": "90%",
+      "efficiencyLabel": "Eficiencia",
+      "lifespan": "20 años",
+      "lifespanLabel": "Vida Útil",
+      "description": "Generador eólico de eje horizontal de alta eficiencia para proyectos residenciales y comerciales. Diseñado para maximizar la conversión de energía eólica en electricidad con un rendimiento superior al 90%."
+    },
+    "specifications": {
+      "title": "Especificaciones Técnicas",
+      "electrical": {
+        "title": "Especificaciones Eléctricas",
+        "nominalPower": "Potencia Nominal",
+        "nominalVoltage": "Voltaje Nominal",
+        "initialWindSpeed": "Velocidad de Arranque",
+        "nominalWindSpeed": "Velocidad Nominal",
+        "safeWindSpeed": "Velocidad Máxima Segura",
+        "generatorType": "Tipo de Generador",
+        "generatorTypeValue": "Generador de Imanes Permanentes"
+      },
+      "physical": {
+        "title": "Especificaciones Físicas",
+        "bladeDiameter": "Diámetro de Palas",
+        "bladeCount": "Número de Palas",
+        "bladeMaterial": "Material de Palas",
+        "bladeMaterialValue": "Fibra de Vidrio Reforzada",
+        "bodyMaterial": "Material del Cuerpo",
+        "bodyMaterialValue": "Aluminio Fundido",
+        "steelMaterial": "Material de Acero",
+        "steelMaterialValue": "Acero Inoxidable 304",
+        "weight": "Peso",
+        "protection": "Protección"
+      },
+      "control": {
+        "title": "Sistema de Control",
+        "method": "Método de Control",
+        "methodValue": "Control Automático",
+        "windDirection": "Ajuste de Dirección",
+        "windDirectionValue": "Automático con Veleta"
+      }
+    },
+    "benefits": {
+      "title": "Beneficios",
+      "efficiency": {
+        "title": "Alta Eficiencia Energética",
+        "description": "Conversión superior al 90% de la energía eólica en electricidad gracias a su diseño optimizado y sistema de control avanzado."
+      },
+      "versatility": {
+        "title": "Versatilidad Ambiental",
+        "description": "Ideal para zonas con vientos moderados a fuertes, adaptándose a diferentes condiciones climáticas y topográficas."
+      },
+      "durability": {
+        "title": "Durabilidad Extrema",
+        "description": "Construida con materiales de alta calidad y protección IP54, garantizando una vida útil de más de 20 años."
+      },
+      "safety": {
+        "title": "Sistema de Seguridad Integral",
+        "description": "Equipada con sistema de frenado automático y protección contra sobrevelocidad para operación segura."
+      }
+    },
+    "cta": {
+      "title": "¿Listo para Energizar tu Proyecto?",
+      "description": "Calcula el potencial de energía eólica para tu proyecto o consulta con nuestros expertos para una solución personalizada.",
+      "calc": "Calcular Proyecto",
+      "contact": "Contactar Asesor"
     }
   }
 }

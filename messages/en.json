@@ -81,7 +81,8 @@
     "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
     "buttonGo": "Go",
     "buttonSeeProject": "See Projects",
-    "buttonSolutions": "View Solutions"
+    "buttonSolutions": "View Solutions",
+    "calculatorButton": "Calculate Investment"
   },
   "FutureEnergySection": {
     "header": "Innovative Energy Solutions for the Future",
@@ -250,16 +251,27 @@
     "errors": {
       "generic": "An error occurred. Please try again.",
       "submitFailed": "Failed to submit the form. Please try again later."
+    },
+    "contact": {
+      "title": "Interested in our solutions?",
+      "description": "Contact us to learn more about our renewable energy solutions.",
+      "button": "Contact",
+      "calculator": "Calculate Investment"
     }
   },
   "QuoteSection": {
     "title": "Solar Project Investment Calculator",
     "subtitle": "Calculate the budget of your solar energy project in Bolivia",
     "form": {
-      "title": "Current Billing and Installation Data",
+      "title": "Energy Consumption Form",
       "monthlyConsumption": "Monthly Energy Consumption",
-      "monthlyConsumptionPlaceholder": "Enter your monthly consumption in kWh",
+      "monthlyConsumptionPlaceholder": "Enter your monthly consumption in kWh from the billing notice.",
       "monthlyConsumptionHelper": "You can find this information on your electricity bill",
+      "lowConsumption": {
+        "title": "Low Consumption Detected",
+        "message": "Due to your current consumption being less than 1000 kWh, we recommend considering our portable solar panel solution, which better suits your consumption needs.",
+        "button": "Contact for more information"
+      },
       "location": "Location",
       "locationPlaceholder": "Enter your city or address",
       "locationHelper": "Click on the map to select your exact location and get accurate solar radiation data",
@@ -340,6 +352,7 @@
       "transportIncluded": "Includes transport to {department}",
       "roi": "ROI (Return on Investment)",
       "note": "Regulatory Note: The regulatory body allows reducing up to 80% of your electricity bill with solar energy.",
+      "disclaimer": "This investment calculation is only an approximation for reference. If you want to know the exact amount, you can request a detailed quote.",
       "allowedSavings": "Allowed Annual Savings (80%)",
       "paybackPeriodHelper": "To recover investment",
       "savings25Years": "25 Year Savings",
@@ -669,8 +682,44 @@
     },
     "solarTile": {
       "title": "Solar Tile",
-      "comingSoon": "Information about Solar Tile coming soon. This section is under development.",
-      "moreInfo": "More Information"
+      "whatIs": {
+        "title": "What is the Solar Tile?",
+        "description": "The Solar Tile is an innovative solution that combines the traditional aesthetics of tiles with solar energy generation. Designed to integrate perfectly into any roof, it offers an elegant and efficient alternative for renewable energy generation."
+      },
+      "advantages": {
+        "title": "Advantages",
+        "advantage1": {
+          "title": "Safety and Durability",
+          "description": "Class A fire resistance rating, hurricane resistance, and structural waterproofing."
+        },
+        "advantage2": {
+          "title": "Durability",
+          "description": "Complies with mandatory certification standards for building materials and has a lifespan similar to buildings."
+        },
+        "advantage3": {
+          "title": "Installation and Maintenance",
+          "description": "Penetration-free installation, modular design, and easy to replace."
+        },
+        "advantage4": {
+          "title": "Compatibility and Cleaning",
+          "description": "Compatible with most metal tiles, self-cleaning, and unobstructed drainage."
+        }
+      },
+      "technical": {
+        "title": "Technical Information",
+        "specifications": {
+          "title": "Specifications",
+          "spec1": {
+            "title": "Maximum Power",
+            "description": "120W per tile"
+          },
+          "spec2": {
+            "title": "Power per Square Meter",
+            "description": "191W/㎡"
+          }
+        }
+      },
+      "cta": "Request Quote"
     },
     "solarRoofPanel": {
       "title": "Solar Roof Panel",
@@ -963,6 +1012,80 @@
       "title": "Ready to implement the most advanced technology?",
       "calc": "Calculate Investment",
       "contact": "Contact Us"
+    }
+  },
+  "WindPage": {
+    "meta": {
+      "title": "Wind Turbine - High Efficiency Wind Power Generator",
+      "description": "Discover our high-efficiency wind turbine, designed to maximize wind energy conversion into electricity with over 90% performance."
+    },
+    "hero": {
+      "title": "WIND TURBINE",
+      "power": "3000 W",
+      "powerLabel": "Power",
+      "efficiency": "90%",
+      "efficiencyLabel": "Efficiency",
+      "lifespan": "20 years",
+      "lifespanLabel": "Lifespan",
+      "description": "High-efficiency horizontal axis wind generator for residential and commercial projects. Designed to maximize wind energy conversion into electricity with over 90% performance."
+    },
+    "specifications": {
+      "title": "Technical Specifications",
+      "electrical": {
+        "title": "Electrical Specifications",
+        "nominalPower": "Rated Power",
+        "nominalVoltage": "Rated Voltage",
+        "initialWindSpeed": "Cut-in Wind Speed",
+        "nominalWindSpeed": "Rated Wind Speed",
+        "safeWindSpeed": "Maximum Safe Wind Speed",
+        "generatorType": "Generator Type",
+        "generatorTypeValue": "Permanent Magnet Generator"
+      },
+      "physical": {
+        "title": "Physical Specifications",
+        "bladeDiameter": "Blade Diameter",
+        "bladeCount": "Number of Blades",
+        "bladeMaterial": "Blade Material",
+        "bladeMaterialValue": "Reinforced Fiberglass",
+        "bodyMaterial": "Body Material",
+        "bodyMaterialValue": "Cast Aluminum",
+        "steelMaterial": "Steel Material",
+        "steelMaterialValue": "Stainless Steel 304",
+        "weight": "Weight",
+        "protection": "Protection"
+      },
+      "control": {
+        "title": "Control System",
+        "method": "Control Method",
+        "methodValue": "Automatic Control",
+        "windDirection": "Wind Direction Adjustment",
+        "windDirectionValue": "Automatic with Vane"
+      }
+    },
+    "benefits": {
+      "title": "Benefits",
+      "efficiency": {
+        "title": "High Energy Efficiency",
+        "description": "Over 90% wind energy to electricity conversion thanks to optimized design and advanced control system."
+      },
+      "versatility": {
+        "title": "Environmental Versatility",
+        "description": "Ideal for areas with moderate to strong winds, adapting to different climatic and topographic conditions."
+      },
+      "durability": {
+        "title": "Extreme Durability",
+        "description": "Built with high-quality materials and IP54 protection, ensuring a lifespan of over 20 years."
+      },
+      "safety": {
+        "title": "Comprehensive Safety System",
+        "description": "Equipped with automatic braking system and overspeed protection for safe operation."
+      }
+    },
+    "cta": {
+      "title": "Ready to Power Your Project?",
+      "description": "Calculate the wind energy potential for your project or consult with our experts for a customized solution.",
+      "calc": "Calculate Project",
+      "contact": "Contact Advisor"
     }
   }
 }

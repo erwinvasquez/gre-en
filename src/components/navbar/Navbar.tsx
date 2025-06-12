@@ -151,13 +151,13 @@ export const Navbar = () => {
               onMouseEnter={() => setHoveredPath(null)}
             >
               <MobileMenu sections={sections} pages={simplePages} pagesWithSubmenu={pagesWithSubmenu} />
-              <Link href={`/${locale}`} className="flex items-center gap-4 sm:gap-4 h-12">
+              <Link href={`/${locale}`} className="flex items-center gap-2 sm:gap-4 h-12 min-w-[120px]">
                 {/* Wrapper con límite visual */}
-                <div className="h-12 w-auto">
+                <div className="h-10 w-auto max-w-[140px] sm:h-12">
                   <img
                     src="/images/Logovf.png"
                     alt="Logo Icon"
-                    className="h-full scale-[3.5] origin-left lg:scale-100 lg:h-10 object-contain"
+                    className="h-full w-auto object-contain transition-all duration-200"
                   />
                 </div>
               </Link>

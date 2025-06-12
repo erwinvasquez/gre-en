@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { ArrowRight, CheckCircle, Info, Zap, Settings, FileText } from "lucide-react"
 import { AnimatedElement } from "@/components/AnimatedElement"
+import Link from "next/link"
 
 // Generar metadatos para SEO
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
@@ -185,23 +186,122 @@ export default async function BIPVPage({ params: { locale } }: { params: { local
 
           {/* CTA para Vidrios Fotovoltaicos */}
           <AnimatedElement animation="fade-in" duration="slow" className="text-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              {t("photovoltaicGlass.cta")} <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Link href={`/${locale}/contacto`}>
+              <Button size="lg" className="bg-primary hover:bg-primary/90">
+                {t("photovoltaicGlass.cta")} <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </AnimatedElement>
         </Container>
       </Section>
 
-      {/* Teja Solar (Placeholder) */}
+      {/* Teja Solar */}
       <Section id="teja-solar" heightType="content">
         <Container size="large" className="py-16 overflow-hidden">
-          <AnimatedElement animation="fade-in" duration="slow">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">{t("solarTile.title")}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">{t("solarTile.title")}</h2>
 
-            <div className="p-8 rounded-lg text-center">
-              <p className="text-lg text-muted-foreground mb-6">{t("solarTile.comingSoon")}</p>
-              <Button variant="outline">{t("solarTile.moreInfo")}</Button>
-            </div>
+          {/* Sección 1: ¿Qué es y Ventajas? */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-20">
+            <AnimatedElement animation="slide-in-left" duration="slow">
+              <h3 className="text-2xl font-bold mb-6 flex items-center text-primary">
+                <Info className="mr-3 h-6 w-6" />
+                {t("solarTile.whatIs.title")}
+              </h3>
+              <p className="text-lg mb-6">{t("solarTile.whatIs.description")}</p>
+
+              <h4 className="text-xl font-semibold mb-4">{t("solarTile.advantages.title")}:</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
+                  <div>
+                    <span className="font-medium">{t("solarTile.advantages.advantage1.title")}:</span>{" "}
+                    {t("solarTile.advantages.advantage1.description")}
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
+                  <div>
+                    <span className="font-medium">{t("solarTile.advantages.advantage2.title")}:</span>{" "}
+                    {t("solarTile.advantages.advantage2.description")}
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
+                  <div>
+                    <span className="font-medium">{t("solarTile.advantages.advantage3.title")}:</span>{" "}
+                    {t("solarTile.advantages.advantage3.description")}
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
+                  <div>
+                    <span className="font-medium">{t("solarTile.advantages.advantage4.title")}:</span>{" "}
+                    {t("solarTile.advantages.advantage4.description")}
+                  </div>
+                </li>
+              </ul>
+            </AnimatedElement>
+            <AnimatedElement
+              animation="slide-in-right"
+              duration="slow"
+              className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-xl"
+            >
+              <Image
+                src="/images/bipv/teja-solar1.jpg"
+                alt="Teja solar instalada en un techo"
+                fill
+                className="object-cover"
+              />
+            </AnimatedElement>
+          </div>
+
+          {/* Sección 2: Información Técnica */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-12">
+          <AnimatedElement
+              animation="slide-in-right"
+              duration="slow"
+              className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-xl"
+            >
+              <Image
+                src="/images/bipv/teja-solar2.jpg"
+                alt="Especificaciones técnicas de la teja solar"
+                fill
+                className="object-cover"
+              />
+            </AnimatedElement>
+            <AnimatedElement animation="slide-in-left" duration="slow">
+              <h3 className="text-2xl font-bold mb-6 flex items-center text-primary">
+                <Settings className="mr-3 h-6 w-6" />
+                {t("solarTile.technical.title")}
+              </h3>
+
+              <h4 className="text-xl font-semibold mb-4">{t("solarTile.technical.specifications.title")}:</h4>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-start">
+                  <FileText className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
+                  <div>
+                    <span className="font-medium">{t("solarTile.technical.specifications.spec1.title")}:</span>{" "}
+                    {t("solarTile.technical.specifications.spec1.description")}
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <FileText className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
+                  <div>
+                    <span className="font-medium">{t("solarTile.technical.specifications.spec2.title")}:</span>{" "}
+                    {t("solarTile.technical.specifications.spec2.description")}
+                  </div>
+                </li>
+              </ul>
+            </AnimatedElement>
+          </div>
+
+          {/* CTA para Teja Solar */}
+          <AnimatedElement animation="fade-in" duration="slow" className="text-center">
+            <Link href={`/${locale}/contacto`}>
+              <Button size="lg" className="bg-primary hover:bg-primary/90">
+                {t("solarTile.cta")} <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </AnimatedElement>
         </Container>
       </Section>
@@ -361,9 +461,11 @@ export default async function BIPVPage({ params: { locale } }: { params: { local
 
           {/* CTA para Panel Techo Solar */}
           <AnimatedElement animation="fade-in" duration="slow" className="text-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              {t("solarRoofPanel.cta")} <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Link href={`/${locale}/contacto`}>
+              <Button size="lg" className="bg-primary hover:bg-primary/90">
+                {t("solarRoofPanel.cta")} <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </AnimatedElement>
         </Container>
       </Section>
@@ -560,9 +662,11 @@ export default async function BIPVPage({ params: { locale } }: { params: { local
 
           {/* CTA para Panel Solar Portátil */}
           <AnimatedElement animation="fade-in" duration="slow" className="text-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              {t("portableSolarPanel.cta")} <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Link href={`/${locale}/contacto`}>
+              <Button size="lg" className="bg-primary hover:bg-primary/90">
+                {t("portableSolarPanel.cta")} <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </AnimatedElement>
         </Container>
       </Section>
@@ -573,9 +677,18 @@ export default async function BIPVPage({ params: { locale } }: { params: { local
           <AnimatedElement animation="fade-in" duration="slow" className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("contact.title")}</h2>
             <p className="text-xl mb-8">{t("contact.description")}</p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              {t("contact.button")} <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href={`/${locale}/calculadora`}>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 w-full sm:w-auto">
+                  {t("contact.calculator")} <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href={`/${locale}/contacto`}>
+                <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                  {t("contact.button")} <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
           </AnimatedElement>
         </Container>
       </Section>

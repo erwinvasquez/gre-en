@@ -33,15 +33,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/calculadora/page.js"
     ],
-    "/[locale]/products/photovoltaic/page": [
+    "/[locale]/products/bipv/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/products/photovoltaic/page.js"
+      "static/chunks/app/[locale]/products/bipv/page.js"
     ],
     "/[locale]/products/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/products/layout.js"
+    ],
+    "/[locale]/products/wind/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/products/wind/page.js"
+    ],
+    "/[locale]/products/photovoltaic/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/products/photovoltaic/page.js"
     ],
     "/[locale]/contacto/page": [
       "static/chunks/webpack.js",
@@ -53,16 +63,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/admin/page.js"
-    ],
-    "/[locale]/admin/contacts/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/admin/contacts/page.js"
-    ],
-    "/[locale]/debug/weather/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/debug/weather/page.js"
     ]
   }
 }

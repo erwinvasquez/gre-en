@@ -54,6 +54,7 @@ import {
   calculateElectricityCost,
   getExchangeRate,
 } from "@/lib/firestore-products"
+import Link from "next/link"
 
 // Tipos para el formulario
 type QuoteFormData = {
@@ -197,7 +198,7 @@ const PHASES = [
   },
 ]
 
-export default function CotizadorPage() {
+export default function CotizadorPage({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations("QuoteSection")
 
   // USAR DIRECTAMENTE useSession EN LUGAR DEL HOOK useAuth
@@ -800,12 +801,7 @@ export default function CotizadorPage() {
                             {formatNumber(currentElectricityCost.costBs)} Bs
                           </span>
                         </div>
-                        <div className="flex justify-between">
-                          <span>{t("form.costUSD")}:</span>
-                          <span className="font-semibold text-red-600">
-                            {formatNumber(currentElectricityCost.costUSD)} {t("units.usd")}
-                          </span>
-                        </div>
+
                       </div>
                     </div>
                   )}
@@ -886,119 +882,135 @@ export default function CotizadorPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    {/* Tu Gasto Actual de Electricidad */}
-                    <div className="bg-red-50 border border-red-200 p-4 rounded-lg">
-                      <h3 className="text-lg font-semibold mb-3 flex items-center text-red-700">
-                        <Zap className="h-5 w-5 mr-2" />
-                        {t("results.currentElectricityCost")}
-                      </h3>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="text-center">
-                          <p className="text-muted-foreground mb-1">{t("results.monthlyBs")}</p>
-                          <p className="text-2xl font-bold text-red-600">
-                            {formatNumber(results.electricityCost?.monthlyBs) || "0"} Bs
-                          </p>
-                          <p className="text-xs text-muted-foreground mt-1">
-                            {results.electricityCost?.rateType || t("units.rateType")}
-                          </p>
-                        </div>
-                        <div className="text-center">
-                          <p className="text-muted-foreground mb-1">{t("results.yearlyBs")}</p>
-                          <p className="text-2xl font-bold text-red-600">
-                            {formatNumber(results.savings?.yearlyBs) || "0"} Bs
-                          </p>
-                          <p className="text-xs text-muted-foreground mt-1">{t("units.yearly")}</p>
+                    {Number(formData.monthlyConsumption) < 1000 ? (
+                      <div className="text-center py-8">
+                        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                          <h3 className="text-xl font-semibold text-blue-800 mb-3">{t("form.lowConsumption.title")}</h3>
+                          <p className="text-blue-700 mb-6">{t("form.lowConsumption.message")}</p>
+                          <Link href={`/${locale}/contacto`}>
+                            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                              {t("form.lowConsumption.button")}
+                            </Button>
+                          </Link>
                         </div>
                       </div>
-                    </div>
-
-                    {/* Inversión Generación Solar */}
-                    <div className="text-center bg-primary/10 p-4 rounded-lg">
-                      <h3 className="text-lg font-semibold mb-2">{t("results.systemCost")}</h3>
-                      <p className="text-3xl font-bold text-primary">
-                        {formatNumber((results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1))}{" "}
-                        {t("units.usd")}
-                      </p>
-                      {results.systemCost?.transport > 0 && (
-                        <p className="text-xs text-muted-foreground mt-1">
-                          {t("results.transportIncluded")}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* ROI (Retorno de Inversión) */}
-                    <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
-                      <h3 className="text-lg font-semibold mb-3 flex items-center text-green-700">
-                        <ArrowRight className="h-5 w-5 mr-2" />
-                        {t("results.roi")}
-                      </h3>
-                      <div className="space-y-3">
-                        <div className="bg-yellow-50 border border-yellow-200 p-3 rounded-lg">
-                          <p className="text-s text-amber-700">
-                            <strong>{t("results.note")}</strong>
-                          </p>
+                    ) : (
+                      <>
+                        {/* Tu Gasto Actual de Electricidad */}
+                        <div className="bg-red-50 border border-red-200 p-4 rounded-lg">
+                          <h3 className="text-lg font-semibold mb-3 flex items-center text-red-700">
+                            <Zap className="h-5 w-5 mr-2" />
+                            {t("results.currentElectricityCost")}
+                          </h3>
+                          <div className="grid grid-cols-2 gap-4">
+                            <div className="text-center">
+                              <p className="text-muted-foreground mb-1">{t("results.monthlyBs")}</p>
+                              <p className="text-2xl font-bold text-red-600">
+                                {formatNumber(results.electricityCost?.monthlyBs) || "0"} Bs
+                              </p>
+                              <p className="text-xs text-muted-foreground mt-1">
+                                {results.electricityCost?.rateType || t("units.rateType")}
+                              </p>
+                            </div>
+                            <div className="text-center">
+                              <p className="text-muted-foreground mb-1">{t("results.yearlyBs")}</p>
+                              <p className="text-2xl font-bold text-red-600">
+                                {formatNumber(results.savings?.yearlyBs) || "0"} Bs
+                              </p>
+                              <p className="text-xs text-muted-foreground mt-1">{t("units.yearly")}</p>
+                            </div>
+                          </div>
                         </div>
 
-                        <div className="grid grid-cols-3 gap-4">
-                          <div className="text-center">
-                            <p className="text-muted-foreground">{t("results.allowedSavings")}</p>
-                            <p className="text-xl font-bold text-green-600">
-                              {formatNumber((results.electricityCost?.monthlyBs || 0) * 0.8 * 12)} Bs
-                            </p>
+                        {/* Inversión Generación Solar */}
+                        <div className="text-center bg-primary/10 p-4 rounded-lg">
+                          <h3 className="text-lg font-semibold mb-2">{t("results.systemCost")}</h3>
+                          <p className="text-3xl font-bold text-primary">
+                            {formatNumber((results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1))}{" "}
+                            Bs
+                          </p>
+                          {results.systemCost?.transport > 0 && (
                             <p className="text-xs text-muted-foreground mt-1">
-                              {formatNumber((results.electricityCost?.monthlyBs || 0) * 0.8)} Bs/mes
+                              {t("results.transportIncluded")}
                             </p>
-                          </div>
-                          <div className="text-center">
-                            <p className="text-muted-foreground">{t("results.paybackPeriod")}</p>
-                            <p className="text-xl font-bold text-blue-600">
-                              {formatNumber(
-                                ((results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1)) /
-                                ((results.electricityCost?.monthlyBs || 0) * 0.8 * 12),
-                              )}{" "}
-                              {t("units.years")}
-                            </p>
-                            <p className="text-xs text-muted-foreground mt-1">{t("results.paybackPeriodHelper")}</p>
-                          </div>
-                          <div className="text-center">
-                            <p className="text-muted-foreground">{t("results.savings25Years")}</p>
-                            <p className="text-xl font-bold text-green-600">
-                              {formatNumber(
-                                (results.electricityCost?.monthlyBs || 0) * 0.8 * 12 * 25 -
-                                (results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1),
-                              )}{" "}
-                              Bs
-                            </p>
-                            <p className="text-xs text-muted-foreground mt-1">{t("results.savings25YearsHelper")}</p>
-                          </div>
+                          )}
                         </div>
-                      </div>
-                    </div>
 
-                    {/* Impacto Ambiental */}
-                    <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
-                      <h3 className="text-lg font-semibold mb-3 flex items-center text-green-700">
-                        <Tree2 className="h-5 w-5 mr-2" />
-                        {t("results.environmental.title")}
-                      </h3>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                        <div className="text-center">
-                          <p className="text-muted-foreground mb-1">{t("results.environmental.treesEquivalent")}</p>
-                          <p className="text-2xl font-bold text-green-600">{formatNumber(treesEquivalent)}</p>
-                          <p className="text-xs text-muted-foreground mt-1">{t("results.environmental.trees")}</p>
+                        {/* ROI (Retorno de Inversión) */}
+                        <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                          <h3 className="text-lg font-semibold mb-3 flex items-center text-green-700">
+                            <ArrowRight className="h-5 w-5 mr-2" />
+                            {t("results.roi")}
+                          </h3>
+                          <div className="space-y-3">
+                            <div className="bg-yellow-50 border border-yellow-200 p-3 rounded-lg">
+                              <p className="text-s text-amber-700">
+                                <strong>{t("results.note")}</strong>
+                              </p>
+                            </div>
+
+                            <div className="grid grid-cols-3 gap-4">
+                              <div className="text-center">
+                                <p className="text-muted-foreground">{t("results.allowedSavings")}</p>
+                                <p className="text-xl font-bold text-green-600">
+                                  {formatNumber((results.electricityCost?.monthlyBs || 0) * 0.8 * 12)} Bs
+                                </p>
+                                <p className="text-xs text-muted-foreground mt-1">
+                                  {formatNumber((results.electricityCost?.monthlyBs || 0) * 0.8)} Bs/mes
+                                </p>
+                              </div>
+                              <div className="text-center">
+                                <p className="text-muted-foreground">{t("results.paybackPeriod")}</p>
+                                <p className="text-xl font-bold text-blue-600">
+                                  {formatNumber(
+                                    ((results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1)) /
+                                    ((results.electricityCost?.monthlyBs || 0) * 0.8 * 12),
+                                  )}{" "}
+                                  {t("units.years")}
+                                </p>
+                                <p className="text-xs text-muted-foreground mt-1">{t("results.paybackPeriodHelper")}</p>
+                              </div>
+                              <div className="text-center">
+                                <p className="text-muted-foreground">{t("results.savings25Years")}</p>
+                                <p className="text-xl font-bold text-green-600">
+                                  {formatNumber(
+                                    (results.electricityCost?.monthlyBs || 0) * 0.8 * 12 * 25 -
+                                    (results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1),
+                                  )}{" "}
+                                  Bs
+                                </p>
+                                <p className="text-xs text-muted-foreground mt-1">{t("results.savings25YearsHelper")}</p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="text-center">
-                          <p className="text-muted-foreground mb-1">{t("results.environmental.carsRemoved")}</p>
-                          <p className="text-2xl font-bold text-blue-600">{formatNumber(carsRemoved)}</p>
-                          <p className="text-xs text-muted-foreground mt-1">{t("results.environmental.cars")}</p>
+
+                        {/* Impacto Ambiental */}
+                        <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                          <h3 className="text-lg font-semibold mb-3 flex items-center text-green-700">
+                            <Tree2 className="h-5 w-5 mr-2" />
+                            {t("results.environmental.title")}
+                          </h3>
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                            <div className="text-center">
+                              <p className="text-muted-foreground mb-1">{t("results.environmental.treesEquivalent")}</p>
+                              <p className="text-2xl font-bold text-green-600">{formatNumber(treesEquivalent)}</p>
+                              <p className="text-xs text-muted-foreground mt-1">{t("results.environmental.trees")}</p>
+                            </div>
+                            <div className="text-center">
+                              <p className="text-muted-foreground mb-1">{t("results.environmental.carsRemoved")}</p>
+                              <p className="text-2xl font-bold text-blue-600">{formatNumber(carsRemoved)}</p>
+                              <p className="text-xs text-muted-foreground mt-1">{t("results.environmental.cars")}</p>
+                            </div>
+                            <div className="text-center">
+                              <p className="text-muted-foreground mb-1">{t("results.environmental.gasolineSaved")}</p>
+                              <p className="text-2xl font-bold text-orange-600">{formatNumber(gasolineSaved)}</p>
+                              <p className="text-xs text-muted-foreground mt-1">{t("results.environmental.liters")}</p>
+                            </div>
+                          </div>
                         </div>
-                        <div className="text-center">
-                          <p className="text-muted-foreground mb-1">{t("results.environmental.gasolineSaved")}</p>
-                          <p className="text-2xl font-bold text-orange-600">{formatNumber(gasolineSaved)}</p>
-                          <p className="text-xs text-muted-foreground mt-1">{t("results.environmental.liters")}</p>
-                        </div>
-                      </div>
-                    </div>
+                      </>
+                    )}
                   </CardContent>
                 </Card>
               </AnimatedElement>
@@ -1021,18 +1033,17 @@ export default function CotizadorPage() {
         </div>
 
         {/* Mensaje de aclaración y botón de contacto */}
-        {results && (
+        {results && Number(formData.monthlyConsumption) >= 1000 && (
           <AnimatedElement animation="slide-up" className="mt-8">
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
               <p className="text-lg text-blue-800 mb-4">
-                {t("results.note")}
+                {t("results.disclaimer")}
               </p>
-              <Button
-                onClick={handleWhatsAppQuote}
-                className="bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                {t("results.requestQuote")}
-              </Button>
+              <Link href={`/${locale}/contacto`}>
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                  {t("results.requestQuote")}
+                </Button>
+              </Link>
             </div>
           </AnimatedElement>
         )}
