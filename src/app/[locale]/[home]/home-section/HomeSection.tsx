@@ -21,7 +21,7 @@ export default function HomeSection() {
       </div>
 
       {/* Contenido superpuesto */}
-      <Container size="xlarge" className="relative z-10 flex flex-col items-start justify-end h-full pb-10 md:pb-24 overflow-hidden" style={{paddingTop: '50vh', paddingBottom: '25vh'}}>
+      <Container size="xlarge" className="relative z-10 flex flex-col items-start justify-end h-full pb-10 md:pb-24 overflow-hidden" style={{paddingTop: '65vh', paddingBottom: '15vh'}}>
         <AnimatedElement animation="slide-in-left" className="max-w-2xl mb-4">
           <h1 className="font-bold text-white">
             <span className="block text-5xl md:text-6xl lg:text-7xl mb-2">{t("titleLine1")}</span>
@@ -29,20 +29,18 @@ export default function HomeSection() {
           </h1>
         </AnimatedElement>
 
-        <AnimatedElement animation="slide-up" delay={200} className="flex gap-4 mt-6">
+        <AnimatedElement animation="slide-up" delay={200} className="flex gap-3 mt-6">
           <Link
             href="#solutions"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-700 text-white font-medium py-3 px-6 rounded-md transition-all hover:shadow-lg hover:from-green-600 hover:to-green-800"
+            className="inline-flex items-center bg-gradient-to-r from-green-500 to-green-700 text-white font-medium py-2 px-4 rounded-md text-base md:text-lg whitespace-nowrap transition-all hover:shadow-lg hover:from-green-600 hover:to-green-800"
           >
             {t("buttonSolutions")}
-            <ArrowRight size={18} />
           </Link>
           <Link
             href="/es/calculadora"
-            className="inline-flex items-center gap-2 bg-white text-green-700 font-medium py-3 px-6 rounded-md border border-green-700 transition-all hover:bg-green-50"
+            className="inline-flex items-center bg-white text-green-700 font-medium py-2 px-4 rounded-md border border-green-700 text-base md:text-lg whitespace-nowrap transition-all hover:bg-green-50"
           >
             {t("calculatorButton", { defaultValue: "Calcular Inversión" })}
-            <ArrowRight size={18} />
           </Link>
         </AnimatedElement>
       </Container>

@@ -1,9 +1,6 @@
 {
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/[locale]/admin/page": "app/[locale]/admin/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/calculadora/page": "app/[locale]/calculadora/page.js",
-  "/[locale]/products/bipv/page": "app/[locale]/products/bipv/page.js",
   "/[locale]/products/wind/page": "app/[locale]/products/wind/page.js"
 }

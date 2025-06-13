@@ -52,9 +52,9 @@ export default async function WindPage({ params: { locale } }: { params: { local
                 </div>
                 <p className="text-lg text-muted-foreground mb-6">{t("hero.description")}</p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="/calculadora" className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-                    <Calculator className="w-5 h-5 mr-2" />
-                    {t("cta.calc")}
+                  <a href="/contacto" className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  {t("cta.contact")}
                   </a>
                 </div>
               </div>
@@ -225,13 +225,9 @@ export default async function WindPage({ params: { locale } }: { params: { local
               <h2 className="text-3xl font-bold mb-6">{t("cta.title")}</h2>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">{t("cta.description")}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/calculadora" className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-                  <Calculator className="w-5 h-5 mr-2" />
-                  {t("cta.calc")}
-                </a>
-                <a href="/contacto" className="inline-flex items-center px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:bg-secondary/90 transition-colors">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  {t("cta.contact")}
+                <a href="/contacto" className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                {t("cta.contact")}
                 </a>
               </div>
             </div>

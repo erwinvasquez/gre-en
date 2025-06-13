@@ -1016,13 +1016,13 @@
     },
     "hero": {
       "title": "TURBINA EÓLICA",
-      "power": "3000 W",
+      "power": "3KW - 10 KW",
       "powerLabel": "Potência",
       "efficiency": "90%",
       "efficiencyLabel": "Eficiência",
       "lifespan": "20 anos",
       "lifespanLabel": "Vida Útil",
-      "description": "Gerador eólico de eixo horizontal de alta eficiência para projetos residenciais e comerciais. Projetado para maximizar a conversão de energia eólica em eletricidade com mais de 90% de desempenho."
+      "description": "Gerador eólico de eixo horizontal de alta eficiência para projetos industriais, comerciais, agropecuários e públicos. Projetado para maximizar a conversão de energia eólica em eletricidade com mais de 90% de desempenho."
     },
     "specifications": {
       "title": "Especificações Técnicas",
@@ -1080,7 +1080,7 @@
       "title": "Pronto para Energizar seu Projeto?",
       "description": "Calcule o potencial de energia eólica para seu projeto ou consulte nossos especialistas para uma solução personalizada.",
       "calc": "Calcular Projeto",
-      "contact": "Contatar Consultor"
+      "contact": "Contate-nos"
     }
   }
 }

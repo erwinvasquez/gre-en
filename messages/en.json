@@ -1021,13 +1021,13 @@
     },
     "hero": {
       "title": "WIND TURBINE",
-      "power": "3000 W",
+      "power": "3KW - 10 KW",
       "powerLabel": "Power",
       "efficiency": "90%",
       "efficiencyLabel": "Efficiency",
       "lifespan": "20 years",
       "lifespanLabel": "Lifespan",
-      "description": "High-efficiency horizontal axis wind generator for residential and commercial projects. Designed to maximize wind energy conversion into electricity with over 90% performance."
+      "description": "High-efficiency horizontal axis wind generator for industrial, commercial, agricultural and public projects. Designed to maximize wind energy conversion into electricity with over 90% performance."
     },
     "specifications": {
       "title": "Technical Specifications",
@@ -1085,7 +1085,7 @@
       "title": "Ready to Power Your Project?",
       "description": "Calculate the wind energy potential for your project or consult with our experts for a customized solution.",
       "calc": "Calculate Project",
-      "contact": "Contact Advisor"
+      "contact": "Contact Us"
     }
   }
 }
