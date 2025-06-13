@@ -26,7 +26,7 @@ export default async function BIPVPage({ params: { locale } }: { params: { local
           <div className="max-w-3xl mx-auto text-center">
             <AnimatedElement animation="fade-in" duration="slow">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">{t("hero.title")}</h1>
-              <p className="text-xl text-muted-foreground mb-8">{t("hero.subtitle")}</p>
+              <p className="text-xl text-muted-foreground mb-2">{t("hero.subtitle")}</p>
             </AnimatedElement>
           </div>
         </Container>
@@ -34,7 +34,7 @@ export default async function BIPVPage({ params: { locale } }: { params: { local
 
       {/* Vidrios Fotovoltaicos */}
       <Section id="vidrios-fotovoltaicos" heightType="content">
-        <Container size="large" className="py-16 overflow-hidden">
+        <Container size="large" className="py-0 overflow-hidden">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">
             {t("photovoltaicGlass.title")}
           </h2>
