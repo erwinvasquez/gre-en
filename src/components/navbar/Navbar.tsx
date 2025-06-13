@@ -133,8 +133,8 @@ export const Navbar = () => {
       { id: "future-energy", label: S("future-energy") },
       { id: "sectors", label: S("sectors") },
       { id: "solutions", label: S("solutions") },
-      // { id: "about-us", label: S("about-us") },
       { id: "contact", label: S("contact") },
+      { id: "about-us", label: S("about-us") },
     ],
     [S],
   )

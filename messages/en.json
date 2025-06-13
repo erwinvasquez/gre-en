@@ -84,6 +84,58 @@
     "buttonSolutions": "View Solutions",
     "calculatorButton": "Calculate Investment"
   },
+  "AboutSection": {
+    "badge": "About Us",
+    "title": "Who We Are",
+    "subtitle": "Pioneering sustainable energy solutions in Bolivia with innovative technology and strategic partnerships",
+    "mission": {
+      "title": "Our Mission",
+      "description": "At Green Bolivia, we work alongside businesses and communities to develop innovative projects that protect the environment and improve quality of life by offering practical and responsible energy solutions."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be a key ally in the journey towards greener development, leading the renewable energy revolution in Bolivia and setting new standards for sustainable practices."
+    },
+    "partnership": {
+      "badge": "Official Partnership",
+      "title": "Exclusive Representatives of JINSUN in Bolivia",
+      "description": "We're proud to be the official representatives of JINSUN, one of China's leading manufacturers of renewable energy technologies, bringing cutting-edge solutions to the Bolivian market.",
+      "benefits": {
+        "benefit1": "Direct access to the latest BIPV (Building Integrated Photovoltaics) technology",
+        "benefit2": "Quality assurance with factory-direct products and technical support",
+        "benefit3": "Exclusive distribution rights for innovative solar solutions in Bolivia"
+      },
+      "images": {
+        "signing": {
+          "alt": "Signing ceremony with JINSUN representatives",
+          "caption": "Official partnership signing ceremony"
+        }
+      }
+    },
+    "gallery": {
+      "title": "Our Partnership Journey",
+      "images": {
+        "signing": {
+          "alt": "Representative signing the agreement",
+          "caption": "Formalizing our exclusive partnership with JINSUN"
+        },
+        "representatives": {
+          "alt": "Representatives with solar and wind energy model",
+          "caption": "JINSUN and Green Bolivia representatives with renewable energy model"
+        },
+        "ceremony": {
+          "alt": "Group photo of all attendees at the signing ceremony",
+          "caption": "Celebrating our strategic alliance for a sustainable Bolivia"
+        }
+      }
+    },
+    "cta": {
+      "title": "Join the Green Energy Revolution",
+      "description": "Discover how our exclusive BIPV technology can transform your home, office, or building into an energy-generating asset with style and efficiency.",
+      "primaryButton": "Contact Us",
+      "secondaryButton": "Learn More About BIPV"
+    }
+  },
   "FutureEnergySection": {
     "header": "Innovative Energy Solutions for the Future",
     "description": "Discover how our solutions are revolutionizing the way we interact with energy",

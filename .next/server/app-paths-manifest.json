@@ -1,6 +1,7 @@
 {
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/products/wind/page": "app/[locale]/products/wind/page.js",
-  "/[locale]/products/bipv/page": "app/[locale]/products/bipv/page.js"
+  "/[locale]/products/bipv/page": "app/[locale]/products/bipv/page.js",
+  "/[locale]/products/wind/page": "app/[locale]/products/wind/page.js"
 }

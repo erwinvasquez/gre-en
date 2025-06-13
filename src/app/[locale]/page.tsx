@@ -50,6 +50,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
       <SectorsSection />
       <SolutionsSection />
       <ContactSection />
+      <AboutSection />
     </main>
   )
 }
