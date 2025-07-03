@@ -11,7 +11,6 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import {
   Calculator,
   Sun,
@@ -30,7 +29,7 @@ import {
   Zap,
   ArrowRight,
   TreesIcon as Tree2,
-  Download,
+  User,
 } from "lucide-react"
 import {
   getCotizadorConfig,
@@ -55,6 +54,10 @@ import {
   getExchangeRate,
 } from "@/lib/firestore-products"
 import Link from "next/link"
+import { collection, addDoc, serverTimestamp } from "firebase/firestore"
+import { db } from "@/lib/firebase"
+import { getCountries, getCountryCallingCode } from "react-phone-number-input/input"
+import en from "react-phone-number-input/locale/en.json"
 
 // Tipos para el formulario
 type QuoteFormData = {
@@ -222,6 +225,15 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
     details: string
   } | null>(null)
 
+  // Estados para el formulario de cliente
+  const [showClientForm, setShowClientForm] = useState(false)
+  const [clientData, setClientData] = useState({
+    name: "",
+    phoneCountryCode: "BO",
+    phoneNumber: "",
+  })
+  const [isSavingClient, setIsSavingClient] = useState(false)
+
   // Formatear números con comas para miles y puntos para decimales
   const formatNumber = (number: number | undefined | null): string => {
     if (number === undefined || number === null) {
@@ -332,6 +344,38 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
     return Object.keys(newErrors).length === 0
   }
 
+  // Función para guardar en la base de datos - SOLO DATOS ESENCIALES
+  const saveQuoteToDatabase = async () => {
+    try {
+      const quoteData = {
+        // Datos del formulario
+        formData: {
+          monthlyConsumption: formData.monthlyConsumption,
+          department: formData.department,
+          sector: formData.sector,
+          phase: formData.phase,
+          includeBattery: formData.includeBattery,
+        },
+        // Datos del cliente
+        clientInfo: {
+          name: clientData.name,
+          phone: `+${getCountryCallingCode(clientData.phoneCountryCode as any)}${clientData.phoneNumber}`,
+          phoneCountryCode: clientData.phoneCountryCode,
+          phoneNumber: clientData.phoneNumber,
+        },
+        // Metadatos
+        createdAt: serverTimestamp(),
+        status: "Nueva Cotización",
+        source: "Calculadora Web",
+      }
+
+      await addDoc(collection(db, "quotes"), quoteData)
+      console.log("✅ Cotización guardada en la base de datos")
+    } catch (error) {
+      console.error("❌ Error al guardar cotización:", error)
+    }
+  }
+
   // Calcular cotización
   const calculateQuote = async () => {
     console.log("🔍 STARTING CALCULATION:", {
@@ -341,6 +385,12 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
     })
 
     if (!validateForm() || !config) return
+
+    // Si no es admin y no tenemos datos del cliente, mostrar formulario
+    if (!isAdmin && !clientData.name) {
+      setShowClientForm(true)
+      return
+    }
 
     setIsCalculating(true)
 
@@ -435,11 +485,6 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
       const co2Reduction = yearlyGeneration * co2FactorPerKwh
       const co2Reduction25Years = co2Reduction * 25
 
-      // Comparaciones ambientales
-      const treesEquivalent = co2Reduction / 20
-      const carsRemoved = co2Reduction / 2500
-      const gasolineSaved = co2Reduction / 2.3
-
       const quoteResults: QuoteResults = {
         panelsNeeded,
         totalPower,
@@ -517,12 +562,66 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
       })
 
       setResults(quoteResults)
+
+      // Si no es admin, guardar en la base de datos (solo datos esenciales)
+      if (!isAdmin) {
+        await saveQuoteToDatabase()
+      }
     } catch (error) {
       console.error("Error calculating quote:", error)
       setErrors({ general: error instanceof Error ? error.message : "Error en el cálculo" })
     } finally {
       setIsCalculating(false)
     }
+  }
+
+  // Funciones para manejar el formulario de cliente
+  const handleClientFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (!clientData.name || !clientData.phoneNumber) {
+      setErrors({ client: "Nombre y teléfono son requeridos" })
+      return
+    }
+
+    setIsSavingClient(true)
+    setShowClientForm(false)
+
+    // Proceder con el cálculo
+    await calculateQuote()
+    setIsSavingClient(false)
+  }
+
+  const handleClientDataChange = (field: string, value: string) => {
+    setClientData((prev) => ({ ...prev, [field]: value }))
+    if (errors.client) {
+      setErrors((prev) => ({ ...prev, client: "" }))
+    }
+  }
+
+  const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    if (/^\d*$/.test(value)) {
+      setClientData((prev) => ({ ...prev, phoneNumber: value }))
+    }
+  }
+
+  const getSelectedCountryCallingCode = () => {
+    if (!clientData.phoneCountryCode) return ""
+    try {
+      return `+${getCountryCallingCode(clientData.phoneCountryCode as any)}`
+    } catch {
+      return ""
+    }
+  }
+
+  const getFlagEmoji = (countryCode: string): string => {
+    if (!countryCode || countryCode.length !== 2) return "🌐"
+    const codePoints = countryCode
+      .toUpperCase()
+      .split("")
+      .map((char) => 127397 + char.charCodeAt(0))
+    return String.fromCodePoint(...codePoints)
   }
 
   // Función para manejar solicitud de cotización por WhatsApp
@@ -577,9 +676,7 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
             <Calculator className="h-12 w-12 text-primary mr-4" />
             <h1 className="text-4xl font-bold text-foreground">{t("title")}</h1>
           </div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {t("subtitle")}
-          </p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{t("subtitle")}</p>
         </AnimatedElement>
 
         {/* Error de configuración general */}
@@ -648,9 +745,7 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                         placeholder={t("form.monthlyConsumptionPlaceholder")}
                         className={errors.monthlyConsumption ? "border-red-500" : ""}
                       />
-                      <p className="text-xs text-muted-foreground">
-                        {t("form.monthlyConsumptionHelper")}
-                      </p>
+                      <p className="text-xs text-muted-foreground">{t("form.monthlyConsumptionHelper")}</p>
                       {errors.monthlyConsumption && <p className="text-xs text-red-500">{errors.monthlyConsumption}</p>}
                     </div>
 
@@ -692,7 +787,7 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                       {errors.department && <p className="text-xs text-red-500">{errors.department}</p>}
                     </div>
 
-                    {/* Sector - ARREGLADO EL OVERFLOW */}
+                    {/* Sector */}
                     <div className="space-y-2">
                       <label htmlFor="sector" className="block text-sm font-medium text-muted-foreground">
                         <Building className="h-4 w-4 inline mr-1" />
@@ -712,7 +807,6 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                                   <div className="flex-1 min-w-0 overflow-hidden">
                                     <div className="font-medium text-sm truncate">{sector.name}</div>
                                     <div className="text-xs text-muted-foreground truncate">{sector.description}</div>
-
                                   </div>
                                 </div>
                               </SelectItem>
@@ -775,9 +869,7 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                             <Clock className="h-4 w-4 mr-1" />
                             <span className="font-medium">{t("form.batteryDescription")}</span>
                           </div>
-                          <p className="text-amber-700">
-                            {t("form.batteryAutonomy")}
-                          </p>
+                          <p className="text-amber-700">{t("form.batteryAutonomy")}</p>
                         </div>
                       )}
                     </div>
@@ -801,7 +893,6 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                             {formatNumber(currentElectricityCost.costBs)} Bs
                           </span>
                         </div>
-
                       </div>
                     </div>
                   )}
@@ -870,7 +961,111 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
 
           {/* COLUMNA DERECHA - RESULTADOS */}
           <div className="space-y-6 h-full">
-            {results ? (
+            {showClientForm && !isAdmin ? (
+              <AnimatedElement animation="slide-up" className="h-full">
+                <Card className="h-full">
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <User className="h-5 w-5 mr-2" />
+                      Información del Cliente
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <form onSubmit={handleClientFormSubmit} className="space-y-4">
+                      <div className="space-y-2">
+                        <label htmlFor="clientName" className="block text-sm font-medium text-muted-foreground">
+                          Nombre completo <span className="text-red-500">*</span>
+                        </label>
+                        <Input
+                          id="clientName"
+                          value={clientData.name}
+                          onChange={(e) => handleClientDataChange("name", e.target.value)}
+                          placeholder="Ingrese su nombre completo"
+                          required
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <label htmlFor="clientPhone" className="block text-sm font-medium text-muted-foreground">
+                          Teléfono <span className="text-red-500">*</span>
+                        </label>
+                        <div className="flex gap-2">
+                          <Select
+                            value={clientData.phoneCountryCode}
+                            onValueChange={(value) => handleClientDataChange("phoneCountryCode", value)}
+                          >
+                            <SelectTrigger className="w-[140px] flex-shrink-0">
+                              <SelectValue>
+                                {clientData.phoneCountryCode ? (
+                                  <div className="flex items-center">
+                                    <span className="mr-2">{getFlagEmoji(clientData.phoneCountryCode)}</span>
+                                    <span>{getSelectedCountryCallingCode()}</span>
+                                  </div>
+                                ) : (
+                                  <span>Seleccionar</span>
+                                )}
+                              </SelectValue>
+                            </SelectTrigger>
+                            <SelectContent>
+                              {getCountries().map((country) => (
+                                <SelectItem key={country} value={country}>
+                                  <div className="flex items-center">
+                                    <span className="mr-2">{getFlagEmoji(country)}</span>
+                                    <span className="mr-2">+{getCountryCallingCode(country as any)}</span>
+                                    <span className="text-sm text-muted-foreground">{en[country] || country}</span>
+                                  </div>
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+
+                          <Input
+                            id="clientPhone"
+                            value={clientData.phoneNumber}
+                            onChange={handlePhoneNumberChange}
+                            placeholder="Número de teléfono"
+                            className="flex-grow"
+                            required
+                            inputMode="numeric"
+                            pattern="[0-9]*"
+                          />
+                        </div>
+                      </div>
+
+                      {errors.client && (
+                        <div className="p-3 bg-red-50 border border-red-200 rounded-md">
+                          <p className="text-sm text-red-600">{errors.client}</p>
+                        </div>
+                      )}
+
+                      <div className="flex gap-3">
+                        <Button
+                          type="button"
+                          variant="outline"
+                          onClick={() => setShowClientForm(false)}
+                          className="flex-1"
+                        >
+                          Cancelar
+                        </Button>
+                        <Button type="submit" disabled={isSavingClient} className="flex-1">
+                          {isSavingClient ? (
+                            <span className="flex items-center">
+                              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                              Calculando...
+                            </span>
+                          ) : (
+                            <span className="flex items-center">
+                              <Calculator className="mr-2 h-4 w-4" />
+                              Continuar con el Cálculo
+                            </span>
+                          )}
+                        </Button>
+                      </div>
+                    </form>
+                  </CardContent>
+                </Card>
+              </AnimatedElement>
+            ) : results ? (
               <AnimatedElement animation="slide-up" className="h-full">
                 <Card className="h-full">
                   <CardHeader>
@@ -926,13 +1121,13 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                         <div className="text-center bg-primary/10 p-4 rounded-lg">
                           <h3 className="text-lg font-semibold mb-2">{t("results.systemCost")}</h3>
                           <p className="text-3xl font-bold text-primary">
-                            {formatNumber((results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1))}{" "}
+                            {formatNumber(
+                              (results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1),
+                            )}{" "}
                             Bs
                           </p>
                           {results.systemCost?.transport > 0 && (
-                            <p className="text-xs text-muted-foreground mt-1">
-                              {t("results.transportIncluded")}
-                            </p>
+                            <p className="text-xs text-muted-foreground mt-1">{t("results.transportIncluded")}</p>
                           )}
                         </div>
 
@@ -964,7 +1159,7 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                                 <p className="text-xl font-bold text-blue-600">
                                   {formatNumber(
                                     ((results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1)) /
-                                    ((results.electricityCost?.monthlyBs || 0) * 0.8 * 12),
+                                      ((results.electricityCost?.monthlyBs || 0) * 0.8 * 12),
                                   )}{" "}
                                   {t("units.years")}
                                 </p>
@@ -975,11 +1170,13 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                                 <p className="text-xl font-bold text-green-600">
                                   {formatNumber(
                                     (results.electricityCost?.monthlyBs || 0) * 0.8 * 12 * 25 -
-                                    (results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1),
+                                      (results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1),
                                   )}{" "}
                                   Bs
                                 </p>
-                                <p className="text-xs text-muted-foreground mt-1">{t("results.savings25YearsHelper")}</p>
+                                <p className="text-xs text-muted-foreground mt-1">
+                                  {t("results.savings25YearsHelper")}
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -1021,9 +1218,7 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                     <div className="text-muted-foreground">
                       <Calculator className="h-12 w-12 mx-auto mb-4 opacity-50" />
                       <p className="text-lg font-medium mb-2">{t("form.noResults")}</p>
-                      <p className="text-sm">
-                        {t("form.noResultsHelper")}
-                      </p>
+                      <p className="text-sm">{t("form.noResultsHelper")}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -1036,13 +1231,9 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
         {results && Number(formData.monthlyConsumption) >= 1000 && (
           <AnimatedElement animation="slide-up" className="mt-8">
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
-              <p className="text-lg text-blue-800 mb-4">
-                {t("results.disclaimer")}
-              </p>
+              <p className="text-lg text-blue-800 mb-4">{t("results.disclaimer")}</p>
               <Link href={`/${locale}/contacto`}>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                  {t("results.requestQuote")}
-                </Button>
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white">{t("results.requestQuote")}</Button>
               </Link>
             </div>
           </AnimatedElement>
@@ -1059,9 +1250,7 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                   <FileText className="h-5 w-5 mr-2" />
                   {t("results.costsTitle")}
                 </CardTitle>
-                <p className="text-sm text-muted-foreground">
-                  {t("results.costsSubtitle")}
-                </p>
+                <p className="text-sm text-muted-foreground">{t("results.costsSubtitle")}</p>
               </CardHeader>
               <CardContent className="space-y-6">
                 {/* Tabla de Costos Estilo Contabilidad */}
@@ -1138,8 +1327,9 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                           </div>
                           <div className="col-span-2 text-right">
                             $
-                            {formatNumber(results.systemCost?.battery / results.technicalDetails.batteryInfo.quantity) ||
-                              0}
+                            {formatNumber(
+                              results.systemCost?.battery / results.technicalDetails.batteryInfo.quantity,
+                            ) || 0}
                           </div>
                           <div className="col-span-2 text-right font-medium">
                             ${formatNumber(results.systemCost?.battery) || 0}
@@ -1158,8 +1348,8 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                         $
                         {formatNumber(
                           (results.systemCost?.panels || 0) +
-                          (results.systemCost?.inverter || 0) +
-                          (results.systemCost?.battery || 0),
+                            (results.systemCost?.inverter || 0) +
+                            (results.systemCost?.battery || 0),
                         )}
                       </div>
                     </div>
@@ -1239,9 +1429,7 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                         <div className="grid grid-cols-12 gap-4 text-sm">
                           <div className="col-span-1 text-orange-600 font-medium">11</div>
                           <div className="col-span-7">
-                            <div className="font-medium">
-                              {t("results.sectorAdjustment")}
-                            </div>
+                            <div className="font-medium">{t("results.sectorAdjustment")}</div>
                             <div className="text-xs text-muted-foreground">
                               {t("results.multiplier")}: {results.technicalDetails?.sectorMultiplier?.toFixed(2)}x
                             </div>
@@ -1325,7 +1513,9 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                           ${formatNumber(results.systemCost?.total) || 0} USD
                         </div>
                         <div className="text-lg font-semibold text-slate-600">
-                          {formatNumber((results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1))}{" "}
+                          {formatNumber(
+                            (results.systemCost?.total || 0) * (results.technicalDetails?.exchangeRate || 1),
+                          )}{" "}
                           Bs
                         </div>
                         <div className="text-xs text-muted-foreground">
@@ -1335,7 +1525,6 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
                     </div>
                   </div>
                 </div>
-
               </CardContent>
             </Card>
           </AnimatedElement>
@@ -1344,3 +1533,4 @@ export default function CotizadorPage({ params: { locale } }: { params: { locale
     </Section>
   )
 }
+

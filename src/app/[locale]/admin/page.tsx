@@ -20,7 +20,7 @@ import {
   Settings,
   BarChart3,
   FileText,
-  UserCheck,
+  Calculator,
   Calendar,
   ExternalLink,
   Plus,
@@ -233,13 +233,13 @@ export default function AdminDashboard() {
                   </Link>
                   <div className="grid grid-cols-2 gap-2">
                     <Link href="/admin/contacts?status=Nuevo Contacto">
-                      <Button variant="outline" size="sm" className="text-xs w-full">
+                      <Button variant="outline" size="sm" className="text-xs w-full bg-transparent">
                         <Filter className="h-3 w-3 mr-1" />
                         Nuevos
                       </Button>
                     </Link>
                     <Link href="/admin/contacts?status=En Revisión">
-                      <Button variant="outline" size="sm" className="text-xs w-full">
+                      <Button variant="outline" size="sm" className="text-xs w-full bg-transparent">
                         <Clock className="h-3 w-3 mr-1" />
                         En Proceso
                       </Button>
@@ -249,31 +249,37 @@ export default function AdminDashboard() {
               </CardContent>
             </Card>
 
-            {/* Gestión de Usuarios */}
+            {/* Gestión de Cotizaciones - REEMPLAZA GESTIÓN DE USUARIOS */}
             <Card className="hover:shadow-md transition-shadow">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <UserCheck className="h-5 w-5 mr-2 text-green-600" />
-                  Gestión de Usuarios
+                  <Calculator className="h-5 w-5 mr-2 text-green-600" />
+                  Gestión de Cotizaciones
                 </CardTitle>
-                <CardDescription>Administra usuarios y roles del sistema</CardDescription>
+                <CardDescription>Administra todas las cotizaciones realizadas por los clientes</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <Button className="w-full justify-start" variant="outline" disabled>
-                    <Users className="h-4 w-4 mr-2" />
-                    Ver Usuarios
-                    <span className="ml-auto text-xs text-muted-foreground">Próximamente</span>
-                  </Button>
+                  <Link href="/admin/quotes">
+                    <Button className="w-full justify-start">
+                      <Calculator className="h-4 w-4 mr-2" />
+                      Ver Todas las Cotizaciones
+                      <ExternalLink className="h-3 w-3 ml-auto" />
+                    </Button>
+                  </Link>
                   <div className="grid grid-cols-2 gap-2">
-                    <Button variant="outline" size="sm" className="text-xs" disabled>
-                      <Settings className="h-3 w-3 mr-1" />
-                      Roles
-                    </Button>
-                    <Button variant="outline" size="sm" className="text-xs" disabled>
-                      <Plus className="h-3 w-3 mr-1" />
-                      Invitar
-                    </Button>
+                    <Link href="/admin/quotes?status=Nueva Cotización">
+                      <Button variant="outline" size="sm" className="text-xs w-full bg-transparent">
+                        <Plus className="h-3 w-3 mr-1" />
+                        Nuevas
+                      </Button>
+                    </Link>
+                    <Link href="/admin/quotes?filter=recent">
+                      <Button variant="outline" size="sm" className="text-xs w-full bg-transparent">
+                        <Clock className="h-3 w-3 mr-1" />
+                        Recientes
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </CardContent>
@@ -290,17 +296,17 @@ export default function AdminDashboard() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <Button className="w-full justify-start" variant="outline" disabled>
+                  <Button className="w-full justify-start bg-transparent" variant="outline" disabled>
                     <BarChart3 className="h-4 w-4 mr-2" />
                     Ver Reportes
                     <span className="ml-auto text-xs text-muted-foreground">Próximamente</span>
                   </Button>
                   <div className="grid grid-cols-2 gap-2">
-                    <Button variant="outline" size="sm" className="text-xs" disabled>
+                    <Button variant="outline" size="sm" className="text-xs bg-transparent" disabled>
                       <FileText className="h-3 w-3 mr-1" />
                       Exportar
                     </Button>
-                    <Button variant="outline" size="sm" className="text-xs" disabled>
+                    <Button variant="outline" size="sm" className="text-xs bg-transparent" disabled>
                       <Calendar className="h-3 w-3 mr-1" />
                       Programar
                     </Button>
@@ -351,7 +357,7 @@ export default function AdminDashboard() {
                       </div>
                     ))}
                     <Link href="/admin/contacts">
-                      <Button variant="outline" className="w-full mt-3">
+                      <Button variant="outline" className="w-full mt-3 bg-transparent">
                         Ver Todos los Contactos
                         <ExternalLink className="h-3 w-3 ml-2" />
                       </Button>
@@ -362,7 +368,7 @@ export default function AdminDashboard() {
                     <MessageSquare className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                     <p className="text-muted-foreground">No hay contactos recientes</p>
                     <Link href="/admin/contacts">
-                      <Button variant="outline" className="mt-3">
+                      <Button variant="outline" className="mt-3 bg-transparent">
                         Ver Gestión de Contactos
                       </Button>
                     </Link>
@@ -433,6 +439,8 @@ export default function AdminDashboard() {
     </AdminGuard>
   )
 }
+
+
 
 
 
