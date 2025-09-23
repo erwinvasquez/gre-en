@@ -13,10 +13,7 @@
       "name": "GreenEnergy Bolivia",
       "url": "https://greenenergy.com.bo",
       "logo": "https://greenenergy.com.bo/logo.png",
-      "sameAs": [
-        "https://www.facebook.com/greenenergybo",
-        "https://www.instagram.com/greenenergybo"
-      ]
+      "sameAs": "https://www.facebook.com/greenenergybo, https://www.instagram.com/greenenergybo"
     },
     "product": {
       "@type": "Product",
@@ -1133,6 +1130,94 @@
       "description": "Calcula el potencial de energía eólica para tu proyecto o consulta con nuestros expertos para una solución personalizada.",
       "calc": "Calcular Proyecto",
       "contact": "Contáctanos"
+    }
+  },
+  "AirConditionPage": {
+    "hero": {
+      "title": "Aires Acondicionados Solares",
+      "subtitle": "Tecnología híbrida que combina energía solar y eléctrica para máximo ahorro y eficiencia"
+    },
+    "technology": {
+      "title": "Tecnología Solar AC",
+      "mppt": {
+        "title": "MPPT Solar Integrado",
+        "features": {
+          "control": "Control inteligente: Detección y ajuste automático del punto de máxima potencia",
+          "efficiency": "Eficiencia 99.9%: Máxima conversión de energía solar",
+          "range": "Rango 80V-380V: Compatible con diferentes configuraciones de paneles solares",
+          "durability": "Diseño robusto: Vida útil de 10 años garantizada"
+        }
+      },
+      "svpwm": {
+        "title": "Tecnología SVPWM 180°",
+        "features": {
+          "controller": "Controlador sinusoidal 180°: Tecnología avanzada de modulación",
+          "compressor": "Compresor de alta eficiencia: Funciona por debajo de 0.1Hz",
+          "operation": "Operación flexible: Funciona con tensión del 50%",
+          "stability": "Máxima estabilidad: Control de temperatura superior"
+        }
+      }
+    },
+    "products": {
+      "title": "Nuestros Productos",
+      "features": {
+        "wifi": "Control WiFi",
+        "mppt": "MPPT integrado",
+        "savings": "Ahorro 60-100%",
+        "range": "Rango -10°C a +60°C"
+      },
+      "specs": {
+        "cooling": "Enfriamiento",
+        "heating": "Calefacción",
+        "eer": "EER",
+        "dimensions": "Dimensiones"
+      },
+      "reserve": "Reservar por WhatsApp"
+    },
+    "smartWifi": {
+      "title": "Control WiFi Inteligente",
+      "app": {
+        "title": "Aplicación Móvil",
+        "features": {
+          "remote": "Control remoto completo: Enciende, apaga y ajusta desde cualquier lugar",
+          "monitoring": "Monitoreo de energía: Visualiza el consumo y ahorro en tiempo real",
+          "statistics": "Estadísticas detalladas: Historial de consumo diario, mensual y anual",
+          "setup": "Configuración fácil: Instalación y configuración en minutos"
+        }
+      }
+    },
+    "connection": {
+      "title": "Diagrama de Conexión del Sistema",
+      "subtitle": "Sistema Híbrido Solar + Red Eléctrica",
+      "description": "Conexión completa con módulos fotovoltaicos y red eléctrica",
+      "features": {
+        "autoBalance": "Autoequilibrio automático ACDC",
+        "noController": "No requiere controlador de carga inversa",
+        "limitedPower": "Potencia de CA limitada 0-300W",
+        "tempRange": "Rango de temperatura -10°C a +60°C"
+      }
+    },
+    "advantages": {
+      "title": "Ventajas Comparativas",
+      "table": {
+        "feature": "Característica",
+        "deye": "Deye Hybrid Solar AC",
+        "conventional": "Inversor Convencional",
+        "acPower": "Fuente de alimentación AC (220V 50/60Hz)",
+        "dcPower": "Fuente de alimentación DC (80VDC-380VDC)",
+        "mixedPower": "Potencia mixta AC + DC",
+        "noElectricity": "Funciona sin electricidad",
+        "smartControl": "Control inteligente de aplicación",
+        "energyMeter": "Medidor de energía inteligente",
+        "softStart": "Arranque suave",
+        "energySavings": "Ahorro de energía promedio"
+      }
+    },
+    "contact": {
+      "title": "¿Listo para Ahorrar Energía?",
+      "description": "Contacta con nuestros especialistas para una cotización personalizada de tu sistema de aire acondicionado solar",
+      "whatsapp": "Consultar por WhatsApp",
+      "moreInfo": "Más Información"
     }
   }
 }

@@ -556,3 +556,99 @@ export function getVariableCosts(config: CotizadorConfig) {
 export function getExchangeRate(config: CotizadorConfig): number {
   return config.costFactors.exchangeRate
 }
+
+// Tipos para Aires Acondicionados
+export interface AirConditioner {
+  id: string
+  model: string
+  btu: string
+  coolingCapacity: string
+  heatingCapacity: string
+  coolingPower: string
+  heatingPower: string
+  eer: string
+  dimensions: string
+  price_usd: number
+  price_bs: number
+  features: string[]
+  specifications: {
+    voltage_solar: string
+    voltage_network: string
+    interior_dimensions: string
+    exterior_dimensions: string
+  }
+}
+
+// Función para obtener aires acondicionados
+export async function getAirConditioners(): Promise<AirConditioner[]> {
+  try {
+    // Por ahora retornamos datos hardcodeados, pero se puede conectar a Firestore
+    const exchangeRate = 6.96 // Tipo de cambio actual Bs/USD
+    
+    return [
+      {
+        id: "12k",
+        model: "DGWA2-ACDC-12K",
+        btu: "12,000",
+        coolingCapacity: "3,000-13,300 BTU",
+        heatingCapacity: "900-3,960 W",
+        coolingPower: "190-1,270 W",
+        heatingPower: "180-1,250 W",
+        eer: "12.76",
+        dimensions: "840x205x295 mm",
+        price_usd: 22000,
+        price_bs: 22000,
+        features: ["Control WiFi", "MPPT integrado", "Ahorro 60-100%", "Rango -10°C a +60°C"],
+        specifications: {
+          voltage_solar: "80-380V DC",
+          voltage_network: "208V~240V/50~60Hz",
+          interior_dimensions: "840x205x295 mm",
+          exterior_dimensions: "802x564x323 mm"
+        }
+      },
+      {
+        id: "18k", 
+        model: "DGWA1-ACDC-18K",
+        btu: "18,000",
+        coolingCapacity: "4,100-20,400 BTU",
+        heatingCapacity: "1,500-5,250 W",
+        coolingPower: "220-2,100 W",
+        heatingPower: "250-1,410 W",
+        eer: "12.36",
+        dimensions: "1080x330x237 mm",
+        price_usd: 24000,
+        price_bs: 24000,
+        features: ["Control WiFi", "MPPT integrado", "Ahorro 60-100%", "Rango -10°C a +60°C"],
+        specifications: {
+          voltage_solar: "80-380V DC",
+          voltage_network: "208V~240V/50~60Hz",
+          interior_dimensions: "1080x330x237 mm",
+          exterior_dimensions: "802x564x323 mm"
+        }
+      },
+      {
+        id: "24k",
+        model: "DGWA1-ACDC-24K", 
+        btu: "24,000",
+        coolingCapacity: "6,100-27,000 BTU",
+        heatingCapacity: "1,800-7,200 W",
+        coolingPower: "300-3,200 W",
+        heatingPower: "340-2,150 W",
+        eer: "12.29",
+        dimensions: "1080x330x237 mm",
+        price_usd: 26000,
+        price_bs: 26000,
+        features: ["Control WiFi", "MPPT integrado", "Ahorro 60-100%", "Rango -10°C a +60°C"],
+        specifications: {
+          voltage_solar: "80-380V DC",
+          voltage_network: "208V~240V/50~60Hz",
+          interior_dimensions: "1080x330x237 mm",
+          exterior_dimensions: "900x700x337 mm"
+        }
+      }
+    ]
+  } catch (error) {
+    console.error("Error getting air conditioners:", error)
+    return []
+  }
+}

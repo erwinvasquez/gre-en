@@ -47,7 +47,9 @@ export const NavbarSection: React.FC<NavbarSectionProps> = ({ sections }) => {
     if (pathname === `/${locale}`) {
       handleScroll(id)
       // Actualizar manualmente el hash sin recargar la página
-      window.history.pushState(null, "", `#${id}`)
+      if (typeof window !== 'undefined') {
+        window.history.pushState(null, "", `#${id}`)
+      }
     } else {
       setTargetId(id)
       // Navegar primero a la página principal sin hash para permitir el scroll suave
@@ -61,7 +63,9 @@ export const NavbarSection: React.FC<NavbarSectionProps> = ({ sections }) => {
       const timeout = setTimeout(() => {
         handleScroll(targetId)
         // Actualizar manualmente el hash sin recargar la página
-        window.history.pushState(null, "", `#${targetId}`)
+        if (typeof window !== 'undefined') {
+          window.history.pushState(null, "", `#${targetId}`)
+        }
         setTargetId(null)
       }, 300) // Aumentamos el tiempo para asegurar que la página esté completamente cargada
       return () => clearTimeout(timeout)
@@ -71,7 +75,7 @@ export const NavbarSection: React.FC<NavbarSectionProps> = ({ sections }) => {
   // Determinar si una sección está activa
   const isSectionActive = (sectionId: string) => {
     // Verificar si hay un hash en la URL que coincida con el ID de la sección
-    const hash = window.location.hash.substring(1)
+    const hash = typeof window !== 'undefined' ? window.location.hash.substring(1) : ''
 
     // Si estamos en la página principal, usar el activeSection del hook o el hash
     if (isHomePage) {
