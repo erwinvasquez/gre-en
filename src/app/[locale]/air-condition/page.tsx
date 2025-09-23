@@ -61,11 +61,11 @@ export default async function AirConditionPage({ params: { locale } }: { params:
 
   return (
     <main className="flex-1 overflow-hidden">
-      {/* Banner de Oferta Especial para Facebook Ads */}
-      <div className=" from-red-600 to-red-700 text-white py-3 text-center">
+      {/* Banner de Oferta Especial para Facebook Ads - Solo visible en desktop */}
+      <div className="hidden md:block bg-gradient-to-r from-red-600 to-red-700 text-white py-3 text-center">
         <div className="container mx-auto px-4">
           <p className="text-sm md:text-base font-semibold">
-            
+            🔥 OFERTA ESPECIAL - INSTALACIÓN GRATIS + DESCUENTO DEL 15% 🔥
           </p>
         </div>
       </div>
@@ -74,7 +74,22 @@ export default async function AirConditionPage({ params: { locale } }: { params:
       <Section id="air-condition-hero" fullWidth={true} className="relative min-h-screen">
         {/* Imagen de fondo a pantalla completa */}
         <div className="absolute inset-0 w-full h-full">
-          <Image src="/images/aires/aires.png" alt="Familia disfrutando aire acondicionado solar" fill priority className="object-cover" />
+          {/* Imagen para desktop */}
+          <Image 
+            src="/images/aires/aires.png" 
+            alt="Familia disfrutando aire acondicionado solar" 
+            fill 
+            priority 
+            className="object-cover hidden md:block" 
+          />
+          {/* Imagen para móvil */}
+          <Image 
+            src="/images/aires/aires-movil.png" 
+            alt="Familia disfrutando aire acondicionado solar" 
+            fill 
+            priority 
+            className="object-cover block md:hidden" 
+          />
           {/* Overlay oscuro para mejorar legibilidad del texto */}
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
@@ -311,12 +326,25 @@ export default async function AirConditionPage({ params: { locale } }: { params:
       <Section id="products" heightType="content">
         <Container size="large" className="pt-4 pb-8 overflow-hidden">
           <div className="text-center mb-12">
+            <div className="mb-4">
+              <Badge className="bg-orange-500 text-white px-4 py-2 text-sm font-semibold">
+                🔥 PREVENTA ESPECIAL 🔥
+              </Badge>
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
-              Elige tu Modelo Ideal
+              Reserva tu Modelo Ahora
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Todos nuestros modelos incluyen instalación profesional, garantía de 10 años y soporte técnico especializado
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
+              Aprovecha nuestros precios especiales de preventa con instalación GRATIS
             </p>
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
+              <p className="text-blue-800 font-semibold">
+                ⏰ Plazo de entrega: 60 días desde la confirmación de reserva
+              </p>
+              <p className="text-blue-600 text-sm mt-1">
+                Incluye instalación profesional, garantía de 10 años y soporte técnico especializado
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -373,7 +401,9 @@ export default async function AirConditionPage({ params: { locale } }: { params:
                       <div className="text-center mb-4">
                         <div className="space-y-2">
                           <div className="text-2xl font-bold text-primary">{product.price_bs.toLocaleString()} Bs</div>
-                          <div className="text-xs text-muted-foreground">Precio incluye instalación</div>
+                          <div className="text-xs text-orange-600 font-semibold">💰 Precio especial de preventa</div>
+                          <div className="text-xs text-muted-foreground">Incluye instalación GRATIS</div>
+                          <div className="text-xs text-blue-600 font-medium">⏰ Entrega en 60 días</div>
                         </div>
                       </div>
                       <a 
